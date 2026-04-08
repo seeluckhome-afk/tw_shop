@@ -1,0 +1,1686 @@
+{% liquid
+  assign layout_mode = section.settings.layout_mode
+%}
+
+<section id="shopify-section-{{ section.id }}" class="home-editorial-cards-section">
+  <style>
+    #shopify-section-{{ section.id }} {
+      --hec-bg: {{ section.settings.section_bg }};
+      --hec-max-width: {{ section.settings.max_width }}px;
+
+      --hec-padding-top: {{ section.settings.padding_top_desktop }}px;
+      --hec-padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+      --hec-side-padding: {{ section.settings.side_padding_desktop }}px;
+
+      --hec-heading-size: {{ section.settings.section_heading_size_desktop }}px;
+      --hec-subheading-size: {{ section.settings.section_subheading_size_desktop }}px;
+      --hec-card-title-size: {{ section.settings.card_title_size_desktop }}px;
+      --hec-card-text-size: {{ section.settings.card_text_size_desktop }}px;
+
+      --hec-overlay-line-1-size: {{ section.settings.overlay_line_1_size }}px;
+      --hec-overlay-line-2-size: {{ section.settings.overlay_line_2_size }}px;
+
+      --hec-grid-columns: {{ section.settings.columns_desktop }};
+      --hec-grid-gap: {{ section.settings.card_gap }}px;
+      --hec-card-radius: {{ section.settings.card_radius }}px;
+      --hec-image-radius: {{ section.settings.image_radius }}px;
+      --hec-content-spacing: {{ section.settings.content_spacing }}px;
+      --hec-card-inner-spacing: {{ section.settings.card_inner_spacing }}px;
+
+      --hec-heading-color: {{ section.settings.heading_color }};
+      --hec-subheading-color: {{ section.settings.subheading_color }};
+      --hec-title-color: {{ section.settings.card_title_color }};
+      --hec-title-hover-color: {{ section.settings.card_title_hover_color }};
+      --hec-text-color: {{ section.settings.card_text_color }};
+      --hec-overlay-color: {{ section.settings.overlay_text_color }};
+
+      --hec-button-bg: {{ section.settings.button_bg_color }};
+      --hec-button-text: {{ section.settings.button_text_color }};
+      --hec-button-hover-bg: {{ section.settings.button_hover_bg_color }};
+      --hec-button-hover-text: {{ section.settings.button_hover_text_color }};
+
+      --hec-hover-duration: {{ section.settings.hover_transition_duration }}ms;
+      --hec-image-scale: {{ section.settings.image_hover_scale | divided_by: 100.0 }};
+      --hec-scroll-card-width: {{ section.settings.scroll_card_width_desktop }}px;
+      --hec-overlay-bottom: {{ section.settings.overlay_bottom }}px;
+      --hec-overlay-side: {{ section.settings.overlay_side }}px;
+
+      --hec-mobile-slider-gap: {{ section.settings.mobile_slider_gap }}px;
+      --hec-mobile-arrow-size: {{ section.settings.mobile_arrow_size }}px;
+      --hec-mobile-arrow-bg: {{ section.settings.mobile_arrow_bg }};
+      --hec-mobile-arrow-color: {{ section.settings.mobile_arrow_color }};
+      --hec-mobile-dot-size: {{ section.settings.mobile_dot_size }}px;
+      --hec-mobile-dot-color: {{ section.settings.mobile_dot_color }};
+      --hec-mobile-dot-active-color: {{ section.settings.mobile_dot_active_color }};
+      --hec-mobile-controls-top: {{ section.settings.mobile_arrow_vertical_position }}%;
+    }
+
+    #shopify-section-{{ section.id }} {
+      background: var(--hec-bg);
+    }
+
+    #shopify-section-{{ section.id }} .hec {
+      padding-top: var(--hec-padding-top);
+      padding-bottom: var(--hec-padding-bottom);
+      background: var(--hec-bg);
+    }
+
+    #shopify-section-{{ section.id }} .hec__inner {
+      max-width: var(--hec-max-width);
+      margin: 0 auto;
+      padding-left: var(--hec-side-padding);
+      padding-right: var(--hec-side-padding);
+    }
+
+    #shopify-section-{{ section.id }} .hec__header {
+      margin-bottom: {{ section.settings.section_header_spacing }}px;
+      text-align: {{ section.settings.heading_alignment }};
+    }
+
+    #shopify-section-{{ section.id }} .hec__heading {
+      margin: 0;
+      color: var(--hec-heading-color);
+      font-size: var(--hec-heading-size);
+      line-height: 1.2;
+      font-weight: {{ section.settings.section_heading_weight }};
+      letter-spacing: {{ section.settings.section_heading_letter_spacing | times: 0.01 }}em;
+    }
+
+    #shopify-section-{{ section.id }} .hec__subheading {
+      margin: 10px 0 0;
+      color: var(--hec-subheading-color);
+      font-size: var(--hec-subheading-size);
+      line-height: 1.6;
+      font-weight: {{ section.settings.section_subheading_weight }};
+      letter-spacing: {{ section.settings.section_subheading_letter_spacing | times: 0.01 }}em;
+    }
+
+    #shopify-section-{{ section.id }} .hec__desktop-track {
+      display: grid;
+      grid-template-columns: repeat(var(--hec-grid-columns), minmax(0, 1fr));
+      gap: var(--hec-grid-gap);
+      align-items: start;
+    }
+
+    #shopify-section-{{ section.id }} .hec__desktop-track--scroll {
+      display: flex;
+      gap: var(--hec-grid-gap);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+    }
+
+    #shopify-section-{{ section.id }} .hec__desktop-track--scroll .hec__card {
+      flex: 0 0 var(--hec-scroll-card-width);
+      max-width: var(--hec-scroll-card-width);
+    }
+
+    #shopify-section-{{ section.id }} .hec__desktop-track--scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    #shopify-section-{{ section.id }} .hec__desktop-track--scroll::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 999px;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-slider {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-slider-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-track {
+      display: flex;
+      gap: 0;
+      overflow: visible;
+      transition: transform var(--hec-hover-duration) ease;
+      will-change: transform;
+      touch-action: pan-y;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-arrow {
+      position: absolute;
+      top: var(--hec-mobile-controls-top);
+      transform: translateY(-50%);
+      width: var(--hec-mobile-arrow-size);
+      height: var(--hec-mobile-arrow-size);
+      border: 0;
+      border-radius: 999px;
+      background: var(--hec-mobile-arrow-bg);
+      color: var(--hec-mobile-arrow-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition:
+        opacity var(--hec-hover-duration) ease,
+        background-color var(--hec-hover-duration) ease,
+        transform var(--hec-hover-duration) ease;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-arrow:hover {
+      transform: translateY(-50%) scale(1.04);
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-arrow[disabled] {
+      opacity: 0.45;
+      cursor: default;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-arrow--prev {
+      left: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-arrow--next {
+      right: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-arrow svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-dots {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-dot {
+      width: var(--hec-mobile-dot-size);
+      height: var(--hec-mobile-dot-size);
+      border-radius: 999px;
+      border: 0;
+      padding: 0;
+      background: var(--hec-mobile-dot-color);
+      cursor: pointer;
+      transition:
+        background-color var(--hec-hover-duration) ease,
+        transform var(--hec-hover-duration) ease;
+    }
+
+    #shopify-section-{{ section.id }} .hec__mobile-dot.is-active {
+      background: var(--hec-mobile-dot-active-color);
+      transform: scale(1.08);
+    }
+
+    #shopify-section-{{ section.id }} .hec__card {
+      min-width: 0;
+      border-radius: var(--hec-card-radius);
+    }
+
+    #shopify-section-{{ section.id }} .hec__card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #shopify-section-{{ section.id }} .hec__media-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--hec-image-radius);
+      background: #f4f4f4;
+    }
+
+    #shopify-section-{{ section.id }} .hec__media {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .hec__media--ratio-3-4 {
+      aspect-ratio: 3 / 4;
+    }
+
+    #shopify-section-{{ section.id }} .hec__media--ratio-4-5 {
+      aspect-ratio: 4 / 5;
+    }
+
+    #shopify-section-{{ section.id }} .hec__media--ratio-1-1 {
+      aspect-ratio: 1 / 1;
+    }
+
+    #shopify-section-{{ section.id }} .hec__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--hec-hover-duration) ease;
+    }
+
+    #shopify-section-{{ section.id }} .hec__placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eceae7;
+      color: #666;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .hec__overlay {
+      position: absolute;
+      right: var(--hec-overlay-side);
+      bottom: var(--hec-overlay-bottom);
+      text-align: right;
+      color: var(--hec-overlay-color);
+      z-index: 2;
+      max-width: calc(100% - (var(--hec-overlay-side) * 2));
+    }
+
+    #shopify-section-{{ section.id }} .hec__overlay-line-1,
+    #shopify-section-{{ section.id }} .hec__overlay-line-2 {
+      display: block;
+      margin: 0;
+      color: inherit;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+    }
+
+    #shopify-section-{{ section.id }} .hec__overlay-line-1 {
+      font-size: var(--hec-overlay-line-1-size);
+      line-height: 1.3;
+      font-weight: {{ section.settings.overlay_line_1_weight }};
+      letter-spacing: {{ section.settings.overlay_line_1_letter_spacing | times: 0.01 }}em;
+    }
+
+    #shopify-section-{{ section.id }} .hec__overlay-line-2 {
+      margin-top: 3px;
+      font-size: var(--hec-overlay-line-2-size);
+      line-height: 1.3;
+      font-weight: {{ section.settings.overlay_line_2_weight }};
+      letter-spacing: {{ section.settings.overlay_line_2_letter_spacing | times: 0.01 }}em;
+    }
+
+    #shopify-section-{{ section.id }} .hec__content {
+      padding-top: var(--hec-card-inner-spacing);
+    }
+
+    #shopify-section-{{ section.id }} .hec__title {
+      margin: 0;
+      color: var(--hec-title-color);
+      font-size: var(--hec-card-title-size);
+      line-height: 1.3;
+      font-weight: {{ section.settings.card_title_weight }};
+      letter-spacing: {{ section.settings.card_title_letter_spacing | times: 0.01 }}em;
+      transition: color var(--hec-hover-duration) ease;
+    }
+
+    #shopify-section-{{ section.id }} .hec__text {
+      margin: var(--hec-content-spacing) 0 0;
+      color: var(--hec-text-color);
+      font-size: var(--hec-card-text-size);
+      line-height: 1.65;
+      font-weight: {{ section.settings.card_text_weight }};
+      letter-spacing: {{ section.settings.card_text_letter_spacing | times: 0.01 }}em;
+    }
+
+    #shopify-section-{{ section.id }} .hec__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: var(--hec-content-spacing);
+      min-height: 46px;
+      padding: 12px 22px;
+      border-radius: {{ section.settings.button_radius }}px;
+      background: var(--hec-button-bg);
+      color: var(--hec-button-text);
+      border: 1px solid var(--hec-button-bg);
+      font-size: {{ section.settings.button_text_size }}px;
+      line-height: 1.2;
+      font-weight: {{ section.settings.button_text_weight }};
+      letter-spacing: {{ section.settings.button_letter_spacing | times: 0.01 }}em;
+      text-transform: {{ section.settings.button_text_transform }};
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      transform: translateY(0);
+      transition:
+        background-color var(--hec-hover-duration) ease,
+        color var(--hec-hover-duration) ease,
+        border-color var(--hec-hover-duration) ease,
+        box-shadow var(--hec-hover-duration) ease,
+        transform var(--hec-hover-duration) ease,
+        opacity var(--hec-hover-duration) ease;
+    }
+
+    #shopify-section-{{ section.id }} .hec__card-link:hover .hec__image {
+      transform: scale(var(--hec-image-scale));
+    }
+
+    #shopify-section-{{ section.id }} .hec__card-link:hover .hec__title {
+      color: var(--hec-title-hover-color);
+    }
+
+    #shopify-section-{{ section.id }} .hec__card-link:hover .hec__button {
+      background: var(--hec-button-hover-bg);
+      color: var(--hec-button-hover-text);
+      border-color: var(--hec-button-hover-bg);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    #shopify-section-{{ section.id }} .hec__card-link:active .hec__button {
+      transform: translateY(0);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    }
+
+    {% unless section.settings.show_on_desktop %}
+      @media screen and (min-width: 990px) {
+        #shopify-section-{{ section.id }} {
+          display: none !important;
+        }
+      }
+    {% endunless %}
+
+    {% unless section.settings.show_on_tablet %}
+      @media screen and (min-width: 750px) and (max-width: 989px) {
+        #shopify-section-{{ section.id }} {
+          display: none !important;
+        }
+      }
+    {% endunless %}
+
+    {% unless section.settings.show_on_mobile %}
+      @media screen and (max-width: 749px) {
+        #shopify-section-{{ section.id }} {
+          display: none !important;
+        }
+      }
+    {% endunless %}
+
+    @media screen and (max-width: 989px) {
+      #shopify-section-{{ section.id }} {
+        --hec-padding-top: {{ section.settings.padding_top_tablet }}px;
+        --hec-padding-bottom: {{ section.settings.padding_bottom_tablet }}px;
+        --hec-side-padding: {{ section.settings.side_padding_tablet }}px;
+
+        --hec-heading-size: {{ section.settings.section_heading_size_tablet }}px;
+        --hec-subheading-size: {{ section.settings.section_subheading_size_tablet }}px;
+        --hec-card-title-size: {{ section.settings.card_title_size_tablet }}px;
+        --hec-card-text-size: {{ section.settings.card_text_size_tablet }}px;
+
+        --hec-grid-columns: {{ section.settings.columns_tablet }};
+        --hec-scroll-card-width: {{ section.settings.scroll_card_width_tablet }}px;
+      }
+    }
+
+    @media screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} {
+        --hec-padding-top: {{ section.settings.padding_top_mobile }}px;
+        --hec-padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        --hec-side-padding: {{ section.settings.side_padding_mobile }}px;
+
+        --hec-heading-size: {{ section.settings.section_heading_size_mobile }}px;
+        --hec-subheading-size: {{ section.settings.section_subheading_size_mobile }}px;
+        --hec-card-title-size: {{ section.settings.card_title_size_mobile }}px;
+        --hec-card-text-size: {{ section.settings.card_text_size_mobile }}px;
+      }
+
+      #shopify-section-{{ section.id }} .hec__desktop-view {
+        display: none;
+      }
+
+      #shopify-section-{{ section.id }} .hec__mobile-slider {
+        display: block;
+      }
+
+      {% if section.settings.show_mobile_arrows %}
+        #shopify-section-{{ section.id }} .hec__mobile-arrow {
+          display: inline-flex;
+        }
+      {% else %}
+        #shopify-section-{{ section.id }} .hec__mobile-arrow {
+          display: none;
+        }
+      {% endif %}
+
+      {% if section.settings.show_mobile_dots %}
+        #shopify-section-{{ section.id }} .hec__mobile-dots {
+          display: flex;
+        }
+      {% endif %}
+
+      #shopify-section-{{ section.id }} .hec__placeholder {
+        min-height: 280px;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .hec__desktop-view {
+        display: block;
+      }
+
+      #shopify-section-{{ section.id }} .hec__mobile-slider {
+        display: none;
+      }
+    }
+  </style>
+
+  <div class="hec">
+    <div class="hec__inner">
+      {% if section.settings.heading != blank or section.settings.subheading != blank %}
+        <div class="hec__header">
+          {% if section.settings.heading != blank %}
+            <h2 class="hec__heading">{{ section.settings.heading }}</h2>
+          {% endif %}
+          {% if section.settings.subheading != blank %}
+            <div class="hec__subheading">{{ section.settings.subheading }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="hec__desktop-view">
+        <div class="{% if layout_mode == 'scroll' %}hec__desktop-track hec__desktop-track--scroll{% else %}hec__desktop-track{% endif %}">
+          {% for block in section.blocks %}
+            {% assign card_link = block.settings.link %}
+            {% assign has_overlay = false %}
+            {% if block.settings.overlay_line_1 != blank or block.settings.overlay_line_2 != blank %}
+              {% assign has_overlay = true %}
+            {% endif %}
+
+            <div class="hec__card" {{ block.shopify_attributes }}>
+              {% if card_link != blank %}
+                <a class="hec__card-link" href="{{ card_link }}">
+              {% else %}
+                <div class="hec__card-link">
+              {% endif %}
+
+                <div class="hec__media-wrap">
+                  <div class="hec__media {% if section.settings.image_ratio != 'adapt' %}hec__media--ratio-{{ section.settings.image_ratio }}{% endif %}">
+                    {% if block.settings.image != blank %}
+                      {{
+                        block.settings.image
+                        | image_url: width: 1600
+                        | image_tag:
+                          class: 'hec__image',
+                          loading: 'lazy',
+                          widths: '400, 600, 800, 1000, 1200, 1400, 1600'
+                      }}
+                    {% else %}
+                      <div class="hec__placeholder">Add card image</div>
+                    {% endif %}
+
+                    {% if has_overlay %}
+                      <div class="hec__overlay">
+                        {% if block.settings.overlay_line_1 != blank %}
+                          <span class="hec__overlay-line-1">{{ block.settings.overlay_line_1 }}</span>
+                        {% endif %}
+                        {% if block.settings.overlay_line_2 != blank %}
+                          <span class="hec__overlay-line-2">{{ block.settings.overlay_line_2 }}</span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+
+                <div class="hec__content">
+                  {% if block.settings.title != blank %}
+                    <h3 class="hec__title">{{ block.settings.title }}</h3>
+                  {% endif %}
+
+                  {% if block.settings.text != blank %}
+                    <div class="hec__text">{{ block.settings.text }}</div>
+                  {% endif %}
+
+                  {% if block.settings.button_label != blank %}
+                    <div class="hec__button">{{ block.settings.button_label }}</div>
+                  {% endif %}
+                </div>
+
+              {% if card_link != blank %}
+                </a>
+              {% else %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="hec__mobile-slider" data-mobile-slider>
+        <div class="hec__mobile-slider-wrap">
+          <button class="hec__mobile-arrow hec__mobile-arrow--prev" type="button" aria-label="Previous slide" data-mobile-prev>
+            <svg viewBox="0 0 24 24">
+              <path d="M15 5L8 12L15 19"></path>
+            </svg>
+          </button>
+
+          <div class="hec__mobile-track" data-mobile-track>
+            {% for block in section.blocks %}
+              {% assign card_link = block.settings.link %}
+              {% assign has_overlay = false %}
+              {% if block.settings.overlay_line_1 != blank or block.settings.overlay_line_2 != blank %}
+                {% assign has_overlay = true %}
+              {% endif %}
+
+              <div class="hec__mobile-slide" {{ block.shopify_attributes }}>
+                <div class="hec__card">
+                  {% if card_link != blank %}
+                    <a class="hec__card-link" href="{{ card_link }}">
+                  {% else %}
+                    <div class="hec__card-link">
+                  {% endif %}
+
+                    <div class="hec__media-wrap">
+                      <div class="hec__media {% if section.settings.image_ratio != 'adapt' %}hec__media--ratio-{{ section.settings.image_ratio }}{% endif %}">
+                        {% if block.settings.image != blank %}
+                          {{
+                            block.settings.image
+                            | image_url: width: 1200
+                            | image_tag:
+                              class: 'hec__image',
+                              loading: 'lazy',
+                              widths: '360, 540, 720, 900, 1200'
+                          }}
+                        {% else %}
+                          <div class="hec__placeholder">Add card image</div>
+                        {% endif %}
+
+                        {% if has_overlay %}
+                          <div class="hec__overlay">
+                            {% if block.settings.overlay_line_1 != blank %}
+                              <span class="hec__overlay-line-1">{{ block.settings.overlay_line_1 }}</span>
+                            {% endif %}
+                            {% if block.settings.overlay_line_2 != blank %}
+                              <span class="hec__overlay-line-2">{{ block.settings.overlay_line_2 }}</span>
+                            {% endif %}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+
+                    <div class="hec__content">
+                      {% if block.settings.title != blank %}
+                        <h3 class="hec__title">{{ block.settings.title }}</h3>
+                      {% endif %}
+
+                      {% if block.settings.text != blank %}
+                        <div class="hec__text">{{ block.settings.text }}</div>
+                      {% endif %}
+
+                      {% if block.settings.button_label != blank %}
+                        <div class="hec__button">{{ block.settings.button_label }}</div>
+                      {% endif %}
+                    </div>
+
+                  {% if card_link != blank %}
+                    </a>
+                  {% else %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <button class="hec__mobile-arrow hec__mobile-arrow--next" type="button" aria-label="Next slide" data-mobile-next>
+            <svg viewBox="0 0 24 24">
+              <path d="M9 5L16 12L9 19"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hec__mobile-dots" data-mobile-dots>
+          {% for block in section.blocks %}
+            <button
+              class="hec__mobile-dot{% if forloop.first %} is-active{% endif %}"
+              type="button"
+              aria-label="Go to slide {{ forloop.index }}"
+              data-mobile-dot="{{ forloop.index0 }}"
+            ></button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var section = document.getElementById('shopify-section-{{ section.id }}');
+      if (!section) return;
+
+      var slider = section.querySelector('[data-mobile-slider]');
+      if (!slider) return;
+      if (slider.dataset.initialized === 'true') return;
+      slider.dataset.initialized = 'true';
+
+      var wrap = slider.querySelector('.hec__mobile-slider-wrap');
+      var track = slider.querySelector('[data-mobile-track]');
+      var prevButton = slider.querySelector('[data-mobile-prev]');
+      var nextButton = slider.querySelector('[data-mobile-next]');
+      var dotsWrap = slider.querySelector('[data-mobile-dots]');
+      var dots = dotsWrap ? Array.prototype.slice.call(dotsWrap.querySelectorAll('[data-mobile-dot]')) : [];
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.hec__mobile-slide'));
+
+      if (!wrap || !track || !slides.length) return;
+
+      var currentIndex = 0;
+      var startX = 0;
+      var currentX = 0;
+      var isDragging = false;
+      var hasMoved = false;
+
+      function isMobile() {
+        return window.matchMedia('(max-width: 749px)').matches;
+      }
+
+      function maxIndex() {
+        return Math.max(0, slides.length - 1);
+      }
+
+      function clampIndex(index) {
+        return Math.max(0, Math.min(index, maxIndex()));
+      }
+
+      function setTrackTransition(enabled) {
+        track.style.transition = enabled ? 'transform var(--hec-hover-duration) ease' : 'none';
+      }
+
+      function setTrackTransform(value) {
+        track.style.transform = value;
+      }
+
+      function slideWidth() {
+        return wrap.clientWidth;
+      }
+
+      function updateDots() {
+        if (!dots.length) return;
+
+        dots.forEach(function(dot, index) {
+          if (index === currentIndex) {
+            dot.classList.add('is-active');
+          } else {
+            dot.classList.remove('is-active');
+          }
+        });
+      }
+
+      function updateArrows() {
+        if (prevButton) {
+          prevButton.disabled = currentIndex <= 0;
+        }
+
+        if (nextButton) {
+          nextButton.disabled = currentIndex >= maxIndex();
+        }
+      }
+
+      function updateControls() {
+        updateDots();
+        updateArrows();
+      }
+
+      function goTo(index, animate) {
+        currentIndex = clampIndex(index);
+        setTrackTransition(animate !== false);
+        setTrackTransform('translate3d(-' + (currentIndex * 100) + '%, 0, 0)');
+        updateControls();
+      }
+
+      function goToPrev() {
+        goTo(currentIndex - 1, true);
+      }
+
+      function goToNext() {
+        goTo(currentIndex + 1, true);
+      }
+
+      if (prevButton) {
+        prevButton.addEventListener('click', function() {
+          goToPrev();
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', function() {
+          goToNext();
+        });
+      }
+
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var index = parseInt(dot.getAttribute('data-mobile-dot'), 10);
+          if (isNaN(index)) return;
+          goTo(index, true);
+        });
+      });
+
+      function onTouchStart(event) {
+        if (!isMobile() || slides.length <= 1) return;
+        isDragging = true;
+        hasMoved = false;
+        startX = event.touches[0].clientX;
+        currentX = startX;
+        setTrackTransition(false);
+      }
+
+      function onTouchMove(event) {
+        if (!isDragging || !isMobile()) return;
+
+        currentX = event.touches[0].clientX;
+        var deltaX = currentX - startX;
+
+        if (Math.abs(deltaX) > 4) {
+          hasMoved = true;
+        }
+
+        var offset = (-currentIndex * slideWidth()) + deltaX;
+        setTrackTransform('translate3d(' + offset + 'px, 0, 0)');
+      }
+
+      function onTouchEnd() {
+        if (!isDragging) return;
+
+        isDragging = false;
+
+        var deltaX = currentX - startX;
+        var threshold = Math.min(80, slideWidth() * 0.18);
+
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX < 0) {
+            currentIndex = clampIndex(currentIndex + 1);
+          } else {
+            currentIndex = clampIndex(currentIndex - 1);
+          }
+        }
+
+        goTo(currentIndex, true);
+
+        window.setTimeout(function() {
+          hasMoved = false;
+        }, 0);
+      }
+
+      wrap.addEventListener('touchstart', onTouchStart, { passive: true });
+      wrap.addEventListener('touchmove', onTouchMove, { passive: true });
+      wrap.addEventListener('touchend', onTouchEnd);
+      wrap.addEventListener('touchcancel', onTouchEnd);
+
+      wrap.addEventListener('click', function(event) {
+        if (!hasMoved) return;
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
+
+      window.addEventListener('resize', function() {
+        if (!isMobile()) return;
+        goTo(currentIndex, false);
+      });
+
+      document.addEventListener('shopify:block:select', function(event) {
+        var target = event.target;
+        if (!target) return;
+
+        var mobileSlide = target.closest('.hec__mobile-slide');
+        if (!mobileSlide) return;
+        if (!section.contains(mobileSlide)) return;
+
+        var index = slides.indexOf(mobileSlide);
+        if (index > -1) {
+          goTo(index, true);
+        }
+      });
+
+      goTo(0, false);
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Home editorial cards",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "Show on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_tablet",
+      "label": "Show on tablet",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on mobile",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout_mode",
+      "label": "Layout mode",
+      "default": "grid",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "scroll", "label": "Horizontal scroll" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "default": "3-4",
+      "options": [
+        { "value": "3-4", "label": "3:4" },
+        { "value": "4-5", "label": "4:5" },
+        { "value": "1-1", "label": "1:1" },
+        { "value": "adapt", "label": "Adapt to image" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 1000,
+      "max": 1800,
+      "step": 20,
+      "default": 1600
+    },
+
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Desktop columns",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "scroll_card_width_desktop",
+      "label": "Desktop scroll card width",
+      "min": 240,
+      "max": 520,
+      "step": 10,
+      "default": 360
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Desktop padding top",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Desktop padding bottom",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "side_padding_desktop",
+      "label": "Desktop side padding",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_heading_size_desktop",
+      "label": "Desktop heading size",
+      "min": 18,
+      "max": 60,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "section_subheading_size_desktop",
+      "label": "Desktop subheading size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "label": "Desktop card title size",
+      "min": 14,
+      "max": 34,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_desktop",
+      "label": "Desktop card text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+
+    {
+      "type": "header",
+      "content": "Tablet layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Tablet columns",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "scroll_card_width_tablet",
+      "label": "Tablet scroll card width",
+      "min": 220,
+      "max": 460,
+      "step": 10,
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "label": "Tablet padding top",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "label": "Tablet padding bottom",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "side_padding_tablet",
+      "label": "Tablet side padding",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "section_heading_size_tablet",
+      "label": "Tablet heading size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "section_subheading_size_tablet",
+      "label": "Tablet subheading size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_tablet",
+      "label": "Tablet card title size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_tablet",
+      "label": "Tablet card text size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile padding top",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile padding bottom",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Mobile side padding",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "section_heading_size_mobile",
+      "label": "Mobile heading size",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "section_subheading_size_mobile",
+      "label": "Mobile subheading size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Mobile card title size",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Mobile card text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_slider_gap",
+      "label": "Mobile slider gap",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_arrows",
+      "label": "Show mobile arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_dots",
+      "label": "Show mobile dots",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "mobile_arrow_size",
+      "label": "Mobile arrow size",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "mobile_arrow_vertical_position",
+      "label": "Mobile arrow vertical position",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_dot_size",
+      "label": "Mobile dot size",
+      "min": 6,
+      "max": 14,
+      "step": 1,
+      "default": 8
+    },
+
+    {
+      "type": "header",
+      "content": "Section typography"
+    },
+    {
+      "type": "range",
+      "id": "section_heading_weight",
+      "label": "Section heading weight",
+      "min": 400,
+      "max": 800,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "section_subheading_weight",
+      "label": "Section subheading weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "section_heading_letter_spacing",
+      "label": "Section heading letter spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_subheading_letter_spacing",
+      "label": "Section subheading letter spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+
+    {
+      "type": "header",
+      "content": "Card typography"
+    },
+    {
+      "type": "range",
+      "id": "card_title_weight",
+      "label": "Card title weight",
+      "min": 400,
+      "max": 800,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "card_text_weight",
+      "label": "Card text weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "card_title_letter_spacing",
+      "label": "Card title letter spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_text_letter_spacing",
+      "label": "Card text letter spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+
+    {
+      "type": "header",
+      "content": "Overlay text"
+    },
+    {
+      "type": "range",
+      "id": "overlay_line_1_size",
+      "label": "Overlay line 1 size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "overlay_line_2_size",
+      "label": "Overlay line 2 size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "overlay_line_1_weight",
+      "label": "Overlay line 1 weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "overlay_line_2_weight",
+      "label": "Overlay line 2 weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "overlay_line_1_letter_spacing",
+      "label": "Overlay line 1 letter spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "overlay_line_2_letter_spacing",
+      "label": "Overlay line 2 letter spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "overlay_bottom",
+      "label": "Overlay bottom spacing",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "overlay_side",
+      "label": "Overlay side spacing",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 14
+    },
+
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background color",
+      "default": "#efefed"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#6e4f34"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#6c6c6c"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#6e4f34"
+    },
+    {
+      "type": "color",
+      "id": "card_title_hover_color",
+      "label": "Card title hover color",
+      "default": "#8b6848"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#4c4c4c"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text_color",
+      "label": "Overlay text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background color",
+      "default": "#7a5a3a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background color",
+      "default": "#5f4429"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "mobile_arrow_bg",
+      "label": "Mobile arrow background",
+      "default": "#7a5a3a"
+    },
+    {
+      "type": "color",
+      "id": "mobile_arrow_color",
+      "label": "Mobile arrow color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "mobile_dot_color",
+      "label": "Mobile dot color",
+      "default": "#cfcfcf"
+    },
+    {
+      "type": "color",
+      "id": "mobile_dot_active_color",
+      "label": "Mobile active dot color",
+      "default": "#ded6cd"
+    },
+
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Card gap",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_inner_spacing",
+      "label": "Space below image",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "label": "Content spacing",
+      "min": 6,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "section_header_spacing",
+      "label": "Space below section heading",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "default": 28
+    },
+
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "button_text_weight",
+      "label": "Button text weight",
+      "min": 400,
+      "max": 800,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "button_letter_spacing",
+      "label": "Button letter spacing",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "button_text_transform",
+      "label": "Button text transform",
+      "default": "uppercase",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "uppercase", "label": "Uppercase" }
+      ]
+    },
+
+    {
+      "type": "header",
+      "content": "Hover effect"
+    },
+    {
+      "type": "range",
+      "id": "hover_transition_duration",
+      "label": "Hover transition duration",
+      "min": 100,
+      "max": 800,
+      "step": 50,
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "image_hover_scale",
+      "label": "Image hover scale",
+      "min": 100,
+      "max": 120,
+      "step": 1,
+      "default": 104
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Editorial card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "overlay_line_1",
+          "label": "Overlay line 1"
+        },
+        {
+          "type": "text",
+          "id": "overlay_line_2",
+          "label": "Overlay line 2"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Linen Blend Collection"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Soft texture, refined finish, and a calm neutral palette for elegant interiors."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Explore collection →"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home editorial cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "overlay_line_1": "Liz - Ivory White",
+            "overlay_line_2": "Triple Pleated >",
+            "title": "Liz Linen Blend",
+            "text": "With soft texture and rich depth, this fabric creates a calm, luxurious window look.",
+            "button_label": "Explore textured linen →"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "overlay_line_1": "Jawara - Off White",
+            "overlay_line_2": "Triple Pleated >",
+            "title": "Jawara Cotton Linen",
+            "text": "Luxury cotton linen drapery adds natural texture and a tailored, sophisticated finish.",
+            "button_label": "Explore organic texture →"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "overlay_line_1": "Isabella - Beige White",
+            "overlay_line_2": "Triple Pleated >",
+            "title": "Isabella Cotton Blend",
+            "text": "Plain woven texture with excellent softness and everyday elegance for refined spaces.",
+            "button_label": "Explore cotton comfort →"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
