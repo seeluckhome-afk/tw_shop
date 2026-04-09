@@ -1,0 +1,672 @@
+{% liquid
+  assign section_heading = section.settings.section_heading
+  assign section_subheading = section.settings.section_subheading
+%}
+
+<section id="shopify-section-{{ section.id }}" class="editorial-guide-cards">
+  <div class="egc__container">
+    {% if section_heading != blank or section_subheading != blank %}
+      <header class="egc__header">
+        {% if section_subheading != blank %}
+          <p class="egc__subheading">{{ section_subheading }}</p>
+        {% endif %}
+        {% if section_heading != blank %}
+          <h2 class="egc__heading">{{ section_heading }}</h2>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="egc__grid">
+      {% for i in (1..3) %}
+        {% liquid
+          assign image_key = 'card_' | append: i | append: '_image'
+          assign title_key = 'card_' | append: i | append: '_title'
+          assign text_key = 'card_' | append: i | append: '_text'
+
+          assign button_1_icon_key = 'card_' | append: i | append: '_button_1_icon'
+          assign button_1_label_key = 'card_' | append: i | append: '_button_1_label'
+          assign button_1_link_key = 'card_' | append: i | append: '_button_1_link'
+
+          assign button_2_icon_key = 'card_' | append: i | append: '_button_2_icon'
+          assign button_2_label_key = 'card_' | append: i | append: '_button_2_label'
+          assign button_2_link_key = 'card_' | append: i | append: '_button_2_link'
+
+          assign card_image = section.settings[image_key]
+          assign card_title = section.settings[title_key]
+          assign card_text = section.settings[text_key]
+
+          assign card_button_1_icon = section.settings[button_1_icon_key]
+          assign card_button_1_label = section.settings[button_1_label_key]
+          assign card_button_1_link = section.settings[button_1_link_key]
+
+          assign card_button_2_icon = section.settings[button_2_icon_key]
+          assign card_button_2_label = section.settings[button_2_label_key]
+          assign card_button_2_link = section.settings[button_2_link_key]
+        %}
+
+        <article class="egc__card">
+          <div class="egc__media-wrap">
+            {% if card_image != blank %}
+              {{
+                card_image
+                | image_url: width: 1600
+                | image_tag:
+                  class: 'egc__image',
+                  loading: 'lazy',
+                  widths: '375, 550, 750, 900, 1100, 1400, 1600',
+                  sizes: '(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw',
+                  alt: card_title
+              }}
+            {% else %}
+              <div class="egc__image egc__placeholder">
+                {{ 'image' | placeholder_svg_tag: 'egc__placeholder-svg' }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="egc__content">
+            {% if card_title != blank %}
+              <h3 class="egc__card-title">{{ card_title }}</h3>
+            {% endif %}
+            {% if card_text != blank %}
+              <p class="egc__card-text">{{ card_text }}</p>
+            {% endif %}
+
+            <div class="egc__buttons">
+              {% if card_button_1_label != blank %}
+                {% if card_button_1_link != blank %}
+                  <a class="egc__button" href="{{ card_button_1_link }}">
+                    <span class="egc__button-icon">
+                      {% if card_button_1_icon != blank %}
+                        {{
+                          card_button_1_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_1_label
+                        }}
+                      {% else %}
+                        <span class="egc__icon-fallback" aria-hidden="true"></span>
+                      {% endif %}
+                    </span>
+                    <span class="egc__button-label">{{ card_button_1_label }}</span>
+                  </a>
+                {% else %}
+                  <div class="egc__button" role="button" aria-disabled="true">
+                    <span class="egc__button-icon">
+                      {% if card_button_1_icon != blank %}
+                        {{
+                          card_button_1_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_1_label
+                        }}
+                      {% else %}
+                        <span class="egc__icon-fallback" aria-hidden="true"></span>
+                      {% endif %}
+                    </span>
+                    <span class="egc__button-label">{{ card_button_1_label }}</span>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              {% if card_button_2_label != blank %}
+                {% if card_button_2_link != blank %}
+                  <a class="egc__button" href="{{ card_button_2_link }}">
+                    <span class="egc__button-icon">
+                      {% if card_button_2_icon != blank %}
+                        {{
+                          card_button_2_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_2_label
+                        }}
+                      {% else %}
+                        <span class="egc__icon-fallback" aria-hidden="true"></span>
+                      {% endif %}
+                    </span>
+                    <span class="egc__button-label">{{ card_button_2_label }}</span>
+                  </a>
+                {% else %}
+                  <div class="egc__button" role="button" aria-disabled="true">
+                    <span class="egc__button-icon">
+                      {% if card_button_2_icon != blank %}
+                        {{
+                          card_button_2_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_2_label
+                        }}
+                      {% else %}
+                        <span class="egc__icon-fallback" aria-hidden="true"></span>
+                      {% endif %}
+                    </span>
+                    <span class="egc__button-label">{{ card_button_2_label }}</span>
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  #shopify-section-{{ section.id }} .egc__container {
+    max-width: {{ section.settings.content_max_width }}px;
+    margin: 0 auto;
+    padding: {{ section.settings.section_top_padding }}px 24px {{ section.settings.section_bottom_padding }}px;
+  }
+
+  #shopify-section-{{ section.id }} .egc__header {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .egc__subheading {
+    margin: 0 0 10px;
+    color: rgba(51, 51, 51, 0.68);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .egc__heading {
+    margin: 0;
+    color: #262626;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  #shopify-section-{{ section.id }} .egc__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: {{ section.settings.card_gap }}px;
+  }
+
+  #shopify-section-{{ section.id }} .egc__card {
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 22px;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .egc__media-wrap {
+    position: relative;
+    height: {{ section.settings.image_height_desktop }}px;
+    overflow: hidden;
+    background: #e8e8e8;
+  }
+
+  #shopify-section-{{ section.id }} .egc__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.28s ease;
+  }
+
+  #shopify-section-{{ section.id }} .egc__card:hover .egc__image {
+    transform: scale(1.035);
+  }
+
+  #shopify-section-{{ section.id }} .egc__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9e7e4;
+  }
+
+  #shopify-section-{{ section.id }} .egc__placeholder-svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.38;
+  }
+
+  #shopify-section-{{ section.id }} .egc__content {
+    padding: 26px 20px 24px;
+  }
+
+  #shopify-section-{{ section.id }} .egc__card-title {
+    margin: 0;
+    color: #3a3a3a;
+    font-size: clamp(24px, 2vw, 38px);
+    font-weight: 400;
+    line-height: 1.24;
+    letter-spacing: 0.01em;
+  }
+
+  #shopify-section-{{ section.id }} .egc__card-text {
+    margin: 14px 0 0;
+    color: #5d5d5d;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  #shopify-section-{{ section.id }} .egc__buttons {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  #shopify-section-{{ section.id }} .egc__button {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 84px;
+    padding: 16px 22px;
+    border: 1px solid #bdbdbd;
+    border-radius: {{ section.settings.button_corner_radius }}px;
+    background-color: #fdfdfd;
+    color: #3f3f3f;
+    text-decoration: none;
+    transition:
+      border-color 0.24s ease,
+      background-color 0.24s ease,
+      transform 0.24s ease;
+  }
+
+  #shopify-section-{{ section.id }} .egc__button:hover {
+    border-color: #9f9f9f;
+    background-color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  #shopify-section-{{ section.id }} .egc__button-icon {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .egc__icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .egc__icon-fallback {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid #979797;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .egc__icon-fallback::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1.5px solid #b1b1b1;
+    border-radius: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .egc__button-label {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{ section.id }} .egc__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #shopify-section-{{ section.id }} .egc__card-title {
+      font-size: clamp(26px, 3.2vw, 34px);
+    }
+
+    #shopify-section-{{ section.id }} .egc__card-text,
+    #shopify-section-{{ section.id }} .egc__button-label {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .egc__container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__header {
+      margin-bottom: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__media-wrap {
+      height: {{ section.settings.image_height_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__content {
+      padding: 20px 16px 18px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__card-title {
+      font-size: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__card-text,
+    #shopify-section-{{ section.id }} .egc__button-label {
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    #shopify-section-{{ section.id }} .egc__buttons {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__button {
+      min-height: 70px;
+      grid-template-columns: 40px 1fr;
+      padding: 14px 16px;
+      gap: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .egc__button-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Editorial guide cards",
+  "tag": "section",
+  "class": "section-editorial-guide-cards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading",
+      "default": "Editorial Guide"
+    },
+    {
+      "type": "text",
+      "id": "section_subheading",
+      "label": "Section subheading",
+      "default": "Start your custom curtain journey"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f4f2"
+    },
+    {
+      "type": "range",
+      "id": "section_top_padding",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "section_bottom_padding",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 980,
+      "max": 1920,
+      "step": 20,
+      "unit": "px",
+      "default": 1600
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Card gap",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_corner_radius",
+      "label": "Button corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Image height desktop",
+      "min": 220,
+      "max": 480,
+      "step": 10,
+      "unit": "px",
+      "default": 350
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height mobile",
+      "min": 160,
+      "max": 380,
+      "step": 10,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 image"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 title",
+      "default": "Find Your Fabric"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_text",
+      "label": "Card 1 text",
+      "default": "Fabric is the soul of a drape, stitching together texture, and personality in every fold."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_button_1_icon",
+      "label": "Card 1 button 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_1_label",
+      "label": "Card 1 button 1 label",
+      "default": "Fabric Swatches"
+    },
+    {
+      "type": "url",
+      "id": "card_1_button_1_link",
+      "label": "Card 1 button 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_button_2_icon",
+      "label": "Card 1 button 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_2_label",
+      "label": "Card 1 button 2 label",
+      "default": "All fabrics introduction"
+    },
+    {
+      "type": "url",
+      "id": "card_1_button_2_link",
+      "label": "Card 1 button 2 link"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 image"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 title",
+      "default": "Processing Technic"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_text",
+      "label": "Card 2 text",
+      "default": "Curtain header styles affect both the appearance and functionality of your space."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_button_1_icon",
+      "label": "Card 2 button 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_1_label",
+      "label": "Card 2 button 1 label",
+      "default": "Learn About Headerstyle"
+    },
+    {
+      "type": "url",
+      "id": "card_2_button_1_link",
+      "label": "Card 2 button 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_button_2_icon",
+      "label": "Card 2 button 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_2_label",
+      "label": "Card 2 button 2 label",
+      "default": "ShapeLock Technique"
+    },
+    {
+      "type": "url",
+      "id": "card_2_button_2_link",
+      "label": "Card 2 button 2 link"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Card 3 image"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Card 3 title",
+      "default": "Measuring Support"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_text",
+      "label": "Card 3 text",
+      "default": "Easily measure curtains with our guide, designed for a seamless, stress-free process."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_button_1_icon",
+      "label": "Card 3 button 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_1_label",
+      "label": "Card 3 button 1 label",
+      "default": "Drapery Measurement"
+    },
+    {
+      "type": "url",
+      "id": "card_3_button_1_link",
+      "label": "Card 3 button 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_button_2_icon",
+      "label": "Card 3 button 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_2_label",
+      "label": "Card 3 button 2 label",
+      "default": "Shades Measurement"
+    },
+    {
+      "type": "url",
+      "id": "card_3_button_2_link",
+      "label": "Card 3 button 2 link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial guide cards",
+      "settings": {
+        "section_heading": "Editorial Guide",
+        "section_subheading": "Start your custom curtain journey",
+        "background_color": "#f5f4f2",
+        "section_top_padding": 56,
+        "section_bottom_padding": 56,
+        "content_max_width": 1600,
+        "card_gap": 28,
+        "button_corner_radius": 18,
+        "image_height_desktop": 350,
+        "image_height_mobile": 220,
+        "card_1_title": "Find Your Fabric",
+        "card_1_text": "Fabric is the soul of a drape, stitching together texture, and personality in every fold.",
+        "card_1_button_1_label": "Fabric Swatches",
+        "card_1_button_2_label": "All fabrics introduction",
+        "card_2_title": "Processing Technic",
+        "card_2_text": "Curtain header styles affect both the appearance and functionality of your space.",
+        "card_2_button_1_label": "Learn About Headerstyle",
+        "card_2_button_2_label": "ShapeLock Technique",
+        "card_3_title": "Measuring Support",
+        "card_3_text": "Easily measure curtains with our guide, designed for a seamless, stress-free process.",
+        "card_3_button_1_label": "Drapery Measurement",
+        "card_3_button_2_label": "Shades Measurement"
+      }
+    }
+  ]
+}
+{% endschema %}
