@@ -16,6 +16,13 @@
       </header>
     {% endif %}
 
+    <div class="egc__grid" role="list">
+      {% for block in section.blocks limit: 3 %}
+        <article class="egc__card" role="listitem" {{ block.shopify_attributes }}>
+          <div class="egc__media-wrap">
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
     <div class="egc__grid">
       {% for i in (1..3) %}
         {% liquid
@@ -55,6 +62,7 @@
                   loading: 'lazy',
                   widths: '375, 550, 750, 900, 1100, 1400, 1600',
                   sizes: '(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw',
+                  alt: block.settings.title
                   alt: card_title
               }}
             {% else %}
@@ -65,6 +73,23 @@
           </div>
 
           <div class="egc__content">
+            {% if block.settings.title != blank %}
+              <h3 class="egc__card-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <p class="egc__card-text">{{ block.settings.text }}</p>
+            {% endif %}
+
+            <div class="egc__buttons">
+              {% if block.settings.button_1_label != blank %}
+                {% if block.settings.button_1_link != blank %}
+                  <a class="egc__button" href="{{ block.settings.button_1_link }}">
+                    <span class="egc__button-icon">
+                      {% if block.settings.button_1_icon != blank %}
+                        {{
+                          block.settings.button_1_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_1_label
             {% if card_title != blank %}
               <h3 class="egc__card-title">{{ card_title }}</h3>
             {% endif %}
@@ -87,11 +112,17 @@
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
+                    <span class="egc__button-label">{{ block.settings.button_1_label }}</span>
                     <span class="egc__button-label">{{ card_button_1_label }}</span>
                   </a>
                 {% else %}
                   <div class="egc__button" role="button" aria-disabled="true">
                     <span class="egc__button-icon">
+                      {% if block.settings.button_1_icon != blank %}
+                        {{
+                          block.settings.button_1_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_1_label
                       {% if card_button_1_icon != blank %}
                         {{
                           card_button_1_icon
@@ -102,11 +133,21 @@
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
+                    <span class="egc__button-label">{{ block.settings.button_1_label }}</span>
                     <span class="egc__button-label">{{ card_button_1_label }}</span>
                   </div>
                 {% endif %}
               {% endif %}
 
+              {% if block.settings.button_2_label != blank %}
+                {% if block.settings.button_2_link != blank %}
+                  <a class="egc__button" href="{{ block.settings.button_2_link }}">
+                    <span class="egc__button-icon">
+                      {% if block.settings.button_2_icon != blank %}
+                        {{
+                          block.settings.button_2_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_2_label
               {% if card_button_2_label != blank %}
                 {% if card_button_2_link != blank %}
                   <a class="egc__button" href="{{ card_button_2_link }}">
@@ -121,11 +162,17 @@
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
+                    <span class="egc__button-label">{{ block.settings.button_2_label }}</span>
                     <span class="egc__button-label">{{ card_button_2_label }}</span>
                   </a>
                 {% else %}
                   <div class="egc__button" role="button" aria-disabled="true">
                     <span class="egc__button-icon">
+                      {% if block.settings.button_2_icon != blank %}
+                        {{
+                          block.settings.button_2_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_2_label
                       {% if card_button_2_icon != blank %}
                         {{
                           card_button_2_icon
@@ -136,6 +183,7 @@
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
+                    <span class="egc__button-label">{{ block.settings.button_2_label }}</span>
                     <span class="egc__button-label">{{ card_button_2_label }}</span>
                   </div>
                 {% endif %}
@@ -145,6 +193,13 @@
         </article>
       {% endfor %}
     </div>
+
+    {% if section.blocks.size == 0 %}
+      <div class="egc__empty-state">
+        {{ 'image' | placeholder_svg_tag: 'egc__placeholder-svg' }}
+        <p>Add up to 3 guide card blocks in the theme editor.</p>
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -318,6 +373,22 @@
     font-weight: 400;
   }
 
+  #shopify-section-{{ section.id }} .egc__empty-state {
+    margin-top: 20px;
+    padding: 24px;
+    border: 1px dashed #c8c8c8;
+    border-radius: 16px;
+    text-align: center;
+    color: #666;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  #shopify-section-{{ section.id }} .egc__empty-state .egc__placeholder-svg {
+    max-width: 120px;
+    margin: 0 auto 12px;
+    display: block;
+  }
+
   @media screen and (max-width: 1200px) {
     #shopify-section-{{ section.id }} .egc__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -390,6 +461,7 @@
   "name": "Editorial guide cards",
   "tag": "section",
   "class": "section-editorial-guide-cards",
+  "max_blocks": 3,
   "settings": [
     {
       "type": "text",
@@ -478,6 +550,63 @@
       "step": 10,
       "unit": "px",
       "default": 220
+    }
+  ],
+  "blocks": [
+    {
+      "type": "guide_card",
+      "name": "Guide card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card title",
+          "default": "Find Your Fabric"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Card text",
+          "default": "Fabric is the soul of a drape, stitching together texture, and personality in every fold."
+        },
+        {
+          "type": "image_picker",
+          "id": "button_1_icon",
+          "label": "Button 1 icon"
+        },
+        {
+          "type": "text",
+          "id": "button_1_label",
+          "label": "Button 1 label",
+          "default": "Fabric Swatches"
+        },
+        {
+          "type": "url",
+          "id": "button_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "image_picker",
+          "id": "button_2_icon",
+          "label": "Button 2 icon"
+        },
+        {
+          "type": "text",
+          "id": "button_2_label",
+          "label": "Button 2 label",
+          "default": "All fabrics introduction"
+        },
+        {
+          "type": "url",
+          "id": "button_2_link",
+          "label": "Button 2 link"
+        }
+      ]
     },
     {
       "type": "header",
@@ -642,6 +771,35 @@
   "presets": [
     {
       "name": "Editorial guide cards",
+      "blocks": [
+        {
+          "type": "guide_card",
+          "settings": {
+            "title": "Find Your Fabric",
+            "text": "Fabric is the soul of a drape, stitching together texture, and personality in every fold.",
+            "button_1_label": "Fabric Swatches",
+            "button_2_label": "All fabrics introduction"
+          }
+        },
+        {
+          "type": "guide_card",
+          "settings": {
+            "title": "Processing Technic",
+            "text": "Curtain header styles affect both the appearance and functionality of your space.",
+            "button_1_label": "Learn About Headerstyle",
+            "button_2_label": "ShapeLock Technique"
+          }
+        },
+        {
+          "type": "guide_card",
+          "settings": {
+            "title": "Measuring Support",
+            "text": "Easily measure curtains with our guide, designed for a seamless, stress-free process.",
+            "button_1_label": "Drapery Measurement",
+            "button_2_label": "Shades Measurement"
+          }
+        }
+      ]
       "settings": {
         "section_heading": "Editorial Guide",
         "section_subheading": "Start your custom curtain journey",
