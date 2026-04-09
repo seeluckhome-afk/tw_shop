@@ -23,6 +23,39 @@
             {% if block.settings.image != blank %}
               {{
                 block.settings.image
+    <div class="egc__grid">
+      {% for i in (1..3) %}
+        {% liquid
+          assign image_key = 'card_' | append: i | append: '_image'
+          assign title_key = 'card_' | append: i | append: '_title'
+          assign text_key = 'card_' | append: i | append: '_text'
+
+          assign button_1_icon_key = 'card_' | append: i | append: '_button_1_icon'
+          assign button_1_label_key = 'card_' | append: i | append: '_button_1_label'
+          assign button_1_link_key = 'card_' | append: i | append: '_button_1_link'
+
+          assign button_2_icon_key = 'card_' | append: i | append: '_button_2_icon'
+          assign button_2_label_key = 'card_' | append: i | append: '_button_2_label'
+          assign button_2_link_key = 'card_' | append: i | append: '_button_2_link'
+
+          assign card_image = section.settings[image_key]
+          assign card_title = section.settings[title_key]
+          assign card_text = section.settings[text_key]
+
+          assign card_button_1_icon = section.settings[button_1_icon_key]
+          assign card_button_1_label = section.settings[button_1_label_key]
+          assign card_button_1_link = section.settings[button_1_link_key]
+
+          assign card_button_2_icon = section.settings[button_2_icon_key]
+          assign card_button_2_label = section.settings[button_2_label_key]
+          assign card_button_2_link = section.settings[button_2_link_key]
+        %}
+
+        <article class="egc__card">
+          <div class="egc__media-wrap">
+            {% if card_image != blank %}
+              {{
+                card_image
                 | image_url: width: 1600
                 | image_tag:
                   class: 'egc__image',
@@ -30,6 +63,7 @@
                   widths: '375, 550, 750, 900, 1100, 1400, 1600',
                   sizes: '(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw',
                   alt: block.settings.title
+                  alt: card_title
               }}
             {% else %}
               <div class="egc__image egc__placeholder">
@@ -56,12 +90,30 @@
                           block.settings.button_1_icon
                           | image_url: width: 80
                           | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_1_label
+            {% if card_title != blank %}
+              <h3 class="egc__card-title">{{ card_title }}</h3>
+            {% endif %}
+            {% if card_text != blank %}
+              <p class="egc__card-text">{{ card_text }}</p>
+            {% endif %}
+
+            <div class="egc__buttons">
+              {% if card_button_1_label != blank %}
+                {% if card_button_1_link != blank %}
+                  <a class="egc__button" href="{{ card_button_1_link }}">
+                    <span class="egc__button-icon">
+                      {% if card_button_1_icon != blank %}
+                        {{
+                          card_button_1_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_1_label
                         }}
                       {% else %}
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
                     <span class="egc__button-label">{{ block.settings.button_1_label }}</span>
+                    <span class="egc__button-label">{{ card_button_1_label }}</span>
                   </a>
                 {% else %}
                   <div class="egc__button" role="button" aria-disabled="true">
@@ -71,12 +123,18 @@
                           block.settings.button_1_icon
                           | image_url: width: 80
                           | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_1_label
+                      {% if card_button_1_icon != blank %}
+                        {{
+                          card_button_1_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_1_label
                         }}
                       {% else %}
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
                     <span class="egc__button-label">{{ block.settings.button_1_label }}</span>
+                    <span class="egc__button-label">{{ card_button_1_label }}</span>
                   </div>
                 {% endif %}
               {% endif %}
@@ -90,12 +148,22 @@
                           block.settings.button_2_icon
                           | image_url: width: 80
                           | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_2_label
+              {% if card_button_2_label != blank %}
+                {% if card_button_2_link != blank %}
+                  <a class="egc__button" href="{{ card_button_2_link }}">
+                    <span class="egc__button-icon">
+                      {% if card_button_2_icon != blank %}
+                        {{
+                          card_button_2_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_2_label
                         }}
                       {% else %}
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
                     <span class="egc__button-label">{{ block.settings.button_2_label }}</span>
+                    <span class="egc__button-label">{{ card_button_2_label }}</span>
                   </a>
                 {% else %}
                   <div class="egc__button" role="button" aria-disabled="true">
@@ -105,12 +173,18 @@
                           block.settings.button_2_icon
                           | image_url: width: 80
                           | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_2_label
+                      {% if card_button_2_icon != blank %}
+                        {{
+                          card_button_2_icon
+                          | image_url: width: 80
+                          | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: card_button_2_label
                         }}
                       {% else %}
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
                       {% endif %}
                     </span>
                     <span class="egc__button-label">{{ block.settings.button_2_label }}</span>
+                    <span class="egc__button-label">{{ card_button_2_label }}</span>
                   </div>
                 {% endif %}
               {% endif %}
@@ -533,6 +607,165 @@
           "label": "Button 2 link"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 image"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 title",
+      "default": "Find Your Fabric"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_text",
+      "label": "Card 1 text",
+      "default": "Fabric is the soul of a drape, stitching together texture, and personality in every fold."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_button_1_icon",
+      "label": "Card 1 button 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_1_label",
+      "label": "Card 1 button 1 label",
+      "default": "Fabric Swatches"
+    },
+    {
+      "type": "url",
+      "id": "card_1_button_1_link",
+      "label": "Card 1 button 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_button_2_icon",
+      "label": "Card 1 button 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_2_label",
+      "label": "Card 1 button 2 label",
+      "default": "All fabrics introduction"
+    },
+    {
+      "type": "url",
+      "id": "card_1_button_2_link",
+      "label": "Card 1 button 2 link"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 image"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 title",
+      "default": "Processing Technic"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_text",
+      "label": "Card 2 text",
+      "default": "Curtain header styles affect both the appearance and functionality of your space."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_button_1_icon",
+      "label": "Card 2 button 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_1_label",
+      "label": "Card 2 button 1 label",
+      "default": "Learn About Headerstyle"
+    },
+    {
+      "type": "url",
+      "id": "card_2_button_1_link",
+      "label": "Card 2 button 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_button_2_icon",
+      "label": "Card 2 button 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_2_label",
+      "label": "Card 2 button 2 label",
+      "default": "ShapeLock Technique"
+    },
+    {
+      "type": "url",
+      "id": "card_2_button_2_link",
+      "label": "Card 2 button 2 link"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Card 3 image"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Card 3 title",
+      "default": "Measuring Support"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_text",
+      "label": "Card 3 text",
+      "default": "Easily measure curtains with our guide, designed for a seamless, stress-free process."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_button_1_icon",
+      "label": "Card 3 button 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_1_label",
+      "label": "Card 3 button 1 label",
+      "default": "Drapery Measurement"
+    },
+    {
+      "type": "url",
+      "id": "card_3_button_1_link",
+      "label": "Card 3 button 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_button_2_icon",
+      "label": "Card 3 button 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_2_label",
+      "label": "Card 3 button 2 label",
+      "default": "Shades Measurement"
+    },
+    {
+      "type": "url",
+      "id": "card_3_button_2_link",
+      "label": "Card 3 button 2 link"
     }
   ],
   "presets": [
@@ -567,6 +800,30 @@
           }
         }
       ]
+      "settings": {
+        "section_heading": "Editorial Guide",
+        "section_subheading": "Start your custom curtain journey",
+        "background_color": "#f5f4f2",
+        "section_top_padding": 56,
+        "section_bottom_padding": 56,
+        "content_max_width": 1600,
+        "card_gap": 28,
+        "button_corner_radius": 18,
+        "image_height_desktop": 350,
+        "image_height_mobile": 220,
+        "card_1_title": "Find Your Fabric",
+        "card_1_text": "Fabric is the soul of a drape, stitching together texture, and personality in every fold.",
+        "card_1_button_1_label": "Fabric Swatches",
+        "card_1_button_2_label": "All fabrics introduction",
+        "card_2_title": "Processing Technic",
+        "card_2_text": "Curtain header styles affect both the appearance and functionality of your space.",
+        "card_2_button_1_label": "Learn About Headerstyle",
+        "card_2_button_2_label": "ShapeLock Technique",
+        "card_3_title": "Measuring Support",
+        "card_3_text": "Easily measure curtains with our guide, designed for a seamless, stress-free process.",
+        "card_3_button_1_label": "Drapery Measurement",
+        "card_3_button_2_label": "Shades Measurement"
+      }
     }
   ]
 }
