@@ -21,6 +21,26 @@
         <article class="egc__card" role="listitem" {{ block.shopify_attributes }}>
           <div class="egc__media-wrap">
             {% if block.settings.image != blank %}
+              {% liquid
+                assign main_image = block.settings.image
+                assign main_image_alt = block.settings.title | escape
+              %}
+              <img
+                class="egc__image"
+                src="{{ main_image | image_url: width: 1600 }}"
+                srcset="
+                  {{ main_image | image_url: width: 375 }} 375w,
+                  {{ main_image | image_url: width: 550 }} 550w,
+                  {{ main_image | image_url: width: 750 }} 750w,
+                  {{ main_image | image_url: width: 900 }} 900w,
+                  {{ main_image | image_url: width: 1100 }} 1100w,
+                  {{ main_image | image_url: width: 1400 }} 1400w,
+                  {{ main_image | image_url: width: 1600 }} 1600w
+                "
+                sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt="{{ main_image_alt }}"
+                loading="lazy"
+              >
               {{ block.settings.image | image_url: width: 1600 | image_tag: class: 'egc__image', loading: 'lazy', widths: '375, 550, 750, 900, 1100, 1400, 1600', sizes: '(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw', alt: block.settings.title }}
               {{
                 block.settings.image
@@ -87,6 +107,8 @@
                   <a class="egc__button" href="{{ block.settings.button_1_link }}">
                     <span class="egc__button-icon">
                       {% if block.settings.button_1_icon != blank %}
+                        {% assign button_1_icon_alt = block.settings.button_1_label | escape %}
+                        <img class="egc__icon-image" src="{{ block.settings.button_1_icon | image_url: width: 80 }}" alt="{{ button_1_icon_alt }}" loading="lazy">
                         {{ block.settings.button_1_icon | image_url: width: 80 | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_1_label }}
                         {{
                           block.settings.button_1_icon
@@ -121,6 +143,8 @@
                   <div class="egc__button" role="button" aria-disabled="true">
                     <span class="egc__button-icon">
                       {% if block.settings.button_1_icon != blank %}
+                        {% assign button_1_icon_alt = block.settings.button_1_label | escape %}
+                        <img class="egc__icon-image" src="{{ block.settings.button_1_icon | image_url: width: 80 }}" alt="{{ button_1_icon_alt }}" loading="lazy">
                         {{ block.settings.button_1_icon | image_url: width: 80 | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_1_label }}
                         {{
                           block.settings.button_1_icon
@@ -147,6 +171,8 @@
                   <a class="egc__button" href="{{ block.settings.button_2_link }}">
                     <span class="egc__button-icon">
                       {% if block.settings.button_2_icon != blank %}
+                        {% assign button_2_icon_alt = block.settings.button_2_label | escape %}
+                        <img class="egc__icon-image" src="{{ block.settings.button_2_icon | image_url: width: 80 }}" alt="{{ button_2_icon_alt }}" loading="lazy">
                         {{ block.settings.button_2_icon | image_url: width: 80 | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_2_label }}
                       {% else %}
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
@@ -158,6 +184,8 @@
                   <div class="egc__button" role="button" aria-disabled="true">
                     <span class="egc__button-icon">
                       {% if block.settings.button_2_icon != blank %}
+                        {% assign button_2_icon_alt = block.settings.button_2_label | escape %}
+                        <img class="egc__icon-image" src="{{ block.settings.button_2_icon | image_url: width: 80 }}" alt="{{ button_2_icon_alt }}" loading="lazy">
                         {{ block.settings.button_2_icon | image_url: width: 80 | image_tag: class: 'egc__icon-image', loading: 'lazy', alt: block.settings.button_2_label }}
                       {% else %}
                         <span class="egc__icon-fallback" aria-hidden="true"></span>
