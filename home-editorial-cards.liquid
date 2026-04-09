@@ -319,14 +319,6 @@
       justify-content: center;
       margin-top: var(--hec-content-spacing);
       min-height: 46px;
-    #shopify-section-{{ section.id }} .hec__button {
-      position: relative;
-      overflow: hidden;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: var(--hec-content-spacing);
-      min-height: 46px;
       padding: 12px 22px;
       border-radius: {{ section.settings.button_radius }}px;
       background: var(--hec-button-bg);
@@ -370,67 +362,11 @@
     #shopify-section-{{ section.id }} .hec__card-link:hover .hec__image {
       transform: scale(var(--hec-image-scale));
     }
-        box-shadow var(--hec-hover-duration) ease,
-        transform var(--hec-hover-duration) ease,
-        opacity var(--hec-hover-duration) ease;
-    }
-
-    #shopify-section-{{ section.id }} .hec__button::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: auto;
-      right: -130%;
-      width: 120%;
-      height: 100%;
-      background: linear-gradient(
-        110deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.22) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      transform: skewX(-18deg);
-      transition: right calc(var(--hec-hover-duration) * 2.4) ease;
-      pointer-events: none;
-    }
-
-    #shopify-section-{{ section.id }} .hec__card-link:hover .hec__image {
-      transform: scale(var(--hec-image-scale));
-    }
 
     #shopify-section-{{ section.id }} .hec__card-link:hover .hec__title {
       color: var(--hec-title-hover-color);
     }
 
-    #shopify-section-{{ section.id }} .hec__button:hover {
-      background: var(--hec-button-hover-bg);
-      color: var(--hec-button-hover-text);
-      border-color: var(--hec-button-hover-bg);
-      transform: none;
-      box-shadow:
-        0 10px 24px rgba(0, 0, 0, 0.16),
-        0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    #shopify-section-{{ section.id }} .hec__button:hover::after {
-      right: 120%;
-    }
-
-    #shopify-section-{{ section.id }} .hec__button:active {
-      transform: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-    }
-
-    @media (hover: none) {
-      #shopify-section-{{ section.id }} .hec__button::after {
-        display: none;
-      }
-
-      #shopify-section-{{ section.id }} .hec__button:hover {
-        transform: none;
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      }
-    }
     #shopify-section-{{ section.id }} .hec__button:hover {
       background: var(--hec-button-hover-bg);
       color: var(--hec-button-hover-text);
@@ -1606,5 +1542,4 @@
     }
   ]
 }
-{% endschema %}
 {% endschema %}
