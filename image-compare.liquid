@@ -1,11 +1,13 @@
 {% liquid
   assign height = section.settings.height
   assign bgBrightness = section.settings.color | brightness_difference: "#000"
+  assign bgBrightness = section.settings.color | brightness_difference: '#000'
   assign has_heading = false
   if section.settings.heading != blank
     assign has_heading = true
   endif
 %}
+-%}
 
 {% style %}
   .image-compare--no-heading {
