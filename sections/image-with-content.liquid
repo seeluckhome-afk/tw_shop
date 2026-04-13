@@ -1,96 +1,151 @@
 {% liquid
-  assign section_id = 'image-with-content-' | append: section.id
-  assign image_blocks = section.blocks | where: 'type', 'image'
-  assign content_blocks = section.blocks | where: 'type', 'content'
-
-  assign image_count = image_blocks.size
-  assign content_count = content_blocks.size
-
-  if image_count > content_count
-    assign pair_count = image_count
-  else
-    assign pair_count = content_count
-  endif
+  assign section_id = 'universal-split-' | append: section.id
 %}
 
-<section id="{{ section_id }}" class="image-with-content-section">
-  <div class="image-with-content__container page-width page-width--{{ section.settings.section_width }}">
-    <div class="image-with-content__pairs">
-      {% for i in (0..pair_count) %}
-        {% assign image_block = image_blocks[i] %}
-        {% assign content_block = content_blocks[i] %}
+<section id="{{ section_id }}" class="universal-split-section">
+  <div class="universal-split page-width page-width--{{ section.settings.section_width }}">
+    <div class="universal-split__rows">
+      {% for block in section.blocks %}
+        {% liquid
+          assign left_type = block.settings.left_type
+          assign right_type = block.settings.right_type
 
-        {% if image_block != blank or content_block != blank %}
-          {% liquid
-            assign layout_position = 'left'
-            assign content_alignment = 'center'
-            assign mobile_layout = 'stack'
-            assign image_ratio = 'adapt'
-            assign content_max_width = 620
+          assign has_left = false
+          assign has_right = false
 
-            if content_block != blank
-              assign layout_position = content_block.settings.image_position
-              assign content_alignment = content_block.settings.content_alignment
-              assign mobile_layout = content_block.settings.mobile_layout
-              assign content_max_width = content_block.settings.content_max_width
-            endif
+          if left_type != 'empty'
+            assign has_left = true
+          endif
 
-            if image_block != blank
-              assign image_ratio = image_block.settings.image_ratio
-            endif
-          %}
+          if right_type != 'empty'
+            assign has_right = true
+          endif
 
-          <div class="image-with-content__pair">
-            <div class="image-with-content__grid image-with-content__grid--{{ layout_position }} image-with-content__grid--content-{{ content_alignment }} image-with-content__grid--mobile-{{ mobile_layout }}">
-              <div class="image-with-content__media-wrapper">
-                <div class="image-with-content__media image-with-content__media--{{ image_ratio }}">
-                  {% if image_block != blank and image_block.settings.image != blank %}
-                    {{
-                      image_block.settings.image
-                      | image_url: width: 2400
-                      | image_tag:
-                        loading: 'lazy',
-                        widths: '375, 550, 750, 900, 1100, 1400, 1700, 2000, 2400',
-                        class: 'image-with-content__image'
-                    }}
-                  {% else %}
-                    <div class="image-with-content__placeholder">
-                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                    </div>
+          if has_left == false and has_right == false
+            continue
+          endif
+
+          assign row_layout = 'two'
+          if has_left and has_right == false
+            assign row_layout = 'single-left'
+          elsif has_right and has_left == false
+            assign row_layout = 'single-right'
+          endif
+
+          assign mobile_order = block.settings.mobile_order
+        %}
+
+        <article
+          class="universal-split__row universal-split__row--{{ row_layout }} universal-split__row--mobile-{{ mobile_order }}"
+          id="universal-split-row-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="universal-split__grid">
+            {% if has_left %}
+              <div class="universal-split__cell universal-split__cell--left universal-split__cell--{{ left_type }}">
+                {% if left_type == 'image' %}
+                  {% assign left_ratio = block.settings.left_image_ratio %}
+                  {% assign left_alt = block.settings.left_image_alt | default: block.settings.left_image.alt | escape %}
+                  {% if block.settings.left_image_link != blank %}
+                    <a class="universal-split__media-link" href="{{ block.settings.left_image_link }}">
                   {% endif %}
-                </div>
+                  <div class="universal-split__media universal-split__media--{{ left_ratio }}">
+                    {% if block.settings.left_image != blank %}
+                      {{
+                        block.settings.left_image
+                        | image_url: width: 2400
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '375, 550, 750, 900, 1100, 1400, 1700, 2000, 2400',
+                          class: 'universal-split__image',
+                          alt: left_alt
+                      }}
+                    {% else %}
+                      <div class="universal-split__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.left_image_link != blank %}
+                    </a>
+                  {% endif %}
+                {% elsif left_type == 'content' %}
+                  <div class="universal-split__content" style="max-width: {{ block.settings.left_content_max_width }}px;">
+                    {% if block.settings.left_heading != blank %}
+                      <h2 class="universal-split__heading universal-split__heading--left-{{ block.id }}">{{ block.settings.left_heading }}</h2>
+                    {% endif %}
+
+                    {% if block.settings.left_text != blank %}
+                      <div class="universal-split__text universal-split__text--left-{{ block.id }} rte">{{ block.settings.left_text }}</div>
+                    {% endif %}
+
+                    {% if block.settings.left_show_button and block.settings.left_button_label != blank %}
+                      <div class="universal-split__button-wrap universal-split__button-wrap--{{ block.settings.left_button_alignment }}">
+                        <a
+                          href="{% if block.settings.left_button_link != blank %}{{ block.settings.left_button_link }}{% else %}#{% endif %}"
+                          class="universal-split__button"
+                          {% if block.settings.left_button_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                        >
+                          <span>{{ block.settings.left_button_label }}</span>
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
               </div>
+            {% endif %}
 
-              <div class="image-with-content__content-wrapper">
-                <div class="image-with-content__content" style="max-width: {{ content_max_width }}px;">
-                  {% if content_block != blank and content_block.settings.heading != blank %}
-                    <h2 class="image-with-content__heading image-with-content__heading--{{ forloop.index0 }}">
-                      {{ content_block.settings.heading }}
-                    </h2>
+            {% if has_right %}
+              <div class="universal-split__cell universal-split__cell--right universal-split__cell--{{ right_type }}">
+                {% if right_type == 'image' %}
+                  {% assign right_ratio = block.settings.right_image_ratio %}
+                  {% assign right_alt = block.settings.right_image_alt | default: block.settings.right_image.alt | escape %}
+                  {% if block.settings.right_image_link != blank %}
+                    <a class="universal-split__media-link" href="{{ block.settings.right_image_link }}">
                   {% endif %}
+                  <div class="universal-split__media universal-split__media--{{ right_ratio }}">
+                    {% if block.settings.right_image != blank %}
+                      {{
+                        block.settings.right_image
+                        | image_url: width: 2400
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '375, 550, 750, 900, 1100, 1400, 1700, 2000, 2400',
+                          class: 'universal-split__image',
+                          alt: right_alt
+                      }}
+                    {% else %}
+                      <div class="universal-split__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.right_image_link != blank %}
+                    </a>
+                  {% endif %}
+                {% elsif right_type == 'content' %}
+                  <div class="universal-split__content" style="max-width: {{ block.settings.right_content_max_width }}px;">
+                    {% if block.settings.right_heading != blank %}
+                      <h2 class="universal-split__heading universal-split__heading--right-{{ block.id }}">{{ block.settings.right_heading }}</h2>
+                    {% endif %}
 
-                  {% if content_block != blank and content_block.settings.text != blank %}
-                    <div class="image-with-content__text image-with-content__text--{{ forloop.index0 }} rte">
-                      {{ content_block.settings.text }}
-                    </div>
-                  {% endif %}
+                    {% if block.settings.right_text != blank %}
+                      <div class="universal-split__text universal-split__text--right-{{ block.id }} rte">{{ block.settings.right_text }}</div>
+                    {% endif %}
 
-                  {% if content_block != blank and content_block.settings.show_button and content_block.settings.button_label != blank %}
-                    <div class="image-with-content__button-wrap image-with-content__button-wrap--{{ content_block.settings.button_alignment }}">
-                      <a
-                        href="{% if content_block.settings.button_link != blank %}{{ content_block.settings.button_link }}{% else %}#{% endif %}"
-                        class="image-with-content__button image-with-content__button--{{ content_block.settings.button_width }}"
-                        {% if content_block.settings.button_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
-                      >
-                        <span>{{ content_block.settings.button_label }}</span>
-                      </a>
-                    </div>
-                  {% endif %}
-                </div>
+                    {% if block.settings.right_show_button and block.settings.right_button_label != blank %}
+                      <div class="universal-split__button-wrap universal-split__button-wrap--{{ block.settings.right_button_alignment }}">
+                        <a
+                          href="{% if block.settings.right_button_link != blank %}{{ block.settings.right_button_link }}{% else %}#{% endif %}"
+                          class="universal-split__button"
+                          {% if block.settings.right_button_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                        >
+                          <span>{{ block.settings.right_button_label }}</span>
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
               </div>
-            </div>
+            {% endif %}
           </div>
-        {% endif %}
+        </article>
       {% endfor %}
     </div>
   </div>
@@ -124,176 +179,143 @@
     padding-right: 28px;
   }
 
-  #{{ section_id }} .image-with-content__pairs {
+  #{{ section_id }} .universal-split__rows {
     display: flex;
     flex-direction: column;
-    gap: {{ section.settings.pairs_gap }}px;
+    gap: {{ section.settings.rows_gap }}px;
   }
 
-  #{{ section_id }} .image-with-content__grid {
+  #{{ section_id }} .universal-split__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: {{ section.settings.column_gap }}px;
     align-items: stretch;
   }
 
-  #{{ section_id }} .image-with-content__grid--right .image-with-content__media-wrapper {
-    order: 2;
+  #{{ section_id }} .universal-split__row--single-left .universal-split__grid,
+  #{{ section_id }} .universal-split__row--single-right .universal-split__grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  #{{ section_id }} .image-with-content__grid--right .image-with-content__content-wrapper {
-    order: 1;
+  #{{ section_id }} .universal-split__cell {
+    min-width: 0;
   }
 
-  #{{ section_id }} .image-with-content__grid--content-top {
-    align-items: start;
-  }
-
-  #{{ section_id }} .image-with-content__grid--content-center {
+  #{{ section_id }} .universal-split__cell--content {
+    display: flex;
     align-items: center;
   }
 
-  #{{ section_id }} .image-with-content__grid--content-bottom {
-    align-items: end;
+  #{{ section_id }} .universal-split__media-link {
+    display: block;
+    width: 100%;
   }
 
-  #{{ section_id }} .image-with-content__media-wrapper,
-  #{{ section_id }} .image-with-content__content-wrapper {
-    min-width: 0;
-    background: transparent;
-  }
-
-  #{{ section_id }} .image-with-content__media {
-    position: relative;
+  #{{ section_id }} .universal-split__media {
     width: 100%;
     height: {{ section.settings.image_height_desktop }}px;
-    overflow: hidden;
     border-radius: {{ section.settings.image_radius }}px;
+    overflow: hidden;
     background: transparent;
   }
 
-  #{{ section_id }} .image-with-content__media--adapt {
+  #{{ section_id }} .universal-split__media--adapt {
     height: auto;
     aspect-ratio: auto;
   }
 
-  #{{ section_id }} .image-with-content__media--square {
+  #{{ section_id }} .universal-split__media--square {
     height: auto;
     aspect-ratio: 1 / 1;
   }
 
-  #{{ section_id }} .image-with-content__media--portrait {
+  #{{ section_id }} .universal-split__media--portrait {
     height: auto;
     aspect-ratio: 4 / 5;
   }
 
-  #{{ section_id }} .image-with-content__media--landscape {
+  #{{ section_id }} .universal-split__media--landscape {
     height: auto;
     aspect-ratio: 4 / 3;
   }
 
-  #{{ section_id }} .image-with-content__media--wide {
+  #{{ section_id }} .universal-split__media--wide {
     height: auto;
     aspect-ratio: 16 / 10;
   }
 
-  #{{ section_id }} .image-with-content__image,
-  #{{ section_id }} .image-with-content__placeholder svg {
+  #{{ section_id }} .universal-split__image,
+  #{{ section_id }} .universal-split__placeholder svg {
+    width: 100%;
+    height: 100%;
     display: block;
-    width: 100%;
-    height: 100%;
   }
 
-  #{{ section_id }} .image-with-content__image {
+  #{{ section_id }} .universal-split__image {
     object-fit: {{ section.settings.image_fit }};
-    background: transparent !important;
+    background: transparent;
   }
 
-  #{{ section_id }} .image-with-content__placeholder {
+  #{{ section_id }} .universal-split__placeholder,
+  #{{ section_id }} .universal-split__placeholder .placeholder-svg {
     width: 100%;
     height: 100%;
     background: #f1f1f1;
+    fill: #c7c7c7;
   }
 
-  #{{ section_id }} .image-with-content__placeholder .placeholder-svg {
-    width: 100%;
-    height: 100%;
-    background: #f1f1f1;
-    fill: #c9c9c9;
-  }
-
-  #{{ section_id }} .image-with-content__content-wrapper {
-    display: flex;
-    align-self: stretch;
-  }
-
-  #{{ section_id }} .image-with-content__content {
+  #{{ section_id }} .universal-split__content {
     width: 100%;
     padding-top: {{ section.settings.content_padding_top }}px;
     padding-bottom: {{ section.settings.content_padding_bottom }}px;
   }
 
-  #{{ section_id }} .image-with-content__heading {
-    margin: 0 0 18px;
-    color: #2f2f2f;
-    text-transform: none;
+  #{{ section_id }} .universal-split__heading {
+    margin: 0;
     word-break: break-word;
   }
 
-  #{{ section_id }} .image-with-content__text {
-    color: #666666;
+  #{{ section_id }} .universal-split__text p,
+  #{{ section_id }} .universal-split__text h1,
+  #{{ section_id }} .universal-split__text h2,
+  #{{ section_id }} .universal-split__text h3,
+  #{{ section_id }} .universal-split__text h4,
+  #{{ section_id }} .universal-split__text h5,
+  #{{ section_id }} .universal-split__text h6,
+  #{{ section_id }} .universal-split__text ul,
+  #{{ section_id }} .universal-split__text ol {
+    margin-top: 0;
   }
 
-  #{{ section_id }} .image-with-content__text p {
-    margin: 0 0 18px;
-  }
-
-  #{{ section_id }} .image-with-content__text p:last-child {
+  #{{ section_id }} .universal-split__text p:last-child {
     margin-bottom: 0;
   }
 
-  #{{ section_id }} .image-with-content__text h1,
-  #{{ section_id }} .image-with-content__text h2,
-  #{{ section_id }} .image-with-content__text h3,
-  #{{ section_id }} .image-with-content__text h4,
-  #{{ section_id }} .image-with-content__text h5,
-  #{{ section_id }} .image-with-content__text h6 {
-    color: inherit;
-    margin-top: 0;
-    margin-bottom: 18px;
-  }
-
-  #{{ section_id }} .image-with-content__text ul,
-  #{{ section_id }} .image-with-content__text ol {
-    margin-top: 0;
-    margin-bottom: 18px;
-    padding-left: 20px;
-  }
-
-  #{{ section_id }} .image-with-content__button-wrap {
+  #{{ section_id }} .universal-split__button-wrap {
     margin-top: {{ section.settings.button_margin_top }}px;
     display: flex;
   }
 
-  #{{ section_id }} .image-with-content__button-wrap--left {
+  #{{ section_id }} .universal-split__button-wrap--left {
     justify-content: flex-start;
   }
 
-  #{{ section_id }} .image-with-content__button-wrap--center {
+  #{{ section_id }} .universal-split__button-wrap--center {
     justify-content: center;
   }
 
-  #{{ section_id }} .image-with-content__button-wrap--right {
+  #{{ section_id }} .universal-split__button-wrap--right {
     justify-content: flex-end;
   }
 
-  #{{ section_id }} .image-with-content__button {
+  #{{ section_id }} .universal-split__button {
     position: relative;
     overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 160px;
+    width: {{ section.settings.button_fixed_width }}px;
+    max-width: 100%;
     min-height: 46px;
     padding: 14px 28px;
     background: {{ section.settings.button_bg }};
@@ -305,7 +327,6 @@
     font-weight: {{ section.settings.button_text_weight }};
     letter-spacing: {{ section.settings.button_letter_spacing }}px;
     line-height: 1.2;
-    text-transform: none;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     transform: translateY(0);
     transition:
@@ -313,48 +334,29 @@
       color {{ section.settings.button_transition_duration }}ms ease,
       border-color {{ section.settings.button_transition_duration }}ms ease,
       box-shadow {{ section.settings.button_transition_duration }}ms ease,
-      transform {{ section.settings.button_transition_duration }}ms ease,
-      opacity {{ section.settings.button_transition_duration }}ms ease;
+      transform {{ section.settings.button_transition_duration }}ms ease;
   }
 
-  #{{ section_id }} .image-with-content__button--auto {
-    width: auto;
-  }
-
-  #{{ section_id }} .image-with-content__button--fixed {
-    width: {{ section.settings.button_fixed_width }}px;
-  }
-
-  #{{ section_id }} .image-with-content__button--full {
-    width: 100%;
-  }
-
-  #{{ section_id }} .image-with-content__button span {
+  #{{ section_id }} .universal-split__button span {
     position: relative;
     z-index: 2;
   }
 
-  #{{ section_id }} .image-with-content__button::after {
+  #{{ section_id }} .universal-split__button::after {
     content: '';
     position: absolute;
     top: 0;
-    left: auto;
     right: -130%;
     width: 120%;
     height: 100%;
-    background: linear-gradient(
-      110deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.22) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0) 100%);
     transform: skewX(-18deg);
     transition: right {{ section.settings.button_shine_duration }}ms ease;
     pointer-events: none;
     z-index: 1;
   }
 
-  #{{ section_id }} .image-with-content__button:hover {
+  #{{ section_id }} .universal-split__button:hover {
     background: {{ section.settings.button_bg_hover }};
     color: {{ section.settings.button_text_color_hover }};
     border-color: {{ section.settings.button_border_color_hover }};
@@ -364,64 +366,83 @@
       0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
-  #{{ section_id }} .image-with-content__button:hover::after {
+  #{{ section_id }} .universal-split__button:hover::after {
     right: 120%;
   }
 
-  #{{ section_id }} .image-with-content__button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-  }
-
-  #{{ section_id }} .image-with-content__button:focus-visible {
+  #{{ section_id }} .universal-split__button:focus-visible {
     outline: 2px solid {{ section.settings.button_border_color_hover }};
     outline-offset: 2px;
   }
 
   @media (hover: none) {
-    #{{ section_id }} .image-with-content__button::after {
+    #{{ section_id }} .universal-split__button::after {
       display: none;
     }
 
-    #{{ section_id }} .image-with-content__button:hover {
-      transform: translateY(0);
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    #{{ section_id }} .universal-split__button:hover {
+      transform: none;
+      box-shadow: none;
     }
   }
 
-  {% assign content_blocks_for_style = section.blocks | where: 'type', 'content' %}
-  {% for block in content_blocks_for_style %}
-    #{{ section_id }} .image-with-content__heading--{{ forloop.index0 }} {
-      color: {{ block.settings.heading_color }};
-      font-size: {{ block.settings.heading_size }}px;
-      font-weight: {{ block.settings.heading_weight }};
-      line-height: {{ block.settings.heading_line_height }};
-      letter-spacing: {{ block.settings.heading_letter_spacing }}px;
-      margin-bottom: {{ block.settings.heading_margin_bottom }}px;
+  {% for block in section.blocks %}
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__heading--left-{{ block.id }} {
+      color: {{ block.settings.left_heading_color }};
+      font-size: {{ block.settings.left_heading_size }}px;
+      font-weight: {{ block.settings.left_heading_weight }};
+      line-height: {{ block.settings.left_heading_line_height }};
+      letter-spacing: {{ block.settings.left_heading_letter_spacing }}px;
+      margin-bottom: {{ block.settings.left_heading_margin_bottom }}px;
     }
 
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} {
-      color: {{ block.settings.text_color }};
-      font-size: {{ block.settings.text_size }}px;
-      font-weight: {{ block.settings.text_weight }};
-      line-height: {{ block.settings.text_line_height }};
-      letter-spacing: {{ block.settings.text_letter_spacing }}px;
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} {
+      color: {{ block.settings.left_text_color }};
+      font-size: {{ block.settings.left_text_size }}px;
+      font-weight: {{ block.settings.left_text_weight }};
+      line-height: {{ block.settings.left_text_line_height }};
+      letter-spacing: {{ block.settings.left_text_letter_spacing }}px;
     }
 
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} p,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} h1,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} h2,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} h3,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} h4,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} h5,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} h6,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} ul,
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} ol {
-      margin-bottom: {{ block.settings.paragraph_spacing }}px;
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} p,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} h1,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} h2,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} h3,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} h4,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} h5,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} h6,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} ul,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} ol {
+      margin-bottom: {{ block.settings.left_paragraph_spacing }}px;
     }
 
-    #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} p:last-child {
-      margin-bottom: 0;
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__heading--right-{{ block.id }} {
+      color: {{ block.settings.right_heading_color }};
+      font-size: {{ block.settings.right_heading_size }}px;
+      font-weight: {{ block.settings.right_heading_weight }};
+      line-height: {{ block.settings.right_heading_line_height }};
+      letter-spacing: {{ block.settings.right_heading_letter_spacing }}px;
+      margin-bottom: {{ block.settings.right_heading_margin_bottom }}px;
+    }
+
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} {
+      color: {{ block.settings.right_text_color }};
+      font-size: {{ block.settings.right_text_size }}px;
+      font-weight: {{ block.settings.right_text_weight }};
+      line-height: {{ block.settings.right_text_line_height }};
+      letter-spacing: {{ block.settings.right_text_letter_spacing }}px;
+    }
+
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} p,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} h1,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} h2,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} h3,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} h4,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} h5,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} h6,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} ul,
+    #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} ol {
+      margin-bottom: {{ block.settings.right_paragraph_spacing }}px;
     }
   {% endfor %}
 
@@ -438,78 +459,75 @@
       padding-right: 16px;
     }
 
-    #{{ section_id }} .image-with-content__pairs {
-      gap: {{ section.settings.pairs_gap_mobile }}px;
+    #{{ section_id }} .universal-split__rows {
+      gap: {{ section.settings.rows_gap_mobile }}px;
     }
 
-    #{{ section_id }} .image-with-content__grid {
+    #{{ section_id }} .universal-split__grid {
       gap: {{ section.settings.column_gap_mobile }}px;
     }
 
-    #{{ section_id }} .image-with-content__content {
+    #{{ section_id }} .universal-split__content {
       padding-top: {{ section.settings.content_padding_top_mobile }}px;
       padding-bottom: {{ section.settings.content_padding_bottom_mobile }}px;
     }
 
-    #{{ section_id }} .image-with-content__button {
+    #{{ section_id }} .universal-split__button {
       font-size: {{ section.settings.button_text_size_mobile }}px;
-      padding: 12px 22px;
-      min-width: 140px;
-    }
-
-    #{{ section_id }} .image-with-content__button--fixed {
       width: min({{ section.settings.button_fixed_width }}px, 100%);
     }
 
-    {% for block in content_blocks_for_style %}
-      #{{ section_id }} .image-with-content__heading--{{ forloop.index0 }} {
-        font-size: {{ block.settings.heading_size_mobile }}px;
-        margin-bottom: {{ block.settings.heading_margin_bottom_mobile }}px;
+    {% for block in section.blocks %}
+      #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__heading--left-{{ block.id }} {
+        font-size: {{ block.settings.left_heading_size_mobile }}px;
+        margin-bottom: {{ block.settings.left_heading_margin_bottom_mobile }}px;
       }
 
-      #{{ section_id }} .image-with-content__text--{{ forloop.index0 }} {
-        font-size: {{ block.settings.text_size_mobile }}px;
+      #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--left-{{ block.id }} {
+        font-size: {{ block.settings.left_text_size_mobile }}px;
+      }
+
+      #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__heading--right-{{ block.id }} {
+        font-size: {{ block.settings.right_heading_size_mobile }}px;
+        margin-bottom: {{ block.settings.right_heading_margin_bottom_mobile }}px;
+      }
+
+      #{{ section_id }} #universal-split-row-{{ block.id }} .universal-split__text--right-{{ block.id }} {
+        font-size: {{ block.settings.right_text_size_mobile }}px;
       }
     {% endfor %}
   }
 
   @media screen and (max-width: 749px) {
-    #{{ section_id }} .image-with-content__grid--mobile-stack,
-    #{{ section_id }} .image-with-content__grid--mobile-image-first,
-    #{{ section_id }} .image-with-content__grid--mobile-text-first {
+    #{{ section_id }} .universal-split__row--two .universal-split__grid {
       grid-template-columns: 1fr;
     }
 
-    #{{ section_id }} .image-with-content__grid--mobile-stack .image-with-content__media-wrapper,
-    #{{ section_id }} .image-with-content__grid--mobile-stack .image-with-content__content-wrapper {
-      order: initial;
-    }
-
-    #{{ section_id }} .image-with-content__grid--mobile-image-first .image-with-content__media-wrapper {
+    #{{ section_id }} .universal-split__row--mobile-left-first .universal-split__cell--left {
       order: 1;
     }
 
-    #{{ section_id }} .image-with-content__grid--mobile-image-first .image-with-content__content-wrapper {
+    #{{ section_id }} .universal-split__row--mobile-left-first .universal-split__cell--right {
       order: 2;
     }
 
-    #{{ section_id }} .image-with-content__grid--mobile-text-first .image-with-content__media-wrapper {
+    #{{ section_id }} .universal-split__row--mobile-right-first .universal-split__cell--left {
       order: 2;
     }
 
-    #{{ section_id }} .image-with-content__grid--mobile-text-first .image-with-content__content-wrapper {
+    #{{ section_id }} .universal-split__row--mobile-right-first .universal-split__cell--right {
       order: 1;
     }
 
-    #{{ section_id }} .image-with-content__media {
+    #{{ section_id }} .universal-split__media {
       height: {{ section.settings.image_height_mobile }}px;
     }
 
-    #{{ section_id }} .image-with-content__media--adapt,
-    #{{ section_id }} .image-with-content__media--square,
-    #{{ section_id }} .image-with-content__media--portrait,
-    #{{ section_id }} .image-with-content__media--landscape,
-    #{{ section_id }} .image-with-content__media--wide {
+    #{{ section_id }} .universal-split__media--adapt,
+    #{{ section_id }} .universal-split__media--square,
+    #{{ section_id }} .universal-split__media--portrait,
+    #{{ section_id }} .universal-split__media--landscape,
+    #{{ section_id }} .universal-split__media--wide {
       height: auto;
     }
   }
@@ -517,7 +535,7 @@
 
 {% schema %}
 {
-  "name": "通用图文模块",
+  "name": "通用双列内容",
   "settings": [
     {
       "type": "header",
@@ -580,15 +598,14 @@
       "unit": "px",
       "default": 24
     },
-
     {
       "type": "header",
       "content": "全局布局设置"
     },
     {
       "type": "range",
-      "id": "pairs_gap",
-      "label": "每组图文之间间距（桌面端）",
+      "id": "rows_gap",
+      "label": "每组之间间距（桌面端）",
       "min": 0,
       "max": 120,
       "step": 4,
@@ -597,8 +614,8 @@
     },
     {
       "type": "range",
-      "id": "pairs_gap_mobile",
-      "label": "每组图文之间间距（移动端）",
+      "id": "rows_gap_mobile",
+      "label": "每组之间间距（移动端）",
       "min": 0,
       "max": 80,
       "step": 4,
@@ -608,8 +625,8 @@
     {
       "type": "range",
       "id": "column_gap",
-      "label": "图文间距（桌面端）",
-      "min": 20,
+      "label": "左右列间距（桌面端）",
+      "min": 12,
       "max": 140,
       "step": 4,
       "unit": "px",
@@ -618,10 +635,10 @@
     {
       "type": "range",
       "id": "column_gap_mobile",
-      "label": "图文间距（移动端）",
-      "min": 12,
+      "label": "左右列间距（移动端）",
+      "min": 8,
       "max": 60,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "default": 20
     },
@@ -651,7 +668,7 @@
       "label": "文案区上内边距（移动端）",
       "min": 0,
       "max": 80,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "default": 8
     },
@@ -661,11 +678,10 @@
       "label": "文案区下内边距（移动端）",
       "min": 0,
       "max": 80,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "default": 8
     },
-
     {
       "type": "header",
       "content": "全局图片设置"
@@ -674,7 +690,7 @@
       "type": "range",
       "id": "image_height_desktop",
       "label": "图片高度（桌面端，固定高度时生效）",
-      "min": 300,
+      "min": 280,
       "max": 900,
       "step": 10,
       "unit": "px",
@@ -684,7 +700,7 @@
       "type": "range",
       "id": "image_height_mobile",
       "label": "图片高度（移动端，固定高度时生效）",
-      "min": 220,
+      "min": 200,
       "max": 700,
       "step": 10,
       "unit": "px",
@@ -710,7 +726,6 @@
       "unit": "px",
       "default": 0
     },
-
     {
       "type": "header",
       "content": "全局按钮样式"
@@ -815,6 +830,16 @@
     },
     {
       "type": "range",
+      "id": "button_fixed_width",
+      "label": "按钮固定宽度",
+      "min": 120,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "range",
       "id": "button_transition_duration",
       "label": "按钮过渡速度",
       "min": 100,
@@ -874,39 +899,58 @@
       "default": 16
     },
     {
-      "type": "range",
-      "id": "button_fixed_width",
-      "label": "按钮固定宽度",
-      "min": 120,
-      "max": 360,
-      "step": 10,
-      "unit": "px",
-      "default": 180
-    },
-
-    {
       "type": "header",
       "content": "管理说明"
     },
     {
       "type": "paragraph",
-      "content": "请按顺序添加模块：先添加一个【图片模块】，再添加一个【文案模块】。前台会按顺序自动配对显示。透明 PNG 可正常显示，不会被图片容器底色干扰。"
+      "content": "每个 block 就是一整组左右内容。左右两侧都可独立选择图片 / 文案 / 空，任一侧设为空时该行会自动切换为单列显示。"
     }
   ],
   "blocks": [
     {
-      "type": "image",
-      "name": "图片模块",
+      "type": "row",
+      "name": "内容行",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "图片"
+          "type": "header",
+          "content": "布局设置"
         },
         {
           "type": "select",
-          "id": "image_ratio",
-          "label": "图片比例",
+          "id": "mobile_order",
+          "label": "移动端排列方式",
+          "default": "stack",
+          "options": [
+            { "value": "stack", "label": "按桌面顺序" },
+            { "value": "left-first", "label": "左侧在上" },
+            { "value": "right-first", "label": "右侧在上" }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "左侧类型"
+        },
+        {
+          "type": "select",
+          "id": "left_type",
+          "label": "左侧内容类型",
+          "default": "image",
+          "options": [
+            { "value": "image", "label": "图片" },
+            { "value": "content", "label": "文案" },
+            { "value": "empty", "label": "留空" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "left_image",
+          "label": "左侧图片"
+        },
+        {
+          "type": "select",
+          "id": "left_image_ratio",
+          "label": "左侧图片比例",
           "default": "adapt",
           "options": [
             { "value": "adapt", "label": "自适应原图" },
@@ -915,61 +959,57 @@
             { "value": "landscape", "label": "4:3" },
             { "value": "wide", "label": "16:10" }
           ]
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "name": "文案模块",
-      "settings": [
-        {
-          "type": "header",
-          "content": "内容设置"
         },
         {
           "type": "text",
-          "id": "heading",
-          "label": "标题",
-          "default": "Section Heading"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "文案内容",
-          "default": "<p>Add your content here. You can place paragraphs, highlighted text, or any custom content directly in this area.</p>"
-        },
-
-        {
-          "type": "header",
-          "content": "按钮设置"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_button",
-          "label": "显示按钮",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "按钮文案",
-          "default": "Learn More"
+          "id": "left_image_alt",
+          "label": "左侧图片 ALT（可选）",
+          "default": "Left image"
         },
         {
           "type": "url",
-          "id": "button_link",
-          "label": "按钮链接"
+          "id": "left_image_link",
+          "label": "左侧图片链接（可选）"
+        },
+        {
+          "type": "text",
+          "id": "left_heading",
+          "label": "左侧标题",
+          "default": "Left heading"
+        },
+        {
+          "type": "richtext",
+          "id": "left_text",
+          "label": "左侧文案",
+          "default": "<p>Left content text goes here.</p>"
         },
         {
           "type": "checkbox",
-          "id": "button_new_tab",
-          "label": "新窗口打开链接",
+          "id": "left_show_button",
+          "label": "显示左侧按钮",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "left_button_label",
+          "label": "左侧按钮文案",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "left_button_link",
+          "label": "左侧按钮链接"
+        },
+        {
+          "type": "checkbox",
+          "id": "left_button_new_tab",
+          "label": "左侧按钮新窗口打开",
           "default": false
         },
         {
           "type": "select",
-          "id": "button_alignment",
-          "label": "按钮对齐方式",
+          "id": "left_button_alignment",
+          "label": "左侧按钮对齐",
           "default": "left",
           "options": [
             { "value": "left", "label": "左对齐" },
@@ -978,78 +1018,29 @@
           ]
         },
         {
-          "type": "select",
-          "id": "button_width",
-          "label": "按钮宽度",
-          "default": "auto",
-          "options": [
-            { "value": "auto", "label": "自适应" },
-            { "value": "fixed", "label": "固定宽度" },
-            { "value": "full", "label": "整行宽度" }
-          ]
-        },
-
-        {
-          "type": "header",
-          "content": "布局设置"
-        },
-        {
-          "type": "select",
-          "id": "image_position",
-          "label": "图片位置",
-          "default": "left",
-          "options": [
-            { "value": "left", "label": "左侧" },
-            { "value": "right", "label": "右侧" }
-          ]
-        },
-        {
-          "type": "select",
-          "id": "content_alignment",
-          "label": "文案垂直对齐",
-          "default": "center",
-          "options": [
-            { "value": "top", "label": "顶部" },
-            { "value": "center", "label": "居中" },
-            { "value": "bottom", "label": "底部" }
-          ]
-        },
-        {
-          "type": "select",
-          "id": "mobile_layout",
-          "label": "移动端排列",
-          "default": "stack",
-          "options": [
-            { "value": "stack", "label": "单列（按桌面顺序）" },
-            { "value": "image-first", "label": "单列（图片在上）" },
-            { "value": "text-first", "label": "单列（文案在上）" }
-          ]
-        },
-        {
           "type": "range",
-          "id": "content_max_width",
-          "label": "文案区域最大宽度",
-          "min": 320,
-          "max": 820,
-          "step": 20,
+          "id": "left_content_max_width",
+          "label": "左侧文案最大宽度",
+          "min": 260,
+          "max": 900,
+          "step": 10,
           "unit": "px",
           "default": 620
         },
-
         {
           "type": "header",
-          "content": "标题样式"
+          "content": "左侧文案样式"
         },
         {
           "type": "color",
-          "id": "heading_color",
-          "label": "标题颜色",
+          "id": "left_heading_color",
+          "label": "左侧标题颜色",
           "default": "#2f2f2f"
         },
         {
           "type": "range",
-          "id": "heading_size",
-          "label": "标题字号（桌面端）",
+          "id": "left_heading_size",
+          "label": "左侧标题字号（桌面端）",
           "min": 18,
           "max": 80,
           "step": 2,
@@ -1058,8 +1049,8 @@
         },
         {
           "type": "range",
-          "id": "heading_size_mobile",
-          "label": "标题字号（移动端）",
+          "id": "left_heading_size_mobile",
+          "label": "左侧标题字号（移动端）",
           "min": 16,
           "max": 48,
           "step": 2,
@@ -1068,8 +1059,8 @@
         },
         {
           "type": "select",
-          "id": "heading_weight",
-          "label": "标题字重",
+          "id": "left_heading_weight",
+          "label": "左侧标题字重",
           "default": "500",
           "options": [
             { "value": "400", "label": "400" },
@@ -1081,8 +1072,8 @@
         },
         {
           "type": "range",
-          "id": "heading_letter_spacing",
-          "label": "标题字间距",
+          "id": "left_heading_letter_spacing",
+          "label": "左侧标题字间距",
           "min": -3,
           "max": 12,
           "step": 1,
@@ -1091,8 +1082,8 @@
         },
         {
           "type": "range",
-          "id": "heading_line_height",
-          "label": "标题行高",
+          "id": "left_heading_line_height",
+          "label": "左侧标题行高",
           "min": 1,
           "max": 2,
           "step": 0.1,
@@ -1100,8 +1091,8 @@
         },
         {
           "type": "range",
-          "id": "heading_margin_bottom",
-          "label": "标题下间距（桌面端）",
+          "id": "left_heading_margin_bottom",
+          "label": "左侧标题下间距（桌面端）",
           "min": 0,
           "max": 80,
           "step": 2,
@@ -1110,29 +1101,24 @@
         },
         {
           "type": "range",
-          "id": "heading_margin_bottom_mobile",
-          "label": "标题下间距（移动端）",
+          "id": "left_heading_margin_bottom_mobile",
+          "label": "左侧标题下间距（移动端）",
           "min": 0,
           "max": 50,
           "step": 2,
           "unit": "px",
           "default": 14
         },
-
-        {
-          "type": "header",
-          "content": "文案样式"
-        },
         {
           "type": "color",
-          "id": "text_color",
-          "label": "文案颜色",
+          "id": "left_text_color",
+          "label": "左侧文案颜色",
           "default": "#666666"
         },
         {
           "type": "range",
-          "id": "text_size",
-          "label": "文案字号（桌面端）",
+          "id": "left_text_size",
+          "label": "左侧文案字号（桌面端）",
           "min": 12,
           "max": 32,
           "step": 1,
@@ -1141,8 +1127,8 @@
         },
         {
           "type": "range",
-          "id": "text_size_mobile",
-          "label": "文案字号（移动端）",
+          "id": "left_text_size_mobile",
+          "label": "左侧文案字号（移动端）",
           "min": 12,
           "max": 26,
           "step": 1,
@@ -1151,8 +1137,8 @@
         },
         {
           "type": "select",
-          "id": "text_weight",
-          "label": "文案字重",
+          "id": "left_text_weight",
+          "label": "左侧文案字重",
           "default": "400",
           "options": [
             { "value": "300", "label": "300" },
@@ -1164,8 +1150,8 @@
         },
         {
           "type": "range",
-          "id": "text_letter_spacing",
-          "label": "文案字间距",
+          "id": "left_text_letter_spacing",
+          "label": "左侧文案字间距",
           "min": -2,
           "max": 8,
           "step": 1,
@@ -1174,8 +1160,8 @@
         },
         {
           "type": "range",
-          "id": "text_line_height",
-          "label": "文案行高",
+          "id": "left_text_line_height",
+          "label": "左侧文案行高",
           "min": 1.2,
           "max": 2.6,
           "step": 0.1,
@@ -1183,8 +1169,258 @@
         },
         {
           "type": "range",
-          "id": "paragraph_spacing",
-          "label": "段落间距",
+          "id": "left_paragraph_spacing",
+          "label": "左侧段落间距",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "default": 18
+        },
+        {
+          "type": "header",
+          "content": "右侧类型"
+        },
+        {
+          "type": "select",
+          "id": "right_type",
+          "label": "右侧内容类型",
+          "default": "content",
+          "options": [
+            { "value": "image", "label": "图片" },
+            { "value": "content", "label": "文案" },
+            { "value": "empty", "label": "留空" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "right_image",
+          "label": "右侧图片"
+        },
+        {
+          "type": "select",
+          "id": "right_image_ratio",
+          "label": "右侧图片比例",
+          "default": "adapt",
+          "options": [
+            { "value": "adapt", "label": "自适应原图" },
+            { "value": "square", "label": "1:1" },
+            { "value": "portrait", "label": "4:5" },
+            { "value": "landscape", "label": "4:3" },
+            { "value": "wide", "label": "16:10" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "right_image_alt",
+          "label": "右侧图片 ALT（可选）",
+          "default": "Right image"
+        },
+        {
+          "type": "url",
+          "id": "right_image_link",
+          "label": "右侧图片链接（可选）"
+        },
+        {
+          "type": "text",
+          "id": "right_heading",
+          "label": "右侧标题",
+          "default": "Right heading"
+        },
+        {
+          "type": "richtext",
+          "id": "right_text",
+          "label": "右侧文案",
+          "default": "<p>Right content text goes here.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "right_show_button",
+          "label": "显示右侧按钮",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "right_button_label",
+          "label": "右侧按钮文案",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "right_button_link",
+          "label": "右侧按钮链接"
+        },
+        {
+          "type": "checkbox",
+          "id": "right_button_new_tab",
+          "label": "右侧按钮新窗口打开",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "right_button_alignment",
+          "label": "右侧按钮对齐",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "左对齐" },
+            { "value": "center", "label": "居中" },
+            { "value": "right", "label": "右对齐" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "right_content_max_width",
+          "label": "右侧文案最大宽度",
+          "min": 260,
+          "max": 900,
+          "step": 10,
+          "unit": "px",
+          "default": 620
+        },
+        {
+          "type": "header",
+          "content": "右侧文案样式"
+        },
+        {
+          "type": "color",
+          "id": "right_heading_color",
+          "label": "右侧标题颜色",
+          "default": "#2f2f2f"
+        },
+        {
+          "type": "range",
+          "id": "right_heading_size",
+          "label": "右侧标题字号（桌面端）",
+          "min": 18,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "right_heading_size_mobile",
+          "label": "右侧标题字号（移动端）",
+          "min": 16,
+          "max": 48,
+          "step": 2,
+          "unit": "px",
+          "default": 28
+        },
+        {
+          "type": "select",
+          "id": "right_heading_weight",
+          "label": "右侧标题字重",
+          "default": "500",
+          "options": [
+            { "value": "400", "label": "400" },
+            { "value": "500", "label": "500" },
+            { "value": "600", "label": "600" },
+            { "value": "700", "label": "700" },
+            { "value": "800", "label": "800" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "right_heading_letter_spacing",
+          "label": "右侧标题字间距",
+          "min": -3,
+          "max": 12,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "right_heading_line_height",
+          "label": "右侧标题行高",
+          "min": 1,
+          "max": 2,
+          "step": 0.1,
+          "default": 1.3
+        },
+        {
+          "type": "range",
+          "id": "right_heading_margin_bottom",
+          "label": "右侧标题下间距（桌面端）",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "right_heading_margin_bottom_mobile",
+          "label": "右侧标题下间距（移动端）",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 14
+        },
+        {
+          "type": "color",
+          "id": "right_text_color",
+          "label": "右侧文案颜色",
+          "default": "#666666"
+        },
+        {
+          "type": "range",
+          "id": "right_text_size",
+          "label": "右侧文案字号（桌面端）",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "default": 17
+        },
+        {
+          "type": "range",
+          "id": "right_text_size_mobile",
+          "label": "右侧文案字号（移动端）",
+          "min": 12,
+          "max": 26,
+          "step": 1,
+          "unit": "px",
+          "default": 15
+        },
+        {
+          "type": "select",
+          "id": "right_text_weight",
+          "label": "右侧文案字重",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "300" },
+            { "value": "400", "label": "400" },
+            { "value": "500", "label": "500" },
+            { "value": "600", "label": "600" },
+            { "value": "700", "label": "700" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "right_text_letter_spacing",
+          "label": "右侧文案字间距",
+          "min": -2,
+          "max": 8,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "right_text_line_height",
+          "label": "右侧文案行高",
+          "min": 1.2,
+          "max": 2.6,
+          "step": 0.1,
+          "default": 1.8
+        },
+        {
+          "type": "range",
+          "id": "right_paragraph_spacing",
+          "label": "右侧段落间距",
           "min": 0,
           "max": 40,
           "step": 2,
@@ -1196,11 +1432,8 @@
   ],
   "presets": [
     {
-      "name": "通用图文模块",
-      "blocks": [
-        { "type": "image" },
-        { "type": "content" }
-      ]
+      "name": "通用双列内容",
+      "blocks": [{ "type": "row" }]
     }
   ]
 }
