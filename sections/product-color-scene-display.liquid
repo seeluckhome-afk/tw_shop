@@ -1,0 +1,127 @@
+{% comment %}
+Product Color/Scene Display Section
+- For product pages only
+- Metaobjects used:
+  1. product_display_info
+     - title
+     - description
+     - color_count
+     - weight
+     - texture
+  2. product_swatch
+     - image
+     - color_name
+     - scene_type (Curtain/Fabric)
+     - series
+{% endcomment %}
+
+<div class="product-display-section" data-section-id="{{ section.id }}">
+  <!-- Filters -->
+  <div class="filters-wrapper">
+    <div class="filter filter-material">
+      <label for="filter-material">Material</label>
+      <select id="filter-material">
+        {% assign materials = product.tags | where: 'contains', 'Material:' %}
+        {% for material in materials %}
+          <option value="{{ material }}">{{ material }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="filter filter-collection">
+      <label for="filter-collection">Collection</label>
+      <select id="filter-collection">
+        {% assign collections = product.tags | where: 'contains', 'Collection:' %}
+        {% for collection in collections %}
+          <option value="{{ collection }}">{{ collection }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="filter filter-type-toggle">
+      <button class="active" data-type="Curtain">Curtain</button>
+      <button data-type="Fabric">Fabric</button>
+    </div>
+  </div>
+
+  <!-- Header + Description -->
+  {% assign display_info = metaobjects.product_display_info[product.handle] %}
+  <div class="product-header">
+    <h2>{{ display_info.title }}</h2>
+    <p>{{ display_info.description }}</p>
+    <span>{{ display_info.color_count }} Colors | {{ display_info.weight }} | {{ display_info.texture }}</span>
+  </div>
+
+  <!-- Swatch / Scene Grid -->
+  <div class="swatch-grid" data-type="Curtain">
+    {% assign swatches = metaobjects.product_swatch | where: 'scene_type', 'Curtain' %}
+    {% for swatch in swatches %}
+      <div class="swatch-item">
+        <img src="{{ swatch.image | image_url: 'medium' }}" alt="{{ swatch.color_name }}">
+        <span>{{ swatch.color_name }}</span>
+      </div>
+      {% if forloop.index == 8 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <button class="load-more">Load More</button>
+</div>
+
+{% schema %}
+{
+  "name": "Product Color/Scene Display",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": ""
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Product Color/Scene Display",
+      "category": "Product Page"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.querySelector('.product-display-section');
+  const filterMaterial = section.querySelector('#filter-material');
+  const filterCollection = section.querySelector('#filter-collection');
+  const typeButtons = section.querySelectorAll('.filter-type-toggle button');
+  const swatchGrid = section.querySelector('.swatch-grid');
+  const loadMoreBtn = section.querySelector('.load-more');
+
+  function updateGrid(type) {
+    swatchGrid.dataset.type = type;
+    const items = swatchGrid.querySelectorAll('.swatch-item');
+    items.forEach((el, index) => {
+      el.style.display = index < 8 ? 'block' : 'none';
+    });
+    loadMoreBtn.style.display = items.length > 8 ? 'block' : 'none';
+  }
+
+  typeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateGrid(btn.dataset.type);
+    });
+  });
+
+  loadMoreBtn.addEventListener('click', () => {
+    const items = swatchGrid.querySelectorAll('.swatch-item');
+    items.forEach(el => el.style.display = 'block');
+    loadMoreBtn.style.display = 'none';
+  });
+
+  // Initial grid setup
+  updateGrid('Curtain');
+});
+{% endjavascript %}
