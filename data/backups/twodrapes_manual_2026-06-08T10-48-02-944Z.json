@@ -1,0 +1,4695 @@
+{
+  "schema": "twodrapes_factory_tool_sqlite_v1",
+  "exportedAt": "2026-06-08T10:48:02.944Z",
+  "data": {
+    "globals": [
+      {
+        "key": "bottom_hem_allowance_cm",
+        "value": "5",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "curtainLaborPerM",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "curtainWasteRate",
+        "value": "1.08",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "defaultPackaging",
+        "value": "8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "factorySettlementMultiplier",
+        "value": "1.2",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "inchToCm",
+        "value": "2.54",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "laborUseFlatWidth",
+        "value": "false",
+        "value_type": "boolean",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "manualCutExtraCm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "manualHeightM",
+        "value": "7",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "material_issue_buffer_cm",
+        "value": "50",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "memoryShapingCostPerPanel",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "profitWarnRate",
+        "value": "0.4",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "roundingStepM",
+        "value": "0.1",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "salesAmountMode",
+        "value": "pretax",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "shopifyAdminToken",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "shopifyApiVersion",
+        "value": "2026-01",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "shopifyShopDomain",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "sideHemAllowanceCm",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "spliceFeePerM",
+        "value": "3",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "superHeightWarnM",
+        "value": "4.5",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "top_nonwoven_allowance_cm",
+        "value": "10",
+        "value_type": "number",
+        "note": "管理端维护",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "key": "usTaxRate",
+        "value": "0",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "usdRmb",
+        "value": "6.8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      },
+      {
+        "key": "verticalCutAllowanceCm",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-06-02T06:02:12.062Z"
+      }
+    ],
+    "fabrics": [
+      {
+        "id": "fabric_dmmfl",
+        "name": "印花麻料",
+        "series": "印花麻料",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "id": "fabric_cmdd",
+        "name": "棉麻大肚",
+        "series": "棉麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "id": "fabric_dmdd",
+        "name": "涤麻大肚",
+        "series": "涤麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      }
+    ],
+    "linings": [
+      {
+        "id": "lining_450_white_280",
+        "name": "450gsm遮光内衬白色",
+        "color": "450gsm White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 18,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "id": "lining_none",
+        "name": "无内衬",
+        "color": "",
+        "width_cm": 0,
+        "price_per_m": 0,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "id": "lining_white_280",
+        "name": "遮光内衬白色",
+        "color": "White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      },
+      {
+        "id": "lining_black_280",
+        "name": "遮光内衬黑色",
+        "color": "Black Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-08T10:42:27.076Z"
+      }
+    ],
+    "products": [
+      {
+        "id": "alias_import_1780380132272",
+        "name": "Alias Import 1780380132272",
+        "factory_name": "Alias Import 1780380132272",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T06:02:12.274Z",
+        "updated_at": "2026-06-02T06:02:12.274Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780380132272",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 5,
+            "product_id": "alias_import_1780380132272",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 6,
+            "product_id": "alias_import_1780380132272",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 5,
+            "product_id": "alias_import_1780380132272",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 6,
+            "product_id": "alias_import_1780380132272",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 6,
+            "product_id": "alias_import_1780380132272",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 10,
+                "group_id": 6,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 11,
+                "group_id": 6,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780381333172",
+        "name": "Alias Import 1780381333172",
+        "factory_name": "Alias Import 1780381333172",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T06:22:13.174Z",
+        "updated_at": "2026-06-02T06:22:13.174Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780381333172",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 7,
+            "product_id": "alias_import_1780381333172",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 8,
+            "product_id": "alias_import_1780381333172",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 7,
+            "product_id": "alias_import_1780381333172",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 8,
+            "product_id": "alias_import_1780381333172",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 7,
+            "product_id": "alias_import_1780381333172",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 12,
+                "group_id": 7,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 13,
+                "group_id": 7,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780393977784",
+        "name": "Alias Import 1780393977784",
+        "factory_name": "Alias Import 1780393977784",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T09:52:57.787Z",
+        "updated_at": "2026-06-02T09:52:57.787Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780393977784",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 9,
+            "product_id": "alias_import_1780393977784",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 10,
+            "product_id": "alias_import_1780393977784",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 9,
+            "product_id": "alias_import_1780393977784",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 10,
+            "product_id": "alias_import_1780393977784",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 8,
+            "product_id": "alias_import_1780393977784",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 14,
+                "group_id": 8,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 15,
+                "group_id": 8,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780394102169",
+        "name": "Alias Import 1780394102169",
+        "factory_name": "Alias Import 1780394102169",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T09:55:02.171Z",
+        "updated_at": "2026-06-02T09:55:02.171Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780394102169",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 11,
+            "product_id": "alias_import_1780394102169",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 12,
+            "product_id": "alias_import_1780394102169",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 11,
+            "product_id": "alias_import_1780394102169",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 12,
+            "product_id": "alias_import_1780394102169",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 9,
+            "product_id": "alias_import_1780394102169",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 16,
+                "group_id": 9,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 17,
+                "group_id": 9,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780394602896",
+        "name": "Alias Import 1780394602896",
+        "factory_name": "Alias Import 1780394602896",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:03:22.899Z",
+        "updated_at": "2026-06-02T10:03:22.899Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780394602896",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 13,
+            "product_id": "alias_import_1780394602896",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 14,
+            "product_id": "alias_import_1780394602896",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 13,
+            "product_id": "alias_import_1780394602896",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 14,
+            "product_id": "alias_import_1780394602896",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 10,
+            "product_id": "alias_import_1780394602896",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 18,
+                "group_id": 10,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 19,
+                "group_id": 10,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780394720385",
+        "name": "Alias Import 1780394720385",
+        "factory_name": "Alias Import 1780394720385",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:05:20.389Z",
+        "updated_at": "2026-06-02T10:05:20.389Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780394720385",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 15,
+            "product_id": "alias_import_1780394720385",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 16,
+            "product_id": "alias_import_1780394720385",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 15,
+            "product_id": "alias_import_1780394720385",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 16,
+            "product_id": "alias_import_1780394720385",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 11,
+            "product_id": "alias_import_1780394720385",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 20,
+                "group_id": 11,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 21,
+                "group_id": 11,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780394861028",
+        "name": "Alias Import 1780394861028",
+        "factory_name": "Alias Import 1780394861028",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:07:41.036Z",
+        "updated_at": "2026-06-02T10:07:41.036Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780394861028",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 17,
+            "product_id": "alias_import_1780394861028",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 18,
+            "product_id": "alias_import_1780394861028",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 17,
+            "product_id": "alias_import_1780394861028",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 18,
+            "product_id": "alias_import_1780394861028",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 12,
+            "product_id": "alias_import_1780394861028",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 22,
+                "group_id": 12,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 23,
+                "group_id": 12,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780395359910",
+        "name": "Alias Import 1780395359910",
+        "factory_name": "Alias Import 1780395359910",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:15:59.915Z",
+        "updated_at": "2026-06-02T10:15:59.915Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780395359910",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 19,
+            "product_id": "alias_import_1780395359910",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 20,
+            "product_id": "alias_import_1780395359910",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 19,
+            "product_id": "alias_import_1780395359910",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 20,
+            "product_id": "alias_import_1780395359910",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 13,
+            "product_id": "alias_import_1780395359910",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 24,
+                "group_id": 13,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 25,
+                "group_id": 13,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780395406637",
+        "name": "Alias Import 1780395406637",
+        "factory_name": "Alias Import 1780395406637",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:16:46.642Z",
+        "updated_at": "2026-06-02T10:16:46.642Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780395406637",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 21,
+            "product_id": "alias_import_1780395406637",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 22,
+            "product_id": "alias_import_1780395406637",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 21,
+            "product_id": "alias_import_1780395406637",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 22,
+            "product_id": "alias_import_1780395406637",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 14,
+            "product_id": "alias_import_1780395406637",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 26,
+                "group_id": 14,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 27,
+                "group_id": 14,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780395909456",
+        "name": "Alias Import 1780395909456",
+        "factory_name": "Alias Import 1780395909456",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:25:09.461Z",
+        "updated_at": "2026-06-02T10:25:09.461Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780395909456",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 23,
+            "product_id": "alias_import_1780395909456",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 24,
+            "product_id": "alias_import_1780395909456",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 23,
+            "product_id": "alias_import_1780395909456",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 24,
+            "product_id": "alias_import_1780395909456",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 15,
+            "product_id": "alias_import_1780395909456",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 28,
+                "group_id": 15,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 29,
+                "group_id": 15,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780397008022",
+        "name": "Alias Import 1780397008022",
+        "factory_name": "Alias Import 1780397008022",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:43:28.027Z",
+        "updated_at": "2026-06-02T10:43:28.027Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780397008022",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 25,
+            "product_id": "alias_import_1780397008022",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 26,
+            "product_id": "alias_import_1780397008022",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 25,
+            "product_id": "alias_import_1780397008022",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 26,
+            "product_id": "alias_import_1780397008022",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 16,
+            "product_id": "alias_import_1780397008022",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 30,
+                "group_id": 16,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 31,
+                "group_id": 16,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780397666812",
+        "name": "Alias Import 1780397666812",
+        "factory_name": "Alias Import 1780397666812",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T10:54:26.817Z",
+        "updated_at": "2026-06-02T10:54:26.817Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780397666812",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 27,
+            "product_id": "alias_import_1780397666812",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 28,
+            "product_id": "alias_import_1780397666812",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 27,
+            "product_id": "alias_import_1780397666812",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 28,
+            "product_id": "alias_import_1780397666812",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 17,
+            "product_id": "alias_import_1780397666812",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 32,
+                "group_id": 17,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 33,
+                "group_id": 17,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780398388140",
+        "name": "Alias Import 1780398388140",
+        "factory_name": "Alias Import 1780398388140",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T11:06:28.146Z",
+        "updated_at": "2026-06-02T11:06:28.146Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780398388140",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 29,
+            "product_id": "alias_import_1780398388140",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 30,
+            "product_id": "alias_import_1780398388140",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 29,
+            "product_id": "alias_import_1780398388140",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 30,
+            "product_id": "alias_import_1780398388140",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 18,
+            "product_id": "alias_import_1780398388140",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 34,
+                "group_id": 18,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 35,
+                "group_id": 18,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780449309084",
+        "name": "Alias Import 1780449309084",
+        "factory_name": "Alias Import 1780449309084",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T01:15:09.090Z",
+        "updated_at": "2026-06-03T01:15:09.090Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780449309084",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 31,
+            "product_id": "alias_import_1780449309084",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 32,
+            "product_id": "alias_import_1780449309084",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 31,
+            "product_id": "alias_import_1780449309084",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 32,
+            "product_id": "alias_import_1780449309084",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 19,
+            "product_id": "alias_import_1780449309084",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 36,
+                "group_id": 19,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 37,
+                "group_id": 19,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780450705948",
+        "name": "Alias Import 1780450705948",
+        "factory_name": "Alias Import 1780450705948",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T01:38:25.954Z",
+        "updated_at": "2026-06-03T01:38:25.954Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780450705948",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 33,
+            "product_id": "alias_import_1780450705948",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 34,
+            "product_id": "alias_import_1780450705948",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 33,
+            "product_id": "alias_import_1780450705948",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 34,
+            "product_id": "alias_import_1780450705948",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 20,
+            "product_id": "alias_import_1780450705948",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 38,
+                "group_id": 20,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 39,
+                "group_id": 20,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780451819163",
+        "name": "Alias Import 1780451819163",
+        "factory_name": "Alias Import 1780451819163",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T01:56:59.169Z",
+        "updated_at": "2026-06-03T01:56:59.169Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780451819163",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 35,
+            "product_id": "alias_import_1780451819163",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 36,
+            "product_id": "alias_import_1780451819163",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 35,
+            "product_id": "alias_import_1780451819163",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 36,
+            "product_id": "alias_import_1780451819163",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 21,
+            "product_id": "alias_import_1780451819163",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 40,
+                "group_id": 21,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 41,
+                "group_id": 21,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780459540282",
+        "name": "Alias Import 1780459540282",
+        "factory_name": "Alias Import 1780459540282",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T04:05:40.292Z",
+        "updated_at": "2026-06-03T04:05:40.292Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780459540282",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 37,
+            "product_id": "alias_import_1780459540282",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 38,
+            "product_id": "alias_import_1780459540282",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 37,
+            "product_id": "alias_import_1780459540282",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 38,
+            "product_id": "alias_import_1780459540282",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 22,
+            "product_id": "alias_import_1780459540282",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 42,
+                "group_id": 22,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 43,
+                "group_id": 22,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780459612708",
+        "name": "Alias Import 1780459612708",
+        "factory_name": "Alias Import 1780459612708",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T04:06:52.720Z",
+        "updated_at": "2026-06-03T04:06:52.720Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780459612708",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 39,
+            "product_id": "alias_import_1780459612708",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 40,
+            "product_id": "alias_import_1780459612708",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 39,
+            "product_id": "alias_import_1780459612708",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 40,
+            "product_id": "alias_import_1780459612708",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 23,
+            "product_id": "alias_import_1780459612708",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 44,
+                "group_id": 23,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 45,
+                "group_id": 23,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780459885424",
+        "name": "Alias Import 1780459885424",
+        "factory_name": "Alias Import 1780459885424",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T04:11:25.430Z",
+        "updated_at": "2026-06-03T04:11:25.430Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780459885424",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 41,
+            "product_id": "alias_import_1780459885424",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 42,
+            "product_id": "alias_import_1780459885424",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 41,
+            "product_id": "alias_import_1780459885424",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 42,
+            "product_id": "alias_import_1780459885424",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 24,
+            "product_id": "alias_import_1780459885424",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 46,
+                "group_id": 24,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 47,
+                "group_id": 24,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780460068755",
+        "name": "Alias Import 1780460068755",
+        "factory_name": "Alias Import 1780460068755",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T04:14:28.763Z",
+        "updated_at": "2026-06-03T04:14:28.763Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780460068755",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 43,
+            "product_id": "alias_import_1780460068755",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 44,
+            "product_id": "alias_import_1780460068755",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 43,
+            "product_id": "alias_import_1780460068755",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 44,
+            "product_id": "alias_import_1780460068755",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 25,
+            "product_id": "alias_import_1780460068755",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 48,
+                "group_id": 25,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 49,
+                "group_id": 25,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780466209558",
+        "name": "Alias Import 1780466209558",
+        "factory_name": "Alias Import 1780466209558",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T05:56:49.566Z",
+        "updated_at": "2026-06-03T05:56:49.566Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780466209558",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 45,
+            "product_id": "alias_import_1780466209558",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 46,
+            "product_id": "alias_import_1780466209558",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 45,
+            "product_id": "alias_import_1780466209558",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 46,
+            "product_id": "alias_import_1780466209558",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 26,
+            "product_id": "alias_import_1780466209558",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 50,
+                "group_id": 26,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 51,
+                "group_id": 26,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780466232295",
+        "name": "Alias Import 1780466232295",
+        "factory_name": "Alias Import 1780466232295",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T05:57:12.305Z",
+        "updated_at": "2026-06-03T05:57:12.305Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780466232295",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 47,
+            "product_id": "alias_import_1780466232295",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 48,
+            "product_id": "alias_import_1780466232295",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 47,
+            "product_id": "alias_import_1780466232295",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 48,
+            "product_id": "alias_import_1780466232295",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 27,
+            "product_id": "alias_import_1780466232295",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 52,
+                "group_id": 27,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 53,
+                "group_id": 27,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780471061286",
+        "name": "Alias Import 1780471061286",
+        "factory_name": "Alias Import 1780471061286",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T07:17:41.295Z",
+        "updated_at": "2026-06-03T07:17:41.295Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780471061286",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 49,
+            "product_id": "alias_import_1780471061286",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 50,
+            "product_id": "alias_import_1780471061286",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 49,
+            "product_id": "alias_import_1780471061286",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 50,
+            "product_id": "alias_import_1780471061286",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 28,
+            "product_id": "alias_import_1780471061286",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 54,
+                "group_id": 28,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 55,
+                "group_id": 28,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780471178913",
+        "name": "Alias Import 1780471178913",
+        "factory_name": "Alias Import 1780471178913",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T07:19:38.925Z",
+        "updated_at": "2026-06-03T07:19:38.925Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780471178913",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 51,
+            "product_id": "alias_import_1780471178913",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 52,
+            "product_id": "alias_import_1780471178913",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 51,
+            "product_id": "alias_import_1780471178913",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 52,
+            "product_id": "alias_import_1780471178913",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 29,
+            "product_id": "alias_import_1780471178913",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 56,
+                "group_id": 29,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 57,
+                "group_id": 29,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780482158381",
+        "name": "Alias Import 1780482158381",
+        "factory_name": "Alias Import 1780482158381",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T10:22:38.389Z",
+        "updated_at": "2026-06-03T10:22:38.389Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780482158381",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 53,
+            "product_id": "alias_import_1780482158381",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 54,
+            "product_id": "alias_import_1780482158381",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 53,
+            "product_id": "alias_import_1780482158381",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 54,
+            "product_id": "alias_import_1780482158381",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 30,
+            "product_id": "alias_import_1780482158381",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 58,
+                "group_id": 30,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 59,
+                "group_id": 30,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780483039666",
+        "name": "Alias Import 1780483039666",
+        "factory_name": "Alias Import 1780483039666",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T10:37:19.675Z",
+        "updated_at": "2026-06-03T10:37:19.675Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780483039666",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 55,
+            "product_id": "alias_import_1780483039666",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 56,
+            "product_id": "alias_import_1780483039666",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 55,
+            "product_id": "alias_import_1780483039666",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 56,
+            "product_id": "alias_import_1780483039666",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 31,
+            "product_id": "alias_import_1780483039666",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 60,
+                "group_id": 31,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 61,
+                "group_id": 31,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780483107598",
+        "name": "Alias Import 1780483107598",
+        "factory_name": "Alias Import 1780483107598",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T10:38:27.607Z",
+        "updated_at": "2026-06-03T10:38:27.607Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780483107598",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 57,
+            "product_id": "alias_import_1780483107598",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 58,
+            "product_id": "alias_import_1780483107598",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 57,
+            "product_id": "alias_import_1780483107598",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 58,
+            "product_id": "alias_import_1780483107598",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 32,
+            "product_id": "alias_import_1780483107598",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 62,
+                "group_id": 32,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 63,
+                "group_id": 32,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780484837895",
+        "name": "Alias Import 1780484837895",
+        "factory_name": "Alias Import 1780484837895",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-03T11:07:17.897Z",
+        "updated_at": "2026-06-03T11:07:17.897Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780484837895",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 59,
+            "product_id": "alias_import_1780484837895",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 60,
+            "product_id": "alias_import_1780484837895",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 59,
+            "product_id": "alias_import_1780484837895",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 60,
+            "product_id": "alias_import_1780484837895",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 33,
+            "product_id": "alias_import_1780484837895",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 64,
+                "group_id": 33,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 65,
+                "group_id": 33,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780887070527",
+        "name": "Alias Import 1780887070527",
+        "factory_name": "Alias Import 1780887070527",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-08T02:51:10.530Z",
+        "updated_at": "2026-06-08T02:51:10.530Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780887070527",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 61,
+            "product_id": "alias_import_1780887070527",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 62,
+            "product_id": "alias_import_1780887070527",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 61,
+            "product_id": "alias_import_1780887070527",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 62,
+            "product_id": "alias_import_1780887070527",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 34,
+            "product_id": "alias_import_1780887070527",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 66,
+                "group_id": 34,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 67,
+                "group_id": 34,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780914950197",
+        "name": "Alias Import 1780914950197",
+        "factory_name": "Alias Import 1780914950197",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-08T10:35:50.201Z",
+        "updated_at": "2026-06-08T10:35:50.201Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780914950197",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 63,
+            "product_id": "alias_import_1780914950197",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 64,
+            "product_id": "alias_import_1780914950197",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 63,
+            "product_id": "alias_import_1780914950197",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 64,
+            "product_id": "alias_import_1780914950197",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 35,
+            "product_id": "alias_import_1780914950197",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 68,
+                "group_id": 35,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 69,
+                "group_id": 35,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780915134075",
+        "name": "Alias Import 1780915134075",
+        "factory_name": "Alias Import 1780915134075",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-08T10:38:54.080Z",
+        "updated_at": "2026-06-08T10:38:54.080Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780915134075",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 65,
+            "product_id": "alias_import_1780915134075",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 66,
+            "product_id": "alias_import_1780915134075",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 65,
+            "product_id": "alias_import_1780915134075",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 66,
+            "product_id": "alias_import_1780915134075",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 36,
+            "product_id": "alias_import_1780915134075",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 70,
+                "group_id": 36,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 71,
+                "group_id": 36,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780915185162",
+        "name": "Alias Import 1780915185162",
+        "factory_name": "Alias Import 1780915185162",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-08T10:39:45.165Z",
+        "updated_at": "2026-06-08T10:39:45.165Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780915185162",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 67,
+            "product_id": "alias_import_1780915185162",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 68,
+            "product_id": "alias_import_1780915185162",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 67,
+            "product_id": "alias_import_1780915185162",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 68,
+            "product_id": "alias_import_1780915185162",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 37,
+            "product_id": "alias_import_1780915185162",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 72,
+                "group_id": 37,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 73,
+                "group_id": 37,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alias_import_1780915347080",
+        "name": "Alias Import 1780915347080",
+        "factory_name": "Alias Import 1780915347080",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 59.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-08T10:42:27.084Z",
+        "updated_at": "2026-06-08T10:42:27.084Z",
+        "panels_per_unit": 1,
+        "factoryName": "Alias Import 1780915347080",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 59.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 69,
+            "product_id": "alias_import_1780915347080",
+            "size_in": 20,
+            "price_usd": 7.99,
+            "sort_order": 0
+          },
+          {
+            "id": 70,
+            "product_id": "alias_import_1780915347080",
+            "size_in": 22,
+            "price_usd": 8.99,
+            "sort_order": 1
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 69,
+            "product_id": "alias_import_1780915347080",
+            "size_in": 30,
+            "price_usd": 9.99,
+            "sort_order": 0
+          },
+          {
+            "id": 70,
+            "product_id": "alias_import_1780915347080",
+            "size_in": 32,
+            "price_usd": 10.99,
+            "sort_order": 1
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 7.99
+          },
+          {
+            "size": 22,
+            "price": 8.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 9.99
+          },
+          {
+            "size": 32,
+            "price": 10.99
+          }
+        ],
+        "options": [
+          {
+            "id": 38,
+            "product_id": "alias_import_1780915347080",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 74,
+                "group_id": 38,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 75,
+                "group_id": 38,
+                "label": "White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lucie_linen_blend_curtain",
+        "name": "Lucie Linen Blend Curtain",
+        "factory_name": "Lucie DMDD",
+        "shopify_option_set": "Lucie DMDD",
+        "type": "curtain",
+        "series": "Lucie",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 0,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-06-02T06:02:12.062Z",
+        "updated_at": "2026-06-02T06:02:12.062Z",
+        "panels_per_unit": 1,
+        "factoryName": "Lucie DMDD",
+        "shopifyOptionSet": "Lucie DMDD",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 0,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 40,
+            "price_usd": 17.99,
+            "sort_order": 0
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 80,
+            "price_usd": 49.99,
+            "sort_order": 1
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 120,
+            "price_usd": 95.99,
+            "sort_order": 2
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 220,
+            "price_usd": 261.99,
+            "sort_order": 3
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 84,
+            "price_usd": 38.99,
+            "sort_order": 0
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 96,
+            "price_usd": 44.99,
+            "sort_order": 1
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 120,
+            "price_usd": 59.99,
+            "sort_order": 2
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 216,
+            "price_usd": 117.99,
+            "sort_order": 3
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 40,
+            "price": 17.99
+          },
+          {
+            "size": 80,
+            "price": 49.99
+          },
+          {
+            "size": 120,
+            "price": 95.99
+          },
+          {
+            "size": 220,
+            "price": 261.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 84,
+            "price": 38.99
+          },
+          {
+            "size": 96,
+            "price": 44.99
+          },
+          {
+            "size": 120,
+            "price": 59.99
+          },
+          {
+            "size": 216,
+            "price": 117.99
+          }
+        ],
+        "options": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "image-swatches",
+            "required": 1,
+            "priceable": 1,
+            "costable": 0,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 1,
+                "group_id": 1,
+                "label": "Snow White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 2,
+                "group_id": 1,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "header_style",
+            "label": "Hanging Header Style",
+            "source_name": "Hanging Header Style",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 1,
+            "key": "header_style",
+            "values": [
+              {
+                "id": 3,
+                "group_id": 2,
+                "label": "2X Pinch Pleat (Black Rings)",
+                "price_usd": 25.99,
+                "cost_rmb": 12,
+                "sort_order": 0,
+                "price": 25.99,
+                "costRmb": 12
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "lining",
+            "label": "Lining Type",
+            "source_name": "Lining Type",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 2,
+            "key": "lining",
+            "values": [
+              {
+                "id": 4,
+                "group_id": 3,
+                "label": "Unlined",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 5,
+                "group_id": 3,
+                "label": "Blackout 100%",
+                "price_usd": 56.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 56.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "memory_shaped",
+            "label": "Memory Shaped",
+            "source_name": "Memory Shaped",
+            "type": "dropdown",
+            "required": 0,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 3,
+            "key": "memory_shaped",
+            "values": [
+              {
+                "id": 6,
+                "group_id": 4,
+                "label": "Without memory training",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 7,
+                "group_id": 4,
+                "label": "Add memory training",
+                "price_usd": 89.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 89.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "tieback",
+            "label": "Matching Tieback",
+            "source_name": "Matching Tieback",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 4,
+            "key": "tieback",
+            "values": [
+              {
+                "id": 8,
+                "group_id": 5,
+                "label": "Yes need the matching tieback",
+                "price_usd": 1,
+                "cost_rmb": 8,
+                "sort_order": 0,
+                "price": 1,
+                "costRmb": 8
+              },
+              {
+                "id": 9,
+                "group_id": 5,
+                "label": "No Need",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "laborRules": [
+      {
+        "id": 397,
+        "layer": "single",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 8,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 398,
+        "layer": "single",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 12,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 399,
+        "layer": "single",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 16,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 400,
+        "layer": "double",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 10,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 401,
+        "layer": "double",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 15,
+        "note": "",
+        "sort_order": 4
+      },
+      {
+        "id": 402,
+        "layer": "double",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 20,
+        "note": "",
+        "sort_order": 5
+      }
+    ],
+    "memoryRules": [
+      {
+        "id": 331,
+        "min_m": 0,
+        "max_m": 3.2,
+        "single_rate_rmb": 6,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 332,
+        "min_m": 3.2,
+        "max_m": 4.5,
+        "single_rate_rmb": 12,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 333,
+        "min_m": 4.5,
+        "max_m": 5.5,
+        "single_rate_rmb": 25,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 334,
+        "min_m": 5.5,
+        "max_m": 7,
+        "single_rate_rmb": 45,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 335,
+        "min_m": 7,
+        "max_m": null,
+        "single_rate_rmb": 0,
+        "double_coef": 1.5,
+        "manual_quote": 1,
+        "note": "",
+        "sort_order": 4
+      }
+    ],
+    "taxRates": [
+      {
+        "code": "AK",
+        "state": "Alaska",
+        "rate": 1.82,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AL",
+        "state": "Alabama",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AR",
+        "state": "Arkansas",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AZ",
+        "state": "Arizona",
+        "rate": 8.52,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CA",
+        "state": "California",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CO",
+        "state": "Colorado",
+        "rate": 7.89,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CT",
+        "state": "Connecticut",
+        "rate": 6.35,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DC",
+        "state": "District of Columbia",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DE",
+        "state": "Delaware",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "FL",
+        "state": "Florida",
+        "rate": 7.02,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "GA",
+        "state": "Georgia",
+        "rate": 7.38,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "HI",
+        "state": "Hawaii",
+        "rate": 4.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IA",
+        "state": "Iowa",
+        "rate": 6.94,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ID",
+        "state": "Idaho",
+        "rate": 6.03,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IL",
+        "state": "Illinois",
+        "rate": 8.86,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IN",
+        "state": "Indiana",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KS",
+        "state": "Kansas",
+        "rate": 8.66,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KY",
+        "state": "Kentucky",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "LA",
+        "state": "Louisiana",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MA",
+        "state": "Massachusetts",
+        "rate": 6.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MD",
+        "state": "Maryland",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ME",
+        "state": "Maine",
+        "rate": 5.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MI",
+        "state": "Michigan",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MN",
+        "state": "Minnesota",
+        "rate": 8.04,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MO",
+        "state": "Missouri",
+        "rate": 8.41,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MS",
+        "state": "Mississippi",
+        "rate": 7.07,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MT",
+        "state": "Montana",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NC",
+        "state": "North Carolina",
+        "rate": 6.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ND",
+        "state": "North Dakota",
+        "rate": 6.96,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NE",
+        "state": "Nebraska",
+        "rate": 6.97,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NH",
+        "state": "New Hampshire",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NJ",
+        "state": "New Jersey",
+        "rate": 6.6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NM",
+        "state": "New Mexico",
+        "rate": 7.62,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NV",
+        "state": "Nevada",
+        "rate": 8.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NY",
+        "state": "New York",
+        "rate": 8.53,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OH",
+        "state": "Ohio",
+        "rate": 7.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OK",
+        "state": "Oklahoma",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OR",
+        "state": "Oregon",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "PA",
+        "state": "Pennsylvania",
+        "rate": 6.34,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "RI",
+        "state": "Rhode Island",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SC",
+        "state": "South Carolina",
+        "rate": 7.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SD",
+        "state": "South Dakota",
+        "rate": 6.4,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TN",
+        "state": "Tennessee",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TX",
+        "state": "Texas",
+        "rate": 8.2,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "UT",
+        "state": "Utah",
+        "rate": 7.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VA",
+        "state": "Virginia",
+        "rate": 5.77,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VT",
+        "state": "Vermont",
+        "rate": 6.36,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WA",
+        "state": "Washington",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WI",
+        "state": "Wisconsin",
+        "rate": 5.7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WV",
+        "state": "West Virginia",
+        "rate": 6.57,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WY",
+        "state": "Wyoming",
+        "rate": 5.44,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      }
+    ],
+    "orders": [
+      {
+        "id": 27,
+        "channel": "shopify",
+        "order_no": "COLON-1780483107623",
+        "order_date": "2026-06-03",
+        "delivery_date": "2026-06-03",
+        "customer_name": "",
+        "customer_email": "",
+        "customer_phone": "",
+        "customer_address": "",
+        "tax_state_code": "",
+        "tax_rate": 0,
+        "remark": "",
+        "total_sales_usd": 115.97,
+        "total_tax_usd": 0,
+        "total_net_sales_rmb": 753.897776,
+        "total_cost_rmb": 23.23,
+        "total_profit_rmb": 730.667776,
+        "total_profit_rate": 0.9691868039149116,
+        "created_at": "2026-06-03T10:38:27.635Z",
+        "updated_at": "2026-06-03T10:38:27.642Z",
+        "logistics_cost_rmb": 0,
+        "paypal_fee_usd": 5.102679999999999,
+        "actual_income_usd": 110.86732,
+        "sales_override_usd": null,
+        "tax_override_usd": null,
+        "status": "production",
+        "logistics_provider": "",
+        "tracking_number": "",
+        "delivery_channel": "",
+        "weight_kg": 0
+      }
+    ],
+    "orderItems": [
+      {
+        "id": 53,
+        "order_id": 27,
+        "product_id": "lucie_linen_blend_curtain",
+        "product_name": "Lucie Linen Blend Curtain",
+        "item_code": "定制-涤麻大肚单层 TWDZ0603-1",
+        "qty": 1,
+        "width_in": 50,
+        "length_in": 84,
+        "fabric_id": "fabric_dmdd",
+        "fabric_name": "涤麻大肚",
+        "lining_id": "lining_none",
+        "lining_name": "无内衬",
+        "fullness": 0,
+        "room_label": "",
+        "actual_paid_usd": null,
+        "system_price_usd": 115.97,
+        "sales_usd": 115.97,
+        "tax_usd": 0,
+        "net_sales_rmb": 788.596,
+        "cost_rmb": 23.23,
+        "profit_rmb": 765.366,
+        "profit_rate": 0.9705425845426555,
+        "calc_detail_json": "{\"product\":{\"id\":\"lucie_linen_blend_curtain\",\"name\":\"Lucie Linen Blend Curtain\",\"factory_name\":\"Lucie DMDD\",\"shopify_option_set\":\"Lucie DMDD\",\"type\":\"curtain\",\"series\":\"Lucie\",\"default_fabric_id\":\"fabric_dmdd\",\"base_price\":0,\"default_fullness\":2,\"enabled\":true,\"created_at\":\"2026-06-02T06:02:12.062Z\",\"updated_at\":\"2026-06-02T06:02:12.062Z\",\"panels_per_unit\":1,\"factoryName\":\"Lucie DMDD\",\"shopifyOptionSet\":\"Lucie DMDD\",\"defaultFabricId\":\"fabric_dmdd\",\"basePrice\":0,\"defaultFullness\":2,\"panelsPerUnit\":1,\"width_prices\":[{\"id\":1,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":40,\"price_usd\":17.99,\"sort_order\":0},{\"id\":2,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":80,\"price_usd\":49.99,\"sort_order\":1},{\"id\":3,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":120,\"price_usd\":95.99,\"sort_order\":2},{\"id\":4,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":220,\"price_usd\":261.99,\"sort_order\":3}],\"length_prices\":[{\"id\":1,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":84,\"price_usd\":38.99,\"sort_order\":0},{\"id\":2,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":96,\"price_usd\":44.99,\"sort_order\":1},{\"id\":3,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":120,\"price_usd\":59.99,\"sort_order\":2},{\"id\":4,\"product_id\":\"lucie_linen_blend_curtain\",\"size_in\":216,\"price_usd\":117.99,\"sort_order\":3}],\"widthPrices\":[{\"size\":40,\"price\":17.99},{\"size\":80,\"price\":49.99},{\"size\":120,\"price\":95.99},{\"size\":220,\"price\":261.99}],\"lengthPrices\":[{\"size\":84,\"price\":38.99},{\"size\":96,\"price\":44.99},{\"size\":120,\"price\":59.99},{\"size\":216,\"price\":117.99}],\"options\":[{\"id\":1,\"product_id\":\"lucie_linen_blend_curtain\",\"option_key\":\"color\",\"label\":\"Color\",\"source_name\":\"Color\",\"type\":\"image-swatches\",\"required\":1,\"priceable\":1,\"costable\":0,\"factory\":1,\"sort_order\":0,\"key\":\"color\",\"values\":[{\"id\":1,\"group_id\":1,\"label\":\"Snow White\",\"price_usd\":0,\"cost_rmb\":0,\"sort_order\":0,\"price\":0,\"costRmb\":0},{\"id\":2,\"group_id\":1,\"label\":\"Natural\",\"price_usd\":0,\"cost_rmb\":0,\"sort_order\":1,\"price\":0,\"costRmb\":0}]},{\"id\":2,\"product_id\":\"lucie_linen_blend_curtain\",\"option_key\":\"header_style\",\"label\":\"Hanging Header Style\",\"source_name\":\"Hanging Header Style\",\"type\":\"dropdown\",\"required\":1,\"priceable\":1,\"costable\":1,\"factory\":1,\"sort_order\":1,\"key\":\"header_style\",\"values\":[{\"id\":3,\"group_id\":2,\"label\":\"2X Pinch Pleat (Black Rings)\",\"price_usd\":25.99,\"cost_rmb\":12,\"sort_order\":0,\"price\":25.99,\"costRmb\":12}]},{\"id\":3,\"product_id\":\"lucie_linen_blend_curtain\",\"option_key\":\"lining\",\"label\":\"Lining Type\",\"source_name\":\"Lining Type\",\"type\":\"dropdown\",\"required\":1,\"priceable\":1,\"costable\":1,\"factory\":1,\"sort_order\":2,\"key\":\"lining\",\"values\":[{\"id\":4,\"group_id\":3,\"label\":\"Unlined\",\"price_usd\":0,\"cost_rmb\":0,\"sort_order\":0,\"price\":0,\"costRmb\":0},{\"id\":5,\"group_id\":3,\"label\":\"Blackout 100%\",\"price_usd\":56.99,\"cost_rmb\":0,\"sort_order\":1,\"price\":56.99,\"costRmb\":0}]},{\"id\":4,\"product_id\":\"lucie_linen_blend_curtain\",\"option_key\":\"memory_shaped\",\"label\":\"Memory Shaped\",\"source_name\":\"Memory Shaped\",\"type\":\"dropdown\",\"required\":0,\"priceable\":1,\"costable\":1,\"factory\":1,\"sort_order\":3,\"key\":\"memory_shaped\",\"values\":[{\"id\":6,\"group_id\":4,\"label\":\"Without memory training\",\"price_usd\":0,\"cost_rmb\":0,\"sort_order\":0,\"price\":0,\"costRmb\":0},{\"id\":7,\"group_id\":4,\"label\":\"Add memory training\",\"price_usd\":89.99,\"cost_rmb\":0,\"sort_order\":1,\"price\":89.99,\"costRmb\":0}]},{\"id\":5,\"product_id\":\"lucie_linen_blend_curtain\",\"option_key\":\"tieback\",\"label\":\"Matching Tieback\",\"source_name\":\"Matching Tieback\",\"type\":\"dropdown\",\"required\":1,\"priceable\":1,\"costable\":1,\"factory\":1,\"sort_order\":4,\"key\":\"tieback\",\"values\":[{\"id\":8,\"group_id\":5,\"label\":\"Yes need the matching tieback\",\"price_usd\":1,\"cost_rmb\":8,\"sort_order\":0,\"price\":1,\"costRmb\":8},{\"id\":9,\"group_id\":5,\"label\":\"No Need\",\"price_usd\":0,\"cost_rmb\":0,\"sort_order\":1,\"price\":0,\"costRmb\":0}]}]},\"qty\":1,\"widthIn\":50,\"lengthIn\":84,\"panelsPerUnit\":1,\"actualPanelQty\":1,\"fullness\":0,\"fabric\":{\"id\":\"fabric_dmdd\",\"name\":\"涤麻大肚\",\"series\":\"涤麻大肚\",\"width_cm\":340,\"price_per_m\":26.14,\"enabled\":1,\"created_at\":\"2026-06-02T06:02:12.062Z\",\"updated_at\":\"2026-06-03T10:38:27.586Z\"},\"lining\":{\"id\":\"lining_none\",\"name\":\"无内衬\",\"color\":\"\",\"width_cm\":0,\"price_per_m\":0,\"enabled\":1,\"created_at\":\"2026-06-02T06:02:12.062Z\",\"updated_at\":\"2026-06-03T10:38:27.586Z\"},\"selectedOptions\":{\"note\":\"Red:Special\",\"color\":\"Snow White\"},\"hasManualQuote\":false,\"estimatedCostReliable\":true,\"systemPriceUsd\":115.97,\"actualPaidUsd\":0,\"discountMode\":\"amount\",\"discountValue\":0,\"discountUsd\":0,\"salesUsd\":115.97,\"taxRate\":0,\"taxUsd\":0,\"netSalesUsd\":115.97,\"netSalesRmb\":788.596,\"rawCostRmb\":23.23,\"estimatedCostRmb\":23.23,\"finalCostRmb\":23.23,\"profitRmb\":765.366,\"profitRate\":0.9705425845426555,\"mainPlan\":{\"cutDirection\":\"horizontal\",\"selectedCuttingDirection\":\"horizontal\",\"horizontalFeasible\":true,\"needSplice\":false,\"spliceRequired\":false,\"panelsNeeded\":1,\"verticalPieceCount\":1,\"fabricMeters\":0.5,\"manualCutExtraCm\":50,\"theoreticalUsageM\":0,\"issuedUsageM\":0.5,\"horizontalUsageMPerPanel\":0,\"verticalUsageMPerPanel\":2.2836000000000003,\"finishedWidthCm\":127,\"finishedLengthCm\":213.36,\"widthCm\":127,\"heightCm\":213.36,\"cutHeightCm\":228.36,\"spreadWidthCm\":0,\"actualPanelQty\":1,\"heightM\":2.1336,\"warnings\":[],\"description\":\"340cm horizontal cut, no splice\"},\"liningPlan\":{\"cutDirection\":\"none\",\"selectedCuttingDirection\":\"none\",\"horizontalFeasible\":false,\"needSplice\":false,\"spliceRequired\":false,\"panelsNeeded\":0,\"verticalPieceCount\":0,\"fabricMeters\":0,\"theoreticalUsageM\":0,\"issuedUsageM\":0,\"horizontalUsageMPerPanel\":0,\"verticalUsageMPerPanel\":0,\"finishedWidthCm\":127,\"finishedLengthCm\":213.36,\"widthCm\":127,\"heightCm\":213.36,\"cutHeightCm\":228.36,\"spreadWidthCm\":0,\"actualPanelQty\":1,\"heightM\":2.1336,\"warnings\":[],\"description\":\"No material\"},\"mainFabricCostRmb\":13.07,\"liningCostRmb\":0,\"laborCostRmb\":10.16,\"optionCostRmb\":0,\"memoryCostRmb\":0,\"packagingCostRmb\":0,\"spliceFeeRmb\":0,\"costBreakdown\":{\"topNonwovenAllowanceCm\":10,\"bottomHemAllowanceCm\":5,\"materialIssueBufferCm\":50,\"widthCm\":127,\"heightCm\":213.36,\"cutHeightCm\":228.36,\"spreadWidthCm\":0,\"actualPanelQty\":1,\"billingWidthM\":1.27,\"layer\":\"single\",\"mainFabricTheoreticalUsageM\":0,\"mainFabricIssuedUsageM\":0.5,\"mainFabricUnitPriceRmb\":26.14,\"estimatedMainFabricCostRmb\":13.07,\"liningTheoreticalUsageM\":0,\"liningIssuedUsageM\":0,\"liningUnitPriceRmb\":0,\"estimatedLiningCostRmb\":0,\"laborUnitPriceRmb\":8,\"estimatedLaborRmb\":10.16,\"spliceRequired\":false,\"spliceUnitPrice\":3,\"estimatedSpliceRmb\":0,\"memoryRequired\":false,\"memoryUnitPriceRmb\":0,\"estimatedMemoryRmb\":0,\"estimatedOptionCostRmb\":0,\"estimatedLogisticsRmb\":0,\"estimatedCostRmb\":23.23,\"estimatedCostReliable\":true},\"quote\":{\"unitPriceUsd\":115.97,\"totalPriceUsd\":115.97,\"widthPrice\":{\"price\":49.99,\"usedSize\":80,\"exact\":false,\"manualQuote\":false},\"lengthPrice\":{\"price\":38.99,\"usedSize\":84,\"exact\":true,\"manualQuote\":false},\"optionPriceUsd\":26.99,\"warnings\":[]},\"warnings\":[],\"details\":{\"fabricName\":\"涤麻大肚\",\"liningName\":\"无内衬\",\"hasLining\":false,\"layer\":\"single\",\"color\":\"Snow White\"},\"finalCostSource\":\"estimated\"}",
+        "selected_options_json": "{\"note\":\"Red:Special\",\"color\":\"Snow White\"}",
+        "remark": "",
+        "created_at": "2026-06-03T10:38:27.642Z",
+        "updated_at": "2026-06-03T10:38:27.642Z",
+        "estimated_cost_rmb": 23.23,
+        "final_cost_rmb": 23.23,
+        "final_cost_source": "estimated",
+        "factory_issued_usage_m": null,
+        "factory_actual_usage_m": null,
+        "factory_fabric_price_rmb": null,
+        "factory_labor_rmb": null,
+        "factory_memory_rmb": null,
+        "factory_cost_total_rmb": null,
+        "factory_settlement_rmb": null
+      }
+    ]
+  }
+}

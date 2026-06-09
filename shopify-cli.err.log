@@ -1,0 +1,18 @@
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  Release notes for 4.1.0                                                     │
+│                                                                              │
+│  Release highlights:                                                         │
+│                                                                              │
+│    - [App] The extension-only app template now includes an App Home          │
+│  extension by default                                                        │
+│                                                                              │
+│  Learn more about App Home extensions [1]                                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[1] https://shopify.dev/docs/api/app-home-ui-extension/latest
+
+
+To run this command, log in to Shopify.
+User verification code: TQPQ-WDPQ
+👉 Open this link to start the auth process: https://accounts.shopify.com/activate-with-code?device_code%5Buser_code%5D=TQPQ-WDPQ

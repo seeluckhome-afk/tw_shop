@@ -1,0 +1,3402 @@
+{
+  "schema": "twodrapes_factory_tool_sqlite_v1",
+  "exportedAt": "2026-05-27T14:38:12.395Z",
+  "data": {
+    "globals": [
+      {
+        "key": "bottom_hem_allowance_cm",
+        "value": "5",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "curtainLaborPerM",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "curtainWasteRate",
+        "value": "1.08",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "defaultPackaging",
+        "value": "8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "factorySettlementMultiplier",
+        "value": "1.2",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "inchToCm",
+        "value": "2.54",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "laborUseFlatWidth",
+        "value": "false",
+        "value_type": "boolean",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "manualCutExtraCm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "manualHeightM",
+        "value": "7",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "material_issue_buffer_cm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "memoryShapingCostPerPanel",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "profitWarnRate",
+        "value": "0.4",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "roundingStepM",
+        "value": "0.1",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "salesAmountMode",
+        "value": "pretax",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyAdminToken",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyApiVersion",
+        "value": "2026-01",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyShopDomain",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "sideHemAllowanceCm",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "spliceFeePerM",
+        "value": "3",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "superHeightWarnM",
+        "value": "4.5",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "top_nonwoven_allowance_cm",
+        "value": "10",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "usTaxRate",
+        "value": "0",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "usdRmb",
+        "value": "6.8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "verticalCutAllowanceCm",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "fabrics": [
+      {
+        "id": "fabric_dmmfl",
+        "name": "印花麻料",
+        "series": "印花麻料",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "fabric_cmdd",
+        "name": "棉麻大肚",
+        "series": "棉麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "fabric_dmdd",
+        "name": "涤麻大肚",
+        "series": "涤麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "linings": [
+      {
+        "id": "lining_450_white_280",
+        "name": "450gsm遮光内衬白色",
+        "color": "450gsm White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 18,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_none",
+        "name": "无内衬",
+        "color": "",
+        "width_cm": 0,
+        "price_per_m": 0,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_white_280",
+        "name": "遮光内衬白色",
+        "color": "White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_black_280",
+        "name": "遮光内衬黑色",
+        "color": "Black Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "products": [
+      {
+        "id": "custom_linen_semi_sheer_curtains",
+        "name": "Custom Linen Semi Sheer Curtains",
+        "factory_name": "Custom Linen Semi Sheer Curtains",
+        "shopify_option_set": "",
+        "type": "curtain",
+        "series": "",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 39.99,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-05-27T14:33:27.215Z",
+        "updated_at": "2026-05-27T14:33:27.215Z",
+        "panels_per_unit": 1,
+        "factoryName": "Custom Linen Semi Sheer Curtains",
+        "shopifyOptionSet": "",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 39.99,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 5,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 20,
+            "price_usd": 6.99,
+            "sort_order": 0
+          },
+          {
+            "id": 6,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 22,
+            "price_usd": 7.99,
+            "sort_order": 1
+          },
+          {
+            "id": 7,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 24,
+            "price_usd": 8.99,
+            "sort_order": 2
+          },
+          {
+            "id": 8,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 26,
+            "price_usd": 9.99,
+            "sort_order": 3
+          },
+          {
+            "id": 9,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 28,
+            "price_usd": 10.99,
+            "sort_order": 4
+          },
+          {
+            "id": 10,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 30,
+            "price_usd": 11.99,
+            "sort_order": 5
+          },
+          {
+            "id": 11,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 32,
+            "price_usd": 12.99,
+            "sort_order": 6
+          },
+          {
+            "id": 12,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 34,
+            "price_usd": 13.99,
+            "sort_order": 7
+          },
+          {
+            "id": 13,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 36,
+            "price_usd": 14.99,
+            "sort_order": 8
+          },
+          {
+            "id": 14,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 38,
+            "price_usd": 15.99,
+            "sort_order": 9
+          },
+          {
+            "id": 15,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 40,
+            "price_usd": 16.99,
+            "sort_order": 10
+          },
+          {
+            "id": 16,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 42,
+            "price_usd": 17.99,
+            "sort_order": 11
+          },
+          {
+            "id": 17,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 44,
+            "price_usd": 18.99,
+            "sort_order": 12
+          },
+          {
+            "id": 18,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 46,
+            "price_usd": 19.99,
+            "sort_order": 13
+          },
+          {
+            "id": 19,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 48,
+            "price_usd": 20.99,
+            "sort_order": 14
+          },
+          {
+            "id": 20,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 50,
+            "price_usd": 21.99,
+            "sort_order": 15
+          },
+          {
+            "id": 21,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 52,
+            "price_usd": 22.99,
+            "sort_order": 16
+          },
+          {
+            "id": 22,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 54,
+            "price_usd": 23.99,
+            "sort_order": 17
+          },
+          {
+            "id": 23,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 56,
+            "price_usd": 24.99,
+            "sort_order": 18
+          },
+          {
+            "id": 24,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 58,
+            "price_usd": 25.99,
+            "sort_order": 19
+          },
+          {
+            "id": 25,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 60,
+            "price_usd": 26.99,
+            "sort_order": 20
+          },
+          {
+            "id": 26,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 62,
+            "price_usd": 28.99,
+            "sort_order": 21
+          },
+          {
+            "id": 27,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 64,
+            "price_usd": 30.99,
+            "sort_order": 22
+          },
+          {
+            "id": 28,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 66,
+            "price_usd": 32.99,
+            "sort_order": 23
+          },
+          {
+            "id": 29,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 68,
+            "price_usd": 34.99,
+            "sort_order": 24
+          },
+          {
+            "id": 30,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 70,
+            "price_usd": 36.99,
+            "sort_order": 25
+          },
+          {
+            "id": 31,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 72,
+            "price_usd": 38.99,
+            "sort_order": 26
+          },
+          {
+            "id": 32,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 74,
+            "price_usd": 40.99,
+            "sort_order": 27
+          },
+          {
+            "id": 33,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 76,
+            "price_usd": 42.99,
+            "sort_order": 28
+          },
+          {
+            "id": 34,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 78,
+            "price_usd": 44.99,
+            "sort_order": 29
+          },
+          {
+            "id": 35,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 80,
+            "price_usd": 46.99,
+            "sort_order": 30
+          },
+          {
+            "id": 36,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 82,
+            "price_usd": 48.99,
+            "sort_order": 31
+          },
+          {
+            "id": 37,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 84,
+            "price_usd": 50.99,
+            "sort_order": 32
+          },
+          {
+            "id": 38,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 86,
+            "price_usd": 52.99,
+            "sort_order": 33
+          },
+          {
+            "id": 39,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 88,
+            "price_usd": 54.99,
+            "sort_order": 34
+          },
+          {
+            "id": 40,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 90,
+            "price_usd": 56.99,
+            "sort_order": 35
+          },
+          {
+            "id": 41,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 92,
+            "price_usd": 58.99,
+            "sort_order": 36
+          },
+          {
+            "id": 42,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 94,
+            "price_usd": 60.99,
+            "sort_order": 37
+          },
+          {
+            "id": 43,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 96,
+            "price_usd": 62.99,
+            "sort_order": 38
+          },
+          {
+            "id": 44,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 98,
+            "price_usd": 64.99,
+            "sort_order": 39
+          },
+          {
+            "id": 45,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 100,
+            "price_usd": 66.99,
+            "sort_order": 40
+          },
+          {
+            "id": 46,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 102,
+            "price_usd": 68.99,
+            "sort_order": 41
+          },
+          {
+            "id": 47,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 104,
+            "price_usd": 70.99,
+            "sort_order": 42
+          },
+          {
+            "id": 48,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 106,
+            "price_usd": 72.99,
+            "sort_order": 43
+          },
+          {
+            "id": 49,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 108,
+            "price_usd": 74.99,
+            "sort_order": 44
+          },
+          {
+            "id": 50,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 110,
+            "price_usd": 76.99,
+            "sort_order": 45
+          },
+          {
+            "id": 51,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 112,
+            "price_usd": 78.99,
+            "sort_order": 46
+          },
+          {
+            "id": 52,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 114,
+            "price_usd": 80.99,
+            "sort_order": 47
+          },
+          {
+            "id": 53,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 116,
+            "price_usd": 82.99,
+            "sort_order": 48
+          },
+          {
+            "id": 54,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 118,
+            "price_usd": 84.99,
+            "sort_order": 49
+          },
+          {
+            "id": 55,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 120,
+            "price_usd": 86.99,
+            "sort_order": 50
+          },
+          {
+            "id": 56,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 122,
+            "price_usd": 88.99,
+            "sort_order": 51
+          },
+          {
+            "id": 57,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 124,
+            "price_usd": 90.99,
+            "sort_order": 52
+          },
+          {
+            "id": 58,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 126,
+            "price_usd": 92.99,
+            "sort_order": 53
+          },
+          {
+            "id": 59,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 128,
+            "price_usd": 94.99,
+            "sort_order": 54
+          },
+          {
+            "id": 60,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 130,
+            "price_usd": 96.99,
+            "sort_order": 55
+          },
+          {
+            "id": 61,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 132,
+            "price_usd": 98.99,
+            "sort_order": 56
+          },
+          {
+            "id": 62,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 134,
+            "price_usd": 100.99,
+            "sort_order": 57
+          },
+          {
+            "id": 63,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 136,
+            "price_usd": 102.99,
+            "sort_order": 58
+          },
+          {
+            "id": 64,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 138,
+            "price_usd": 104.99,
+            "sort_order": 59
+          },
+          {
+            "id": 65,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 140,
+            "price_usd": 106.99,
+            "sort_order": 60
+          },
+          {
+            "id": 66,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 142,
+            "price_usd": 109.99,
+            "sort_order": 61
+          },
+          {
+            "id": 67,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 144,
+            "price_usd": 112.99,
+            "sort_order": 62
+          },
+          {
+            "id": 68,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 146,
+            "price_usd": 115.99,
+            "sort_order": 63
+          },
+          {
+            "id": 69,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 148,
+            "price_usd": 118.99,
+            "sort_order": 64
+          },
+          {
+            "id": 70,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 150,
+            "price_usd": 121.99,
+            "sort_order": 65
+          },
+          {
+            "id": 71,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 152,
+            "price_usd": 124.99,
+            "sort_order": 66
+          },
+          {
+            "id": 72,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 154,
+            "price_usd": 127.99,
+            "sort_order": 67
+          },
+          {
+            "id": 73,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 156,
+            "price_usd": 130.99,
+            "sort_order": 68
+          },
+          {
+            "id": 74,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 158,
+            "price_usd": 133.99,
+            "sort_order": 69
+          },
+          {
+            "id": 75,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 160,
+            "price_usd": 136.99,
+            "sort_order": 70
+          },
+          {
+            "id": 76,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 162,
+            "price_usd": 139.99,
+            "sort_order": 71
+          },
+          {
+            "id": 77,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 164,
+            "price_usd": 142.99,
+            "sort_order": 72
+          },
+          {
+            "id": 78,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 166,
+            "price_usd": 145.99,
+            "sort_order": 73
+          },
+          {
+            "id": 79,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 168,
+            "price_usd": 148.99,
+            "sort_order": 74
+          },
+          {
+            "id": 80,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 170,
+            "price_usd": 151.99,
+            "sort_order": 75
+          },
+          {
+            "id": 81,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 172,
+            "price_usd": 154.99,
+            "sort_order": 76
+          },
+          {
+            "id": 82,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 174,
+            "price_usd": 157.99,
+            "sort_order": 77
+          },
+          {
+            "id": 83,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 176,
+            "price_usd": 160.99,
+            "sort_order": 78
+          },
+          {
+            "id": 84,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 178,
+            "price_usd": 163.99,
+            "sort_order": 79
+          },
+          {
+            "id": 85,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 180,
+            "price_usd": 166.99,
+            "sort_order": 80
+          },
+          {
+            "id": 86,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 182,
+            "price_usd": 169.99,
+            "sort_order": 81
+          },
+          {
+            "id": 87,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 184,
+            "price_usd": 172.99,
+            "sort_order": 82
+          },
+          {
+            "id": 88,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 186,
+            "price_usd": 175.99,
+            "sort_order": 83
+          },
+          {
+            "id": 89,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 188,
+            "price_usd": 178.99,
+            "sort_order": 84
+          },
+          {
+            "id": 90,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 190,
+            "price_usd": 181.99,
+            "sort_order": 85
+          },
+          {
+            "id": 91,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 192,
+            "price_usd": 184.99,
+            "sort_order": 86
+          },
+          {
+            "id": 92,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 194,
+            "price_usd": 187.99,
+            "sort_order": 87
+          },
+          {
+            "id": 93,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 196,
+            "price_usd": 190.99,
+            "sort_order": 88
+          },
+          {
+            "id": 94,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 198,
+            "price_usd": 193.99,
+            "sort_order": 89
+          },
+          {
+            "id": 95,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 200,
+            "price_usd": 196.99,
+            "sort_order": 90
+          },
+          {
+            "id": 96,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 202,
+            "price_usd": 199.99,
+            "sort_order": 91
+          },
+          {
+            "id": 97,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 204,
+            "price_usd": 202.99,
+            "sort_order": 92
+          },
+          {
+            "id": 98,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 210,
+            "price_usd": 211.99,
+            "sort_order": 93
+          },
+          {
+            "id": 99,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 212,
+            "price_usd": 214.99,
+            "sort_order": 94
+          },
+          {
+            "id": 100,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 214,
+            "price_usd": 217.99,
+            "sort_order": 95
+          },
+          {
+            "id": 101,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 220,
+            "price_usd": 226.99,
+            "sort_order": 96
+          },
+          {
+            "id": 102,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 224,
+            "price_usd": 232.99,
+            "sort_order": 97
+          },
+          {
+            "id": 103,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 230,
+            "price_usd": 241.99,
+            "sort_order": 98
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 5,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 30,
+            "price_usd": 8.99,
+            "sort_order": 0
+          },
+          {
+            "id": 6,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 32,
+            "price_usd": 9.99,
+            "sort_order": 1
+          },
+          {
+            "id": 7,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 34,
+            "price_usd": 10.99,
+            "sort_order": 2
+          },
+          {
+            "id": 8,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 36,
+            "price_usd": 11.99,
+            "sort_order": 3
+          },
+          {
+            "id": 9,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 38,
+            "price_usd": 12.99,
+            "sort_order": 4
+          },
+          {
+            "id": 10,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 40,
+            "price_usd": 13.99,
+            "sort_order": 5
+          },
+          {
+            "id": 11,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 42,
+            "price_usd": 14.99,
+            "sort_order": 6
+          },
+          {
+            "id": 12,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 44,
+            "price_usd": 15.99,
+            "sort_order": 7
+          },
+          {
+            "id": 13,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 46,
+            "price_usd": 16.99,
+            "sort_order": 8
+          },
+          {
+            "id": 14,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 48,
+            "price_usd": 17.99,
+            "sort_order": 9
+          },
+          {
+            "id": 15,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 50,
+            "price_usd": 18.99,
+            "sort_order": 10
+          },
+          {
+            "id": 16,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 52,
+            "price_usd": 19.99,
+            "sort_order": 11
+          },
+          {
+            "id": 17,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 54,
+            "price_usd": 20.99,
+            "sort_order": 12
+          },
+          {
+            "id": 18,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 56,
+            "price_usd": 21.99,
+            "sort_order": 13
+          },
+          {
+            "id": 19,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 58,
+            "price_usd": 22.99,
+            "sort_order": 14
+          },
+          {
+            "id": 20,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 60,
+            "price_usd": 23.99,
+            "sort_order": 15
+          },
+          {
+            "id": 21,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 62,
+            "price_usd": 24.99,
+            "sort_order": 16
+          },
+          {
+            "id": 22,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 64,
+            "price_usd": 25.99,
+            "sort_order": 17
+          },
+          {
+            "id": 23,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 66,
+            "price_usd": 26.99,
+            "sort_order": 18
+          },
+          {
+            "id": 24,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 68,
+            "price_usd": 27.99,
+            "sort_order": 19
+          },
+          {
+            "id": 25,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 70,
+            "price_usd": 28.99,
+            "sort_order": 20
+          },
+          {
+            "id": 26,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 72,
+            "price_usd": 29.99,
+            "sort_order": 21
+          },
+          {
+            "id": 27,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 74,
+            "price_usd": 30.99,
+            "sort_order": 22
+          },
+          {
+            "id": 28,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 76,
+            "price_usd": 31.99,
+            "sort_order": 23
+          },
+          {
+            "id": 29,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 78,
+            "price_usd": 32.99,
+            "sort_order": 24
+          },
+          {
+            "id": 30,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 80,
+            "price_usd": 33.99,
+            "sort_order": 25
+          },
+          {
+            "id": 31,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 82,
+            "price_usd": 34.99,
+            "sort_order": 26
+          },
+          {
+            "id": 32,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 84,
+            "price_usd": 35.99,
+            "sort_order": 27
+          },
+          {
+            "id": 33,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 86,
+            "price_usd": 36.99,
+            "sort_order": 28
+          },
+          {
+            "id": 34,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 88,
+            "price_usd": 37.99,
+            "sort_order": 29
+          },
+          {
+            "id": 35,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 90,
+            "price_usd": 38.99,
+            "sort_order": 30
+          },
+          {
+            "id": 36,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 92,
+            "price_usd": 39.99,
+            "sort_order": 31
+          },
+          {
+            "id": 37,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 94,
+            "price_usd": 40.99,
+            "sort_order": 32
+          },
+          {
+            "id": 38,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 96,
+            "price_usd": 41.99,
+            "sort_order": 33
+          },
+          {
+            "id": 39,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 98,
+            "price_usd": 42.99,
+            "sort_order": 34
+          },
+          {
+            "id": 40,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 100,
+            "price_usd": 43.99,
+            "sort_order": 35
+          },
+          {
+            "id": 41,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 102,
+            "price_usd": 44.99,
+            "sort_order": 36
+          },
+          {
+            "id": 42,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 104,
+            "price_usd": 45.99,
+            "sort_order": 37
+          },
+          {
+            "id": 43,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 106,
+            "price_usd": 46.99,
+            "sort_order": 38
+          },
+          {
+            "id": 44,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 108,
+            "price_usd": 47.99,
+            "sort_order": 39
+          },
+          {
+            "id": 45,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 110,
+            "price_usd": 48.99,
+            "sort_order": 40
+          },
+          {
+            "id": 46,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 112,
+            "price_usd": 49.99,
+            "sort_order": 41
+          },
+          {
+            "id": 47,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 114,
+            "price_usd": 50.99,
+            "sort_order": 42
+          },
+          {
+            "id": 48,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 116,
+            "price_usd": 51.99,
+            "sort_order": 43
+          },
+          {
+            "id": 49,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 118,
+            "price_usd": 52.99,
+            "sort_order": 44
+          },
+          {
+            "id": 50,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 120,
+            "price_usd": 53.99,
+            "sort_order": 45
+          },
+          {
+            "id": 51,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 122,
+            "price_usd": 54.99,
+            "sort_order": 46
+          },
+          {
+            "id": 52,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 124,
+            "price_usd": 55.99,
+            "sort_order": 47
+          },
+          {
+            "id": 53,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 126,
+            "price_usd": 56.99,
+            "sort_order": 48
+          },
+          {
+            "id": 54,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 128,
+            "price_usd": 57.99,
+            "sort_order": 49
+          },
+          {
+            "id": 55,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 130,
+            "price_usd": 58.99,
+            "sort_order": 50
+          },
+          {
+            "id": 56,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 132,
+            "price_usd": 60.99,
+            "sort_order": 51
+          },
+          {
+            "id": 57,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 134,
+            "price_usd": 62.99,
+            "sort_order": 52
+          },
+          {
+            "id": 58,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 136,
+            "price_usd": 62.99,
+            "sort_order": 53
+          },
+          {
+            "id": 59,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 138,
+            "price_usd": 66.99,
+            "sort_order": 54
+          },
+          {
+            "id": 60,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 140,
+            "price_usd": 68.99,
+            "sort_order": 55
+          },
+          {
+            "id": 61,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 142,
+            "price_usd": 70.99,
+            "sort_order": 56
+          },
+          {
+            "id": 62,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 144,
+            "price_usd": 72.99,
+            "sort_order": 57
+          },
+          {
+            "id": 63,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 146,
+            "price_usd": 74.99,
+            "sort_order": 58
+          },
+          {
+            "id": 64,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 148,
+            "price_usd": 76.99,
+            "sort_order": 59
+          },
+          {
+            "id": 65,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 150,
+            "price_usd": 78.99,
+            "sort_order": 60
+          },
+          {
+            "id": 66,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 152,
+            "price_usd": 80.99,
+            "sort_order": 61
+          },
+          {
+            "id": 67,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 154,
+            "price_usd": 82.99,
+            "sort_order": 62
+          },
+          {
+            "id": 68,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 156,
+            "price_usd": 84.99,
+            "sort_order": 63
+          },
+          {
+            "id": 69,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 158,
+            "price_usd": 86.99,
+            "sort_order": 64
+          },
+          {
+            "id": 70,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 160,
+            "price_usd": 88.99,
+            "sort_order": 65
+          },
+          {
+            "id": 71,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 162,
+            "price_usd": 90.99,
+            "sort_order": 66
+          },
+          {
+            "id": 72,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 164,
+            "price_usd": 92.99,
+            "sort_order": 67
+          },
+          {
+            "id": 73,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 166,
+            "price_usd": 94.99,
+            "sort_order": 68
+          },
+          {
+            "id": 74,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 168,
+            "price_usd": 96.99,
+            "sort_order": 69
+          },
+          {
+            "id": 75,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 170,
+            "price_usd": 98.99,
+            "sort_order": 70
+          },
+          {
+            "id": 76,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 172,
+            "price_usd": 100.99,
+            "sort_order": 71
+          },
+          {
+            "id": 77,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 174,
+            "price_usd": 102.99,
+            "sort_order": 72
+          },
+          {
+            "id": 78,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 176,
+            "price_usd": 104.99,
+            "sort_order": 73
+          },
+          {
+            "id": 79,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 178,
+            "price_usd": 106.99,
+            "sort_order": 74
+          },
+          {
+            "id": 80,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 180,
+            "price_usd": 108.99,
+            "sort_order": 75
+          },
+          {
+            "id": 81,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 182,
+            "price_usd": 110.99,
+            "sort_order": 76
+          },
+          {
+            "id": 82,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 184,
+            "price_usd": 112.99,
+            "sort_order": 77
+          },
+          {
+            "id": 83,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 186,
+            "price_usd": 114.99,
+            "sort_order": 78
+          },
+          {
+            "id": 84,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 188,
+            "price_usd": 116.99,
+            "sort_order": 79
+          },
+          {
+            "id": 85,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 190,
+            "price_usd": 118.99,
+            "sort_order": 80
+          },
+          {
+            "id": 86,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 192,
+            "price_usd": 120.99,
+            "sort_order": 81
+          },
+          {
+            "id": 87,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 194,
+            "price_usd": 122.99,
+            "sort_order": 82
+          },
+          {
+            "id": 88,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 196,
+            "price_usd": 124.99,
+            "sort_order": 83
+          },
+          {
+            "id": 89,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 198,
+            "price_usd": 126.99,
+            "sort_order": 84
+          },
+          {
+            "id": 90,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 200,
+            "price_usd": 128.99,
+            "sort_order": 85
+          },
+          {
+            "id": 91,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 202,
+            "price_usd": 130.99,
+            "sort_order": 86
+          },
+          {
+            "id": 92,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 204,
+            "price_usd": 132.99,
+            "sort_order": 87
+          },
+          {
+            "id": 93,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 206,
+            "price_usd": 134.99,
+            "sort_order": 88
+          },
+          {
+            "id": 94,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 208,
+            "price_usd": 136.99,
+            "sort_order": 89
+          },
+          {
+            "id": 95,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 210,
+            "price_usd": 138.99,
+            "sort_order": 90
+          },
+          {
+            "id": 96,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 212,
+            "price_usd": 140.99,
+            "sort_order": 91
+          },
+          {
+            "id": 97,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 214,
+            "price_usd": 142.99,
+            "sort_order": 92
+          },
+          {
+            "id": 98,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 216,
+            "price_usd": 144.99,
+            "sort_order": 93
+          },
+          {
+            "id": 99,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 218,
+            "price_usd": 146.99,
+            "sort_order": 94
+          },
+          {
+            "id": 100,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 220,
+            "price_usd": 148.99,
+            "sort_order": 95
+          },
+          {
+            "id": 101,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 222,
+            "price_usd": 150.99,
+            "sort_order": 96
+          },
+          {
+            "id": 102,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 224,
+            "price_usd": 152.99,
+            "sort_order": 97
+          },
+          {
+            "id": 103,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "size_in": 228,
+            "price_usd": 156.99,
+            "sort_order": 98
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 20,
+            "price": 6.99
+          },
+          {
+            "size": 22,
+            "price": 7.99
+          },
+          {
+            "size": 24,
+            "price": 8.99
+          },
+          {
+            "size": 26,
+            "price": 9.99
+          },
+          {
+            "size": 28,
+            "price": 10.99
+          },
+          {
+            "size": 30,
+            "price": 11.99
+          },
+          {
+            "size": 32,
+            "price": 12.99
+          },
+          {
+            "size": 34,
+            "price": 13.99
+          },
+          {
+            "size": 36,
+            "price": 14.99
+          },
+          {
+            "size": 38,
+            "price": 15.99
+          },
+          {
+            "size": 40,
+            "price": 16.99
+          },
+          {
+            "size": 42,
+            "price": 17.99
+          },
+          {
+            "size": 44,
+            "price": 18.99
+          },
+          {
+            "size": 46,
+            "price": 19.99
+          },
+          {
+            "size": 48,
+            "price": 20.99
+          },
+          {
+            "size": 50,
+            "price": 21.99
+          },
+          {
+            "size": 52,
+            "price": 22.99
+          },
+          {
+            "size": 54,
+            "price": 23.99
+          },
+          {
+            "size": 56,
+            "price": 24.99
+          },
+          {
+            "size": 58,
+            "price": 25.99
+          },
+          {
+            "size": 60,
+            "price": 26.99
+          },
+          {
+            "size": 62,
+            "price": 28.99
+          },
+          {
+            "size": 64,
+            "price": 30.99
+          },
+          {
+            "size": 66,
+            "price": 32.99
+          },
+          {
+            "size": 68,
+            "price": 34.99
+          },
+          {
+            "size": 70,
+            "price": 36.99
+          },
+          {
+            "size": 72,
+            "price": 38.99
+          },
+          {
+            "size": 74,
+            "price": 40.99
+          },
+          {
+            "size": 76,
+            "price": 42.99
+          },
+          {
+            "size": 78,
+            "price": 44.99
+          },
+          {
+            "size": 80,
+            "price": 46.99
+          },
+          {
+            "size": 82,
+            "price": 48.99
+          },
+          {
+            "size": 84,
+            "price": 50.99
+          },
+          {
+            "size": 86,
+            "price": 52.99
+          },
+          {
+            "size": 88,
+            "price": 54.99
+          },
+          {
+            "size": 90,
+            "price": 56.99
+          },
+          {
+            "size": 92,
+            "price": 58.99
+          },
+          {
+            "size": 94,
+            "price": 60.99
+          },
+          {
+            "size": 96,
+            "price": 62.99
+          },
+          {
+            "size": 98,
+            "price": 64.99
+          },
+          {
+            "size": 100,
+            "price": 66.99
+          },
+          {
+            "size": 102,
+            "price": 68.99
+          },
+          {
+            "size": 104,
+            "price": 70.99
+          },
+          {
+            "size": 106,
+            "price": 72.99
+          },
+          {
+            "size": 108,
+            "price": 74.99
+          },
+          {
+            "size": 110,
+            "price": 76.99
+          },
+          {
+            "size": 112,
+            "price": 78.99
+          },
+          {
+            "size": 114,
+            "price": 80.99
+          },
+          {
+            "size": 116,
+            "price": 82.99
+          },
+          {
+            "size": 118,
+            "price": 84.99
+          },
+          {
+            "size": 120,
+            "price": 86.99
+          },
+          {
+            "size": 122,
+            "price": 88.99
+          },
+          {
+            "size": 124,
+            "price": 90.99
+          },
+          {
+            "size": 126,
+            "price": 92.99
+          },
+          {
+            "size": 128,
+            "price": 94.99
+          },
+          {
+            "size": 130,
+            "price": 96.99
+          },
+          {
+            "size": 132,
+            "price": 98.99
+          },
+          {
+            "size": 134,
+            "price": 100.99
+          },
+          {
+            "size": 136,
+            "price": 102.99
+          },
+          {
+            "size": 138,
+            "price": 104.99
+          },
+          {
+            "size": 140,
+            "price": 106.99
+          },
+          {
+            "size": 142,
+            "price": 109.99
+          },
+          {
+            "size": 144,
+            "price": 112.99
+          },
+          {
+            "size": 146,
+            "price": 115.99
+          },
+          {
+            "size": 148,
+            "price": 118.99
+          },
+          {
+            "size": 150,
+            "price": 121.99
+          },
+          {
+            "size": 152,
+            "price": 124.99
+          },
+          {
+            "size": 154,
+            "price": 127.99
+          },
+          {
+            "size": 156,
+            "price": 130.99
+          },
+          {
+            "size": 158,
+            "price": 133.99
+          },
+          {
+            "size": 160,
+            "price": 136.99
+          },
+          {
+            "size": 162,
+            "price": 139.99
+          },
+          {
+            "size": 164,
+            "price": 142.99
+          },
+          {
+            "size": 166,
+            "price": 145.99
+          },
+          {
+            "size": 168,
+            "price": 148.99
+          },
+          {
+            "size": 170,
+            "price": 151.99
+          },
+          {
+            "size": 172,
+            "price": 154.99
+          },
+          {
+            "size": 174,
+            "price": 157.99
+          },
+          {
+            "size": 176,
+            "price": 160.99
+          },
+          {
+            "size": 178,
+            "price": 163.99
+          },
+          {
+            "size": 180,
+            "price": 166.99
+          },
+          {
+            "size": 182,
+            "price": 169.99
+          },
+          {
+            "size": 184,
+            "price": 172.99
+          },
+          {
+            "size": 186,
+            "price": 175.99
+          },
+          {
+            "size": 188,
+            "price": 178.99
+          },
+          {
+            "size": 190,
+            "price": 181.99
+          },
+          {
+            "size": 192,
+            "price": 184.99
+          },
+          {
+            "size": 194,
+            "price": 187.99
+          },
+          {
+            "size": 196,
+            "price": 190.99
+          },
+          {
+            "size": 198,
+            "price": 193.99
+          },
+          {
+            "size": 200,
+            "price": 196.99
+          },
+          {
+            "size": 202,
+            "price": 199.99
+          },
+          {
+            "size": 204,
+            "price": 202.99
+          },
+          {
+            "size": 210,
+            "price": 211.99
+          },
+          {
+            "size": 212,
+            "price": 214.99
+          },
+          {
+            "size": 214,
+            "price": 217.99
+          },
+          {
+            "size": 220,
+            "price": 226.99
+          },
+          {
+            "size": 224,
+            "price": 232.99
+          },
+          {
+            "size": 230,
+            "price": 241.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 30,
+            "price": 8.99
+          },
+          {
+            "size": 32,
+            "price": 9.99
+          },
+          {
+            "size": 34,
+            "price": 10.99
+          },
+          {
+            "size": 36,
+            "price": 11.99
+          },
+          {
+            "size": 38,
+            "price": 12.99
+          },
+          {
+            "size": 40,
+            "price": 13.99
+          },
+          {
+            "size": 42,
+            "price": 14.99
+          },
+          {
+            "size": 44,
+            "price": 15.99
+          },
+          {
+            "size": 46,
+            "price": 16.99
+          },
+          {
+            "size": 48,
+            "price": 17.99
+          },
+          {
+            "size": 50,
+            "price": 18.99
+          },
+          {
+            "size": 52,
+            "price": 19.99
+          },
+          {
+            "size": 54,
+            "price": 20.99
+          },
+          {
+            "size": 56,
+            "price": 21.99
+          },
+          {
+            "size": 58,
+            "price": 22.99
+          },
+          {
+            "size": 60,
+            "price": 23.99
+          },
+          {
+            "size": 62,
+            "price": 24.99
+          },
+          {
+            "size": 64,
+            "price": 25.99
+          },
+          {
+            "size": 66,
+            "price": 26.99
+          },
+          {
+            "size": 68,
+            "price": 27.99
+          },
+          {
+            "size": 70,
+            "price": 28.99
+          },
+          {
+            "size": 72,
+            "price": 29.99
+          },
+          {
+            "size": 74,
+            "price": 30.99
+          },
+          {
+            "size": 76,
+            "price": 31.99
+          },
+          {
+            "size": 78,
+            "price": 32.99
+          },
+          {
+            "size": 80,
+            "price": 33.99
+          },
+          {
+            "size": 82,
+            "price": 34.99
+          },
+          {
+            "size": 84,
+            "price": 35.99
+          },
+          {
+            "size": 86,
+            "price": 36.99
+          },
+          {
+            "size": 88,
+            "price": 37.99
+          },
+          {
+            "size": 90,
+            "price": 38.99
+          },
+          {
+            "size": 92,
+            "price": 39.99
+          },
+          {
+            "size": 94,
+            "price": 40.99
+          },
+          {
+            "size": 96,
+            "price": 41.99
+          },
+          {
+            "size": 98,
+            "price": 42.99
+          },
+          {
+            "size": 100,
+            "price": 43.99
+          },
+          {
+            "size": 102,
+            "price": 44.99
+          },
+          {
+            "size": 104,
+            "price": 45.99
+          },
+          {
+            "size": 106,
+            "price": 46.99
+          },
+          {
+            "size": 108,
+            "price": 47.99
+          },
+          {
+            "size": 110,
+            "price": 48.99
+          },
+          {
+            "size": 112,
+            "price": 49.99
+          },
+          {
+            "size": 114,
+            "price": 50.99
+          },
+          {
+            "size": 116,
+            "price": 51.99
+          },
+          {
+            "size": 118,
+            "price": 52.99
+          },
+          {
+            "size": 120,
+            "price": 53.99
+          },
+          {
+            "size": 122,
+            "price": 54.99
+          },
+          {
+            "size": 124,
+            "price": 55.99
+          },
+          {
+            "size": 126,
+            "price": 56.99
+          },
+          {
+            "size": 128,
+            "price": 57.99
+          },
+          {
+            "size": 130,
+            "price": 58.99
+          },
+          {
+            "size": 132,
+            "price": 60.99
+          },
+          {
+            "size": 134,
+            "price": 62.99
+          },
+          {
+            "size": 136,
+            "price": 62.99
+          },
+          {
+            "size": 138,
+            "price": 66.99
+          },
+          {
+            "size": 140,
+            "price": 68.99
+          },
+          {
+            "size": 142,
+            "price": 70.99
+          },
+          {
+            "size": 144,
+            "price": 72.99
+          },
+          {
+            "size": 146,
+            "price": 74.99
+          },
+          {
+            "size": 148,
+            "price": 76.99
+          },
+          {
+            "size": 150,
+            "price": 78.99
+          },
+          {
+            "size": 152,
+            "price": 80.99
+          },
+          {
+            "size": 154,
+            "price": 82.99
+          },
+          {
+            "size": 156,
+            "price": 84.99
+          },
+          {
+            "size": 158,
+            "price": 86.99
+          },
+          {
+            "size": 160,
+            "price": 88.99
+          },
+          {
+            "size": 162,
+            "price": 90.99
+          },
+          {
+            "size": 164,
+            "price": 92.99
+          },
+          {
+            "size": 166,
+            "price": 94.99
+          },
+          {
+            "size": 168,
+            "price": 96.99
+          },
+          {
+            "size": 170,
+            "price": 98.99
+          },
+          {
+            "size": 172,
+            "price": 100.99
+          },
+          {
+            "size": 174,
+            "price": 102.99
+          },
+          {
+            "size": 176,
+            "price": 104.99
+          },
+          {
+            "size": 178,
+            "price": 106.99
+          },
+          {
+            "size": 180,
+            "price": 108.99
+          },
+          {
+            "size": 182,
+            "price": 110.99
+          },
+          {
+            "size": 184,
+            "price": 112.99
+          },
+          {
+            "size": 186,
+            "price": 114.99
+          },
+          {
+            "size": 188,
+            "price": 116.99
+          },
+          {
+            "size": 190,
+            "price": 118.99
+          },
+          {
+            "size": 192,
+            "price": 120.99
+          },
+          {
+            "size": 194,
+            "price": 122.99
+          },
+          {
+            "size": 196,
+            "price": 124.99
+          },
+          {
+            "size": 198,
+            "price": 126.99
+          },
+          {
+            "size": 200,
+            "price": 128.99
+          },
+          {
+            "size": 202,
+            "price": 130.99
+          },
+          {
+            "size": 204,
+            "price": 132.99
+          },
+          {
+            "size": 206,
+            "price": 134.99
+          },
+          {
+            "size": 208,
+            "price": 136.99
+          },
+          {
+            "size": 210,
+            "price": 138.99
+          },
+          {
+            "size": 212,
+            "price": 140.99
+          },
+          {
+            "size": 214,
+            "price": 142.99
+          },
+          {
+            "size": 216,
+            "price": 144.99
+          },
+          {
+            "size": 218,
+            "price": 146.99
+          },
+          {
+            "size": 220,
+            "price": 148.99
+          },
+          {
+            "size": 222,
+            "price": 150.99
+          },
+          {
+            "size": 224,
+            "price": 152.99
+          },
+          {
+            "size": 228,
+            "price": 156.99
+          }
+        ],
+        "options": [
+          {
+            "id": 6,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "option_key": "hanging_header_style",
+            "label": "Hanging Header Style",
+            "source_name": "Hanging Header Style",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "hanging_header_style",
+            "values": [
+              {
+                "id": 10,
+                "group_id": 6,
+                "label": "2X Pinch Pleat (Black Rings)",
+                "price_usd": 25.99,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 25.99,
+                "costRmb": 0
+              },
+              {
+                "id": 11,
+                "group_id": 6,
+                "label": "2X Pinch Pleat (Bronze Rings)",
+                "price_usd": 25.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 25.99,
+                "costRmb": 0
+              },
+              {
+                "id": 12,
+                "group_id": 6,
+                "label": "2X Pinch Pleat (Witchout Accessories)",
+                "price_usd": 20.99,
+                "cost_rmb": 0,
+                "sort_order": 2,
+                "price": 20.99,
+                "costRmb": 0
+              },
+              {
+                "id": 13,
+                "group_id": 6,
+                "label": "2X Pinch Pleat with Back Tab (Black Rings)",
+                "price_usd": 35.99,
+                "cost_rmb": 0,
+                "sort_order": 3,
+                "price": 35.99,
+                "costRmb": 0
+              },
+              {
+                "id": 14,
+                "group_id": 6,
+                "label": "2X Pinch Pleat with Back Tab (Bronze Rings)",
+                "price_usd": 35.99,
+                "cost_rmb": 0,
+                "sort_order": 4,
+                "price": 35.99,
+                "costRmb": 0
+              },
+              {
+                "id": 15,
+                "group_id": 6,
+                "label": "2X Pinch Pleat with Back Tab (Witchout Accessories)",
+                "price_usd": 30.99,
+                "cost_rmb": 0,
+                "sort_order": 5,
+                "price": 30.99,
+                "costRmb": 0
+              },
+              {
+                "id": 16,
+                "group_id": 6,
+                "label": "Bronze Grommet",
+                "price_usd": 15.99,
+                "cost_rmb": 0,
+                "sort_order": 6,
+                "price": 15.99,
+                "costRmb": 0
+              },
+              {
+                "id": 17,
+                "group_id": 6,
+                "label": "Nickel Grommet",
+                "price_usd": 15.99,
+                "cost_rmb": 0,
+                "sort_order": 7,
+                "price": 15.99,
+                "costRmb": 0
+              },
+              {
+                "id": 18,
+                "group_id": 6,
+                "label": "Back Tab",
+                "price_usd": 15.99,
+                "cost_rmb": 0,
+                "sort_order": 8,
+                "price": 15.99,
+                "costRmb": 0
+              },
+              {
+                "id": 19,
+                "group_id": 6,
+                "label": "Rod Pocket",
+                "price_usd": 10.99,
+                "cost_rmb": 0,
+                "sort_order": 9,
+                "price": 10.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "option_key": "memory_shaped",
+            "label": "Memory Shaped",
+            "source_name": "Memory Shaped",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 1,
+            "key": "memory_shaped",
+            "values": [
+              {
+                "id": 20,
+                "group_id": 7,
+                "label": "Wide Below 40 Inches",
+                "price_usd": 20.99,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 20.99,
+                "costRmb": 0
+              },
+              {
+                "id": 21,
+                "group_id": 7,
+                "label": "Wide from 40 to 80 Inches",
+                "price_usd": 40.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 40.99,
+                "costRmb": 0
+              },
+              {
+                "id": 22,
+                "group_id": 7,
+                "label": "Wide from 80 to 160 Inches",
+                "price_usd": 60.99,
+                "cost_rmb": 0,
+                "sort_order": 2,
+                "price": 60.99,
+                "costRmb": 0
+              },
+              {
+                "id": 23,
+                "group_id": 7,
+                "label": "Wide from 160 to 260 Inches",
+                "price_usd": 90.99,
+                "cost_rmb": 0,
+                "sort_order": 3,
+                "price": 90.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "option_key": "tieback",
+            "label": "Tieback",
+            "source_name": "Tieback",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 2,
+            "key": "tieback",
+            "values": [
+              {
+                "id": 24,
+                "group_id": 8,
+                "label": "No",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 25,
+                "group_id": 8,
+                "label": "Yes",
+                "price_usd": 1,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 1,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "product_id": "custom_linen_semi_sheer_curtains",
+            "option_key": "room_label",
+            "label": "Room Label",
+            "source_name": "Room Label",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 3,
+            "key": "room_label",
+            "values": [
+              {
+                "id": 26,
+                "group_id": 9,
+                "label": "Room Label",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lucie_linen_blend_curtain",
+        "name": "Lucie Linen Blend Curtain",
+        "factory_name": "Lucie DMDD",
+        "shopify_option_set": "Lucie DMDD",
+        "type": "curtain",
+        "series": "Lucie",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 0,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z",
+        "panels_per_unit": 1,
+        "factoryName": "Lucie DMDD",
+        "shopifyOptionSet": "Lucie DMDD",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 0,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 40,
+            "price_usd": 17.99,
+            "sort_order": 0
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 80,
+            "price_usd": 49.99,
+            "sort_order": 1
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 120,
+            "price_usd": 95.99,
+            "sort_order": 2
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 220,
+            "price_usd": 261.99,
+            "sort_order": 3
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 84,
+            "price_usd": 38.99,
+            "sort_order": 0
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 96,
+            "price_usd": 44.99,
+            "sort_order": 1
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 120,
+            "price_usd": 59.99,
+            "sort_order": 2
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 216,
+            "price_usd": 117.99,
+            "sort_order": 3
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 40,
+            "price": 17.99
+          },
+          {
+            "size": 80,
+            "price": 49.99
+          },
+          {
+            "size": 120,
+            "price": 95.99
+          },
+          {
+            "size": 220,
+            "price": 261.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 84,
+            "price": 38.99
+          },
+          {
+            "size": 96,
+            "price": 44.99
+          },
+          {
+            "size": 120,
+            "price": 59.99
+          },
+          {
+            "size": 216,
+            "price": 117.99
+          }
+        ],
+        "options": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "image-swatches",
+            "required": 1,
+            "priceable": 1,
+            "costable": 0,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 1,
+                "group_id": 1,
+                "label": "Snow White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 2,
+                "group_id": 1,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "header_style",
+            "label": "Hanging Header Style",
+            "source_name": "Hanging Header Style",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 1,
+            "key": "header_style",
+            "values": [
+              {
+                "id": 3,
+                "group_id": 2,
+                "label": "2X Pinch Pleat (Black Rings)",
+                "price_usd": 25.99,
+                "cost_rmb": 12,
+                "sort_order": 0,
+                "price": 25.99,
+                "costRmb": 12
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "lining",
+            "label": "Lining Type",
+            "source_name": "Lining Type",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 2,
+            "key": "lining",
+            "values": [
+              {
+                "id": 4,
+                "group_id": 3,
+                "label": "Unlined",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 5,
+                "group_id": 3,
+                "label": "Blackout 100%",
+                "price_usd": 56.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 56.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "memory_shaped",
+            "label": "Memory Shaped",
+            "source_name": "Memory Shaped",
+            "type": "dropdown",
+            "required": 0,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 3,
+            "key": "memory_shaped",
+            "values": [
+              {
+                "id": 6,
+                "group_id": 4,
+                "label": "Without memory training",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 7,
+                "group_id": 4,
+                "label": "Add memory training",
+                "price_usd": 89.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 89.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "tieback",
+            "label": "Matching Tieback",
+            "source_name": "Matching Tieback",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 4,
+            "key": "tieback",
+            "values": [
+              {
+                "id": 8,
+                "group_id": 5,
+                "label": "Yes need the matching tieback",
+                "price_usd": 1,
+                "cost_rmb": 8,
+                "sort_order": 0,
+                "price": 1,
+                "costRmb": 8
+              },
+              {
+                "id": 9,
+                "group_id": 5,
+                "label": "No Need",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "laborRules": [
+      {
+        "id": 1,
+        "layer": "single",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 8,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 2,
+        "layer": "single",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 12,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 3,
+        "layer": "single",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 16,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 4,
+        "layer": "double",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 10,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 5,
+        "layer": "double",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 15,
+        "note": "",
+        "sort_order": 4
+      },
+      {
+        "id": 6,
+        "layer": "double",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 20,
+        "note": "",
+        "sort_order": 5
+      }
+    ],
+    "memoryRules": [
+      {
+        "id": 1,
+        "min_m": 0,
+        "max_m": 3.2,
+        "single_rate_rmb": 6,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 2,
+        "min_m": 3.2,
+        "max_m": 4.5,
+        "single_rate_rmb": 12,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 3,
+        "min_m": 4.5,
+        "max_m": 5.5,
+        "single_rate_rmb": 25,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 4,
+        "min_m": 5.5,
+        "max_m": 7,
+        "single_rate_rmb": 45,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 5,
+        "min_m": 7,
+        "max_m": null,
+        "single_rate_rmb": 0,
+        "double_coef": 1.5,
+        "manual_quote": 1,
+        "note": "",
+        "sort_order": 4
+      }
+    ],
+    "taxRates": [
+      {
+        "code": "AK",
+        "state": "Alaska",
+        "rate": 1.82,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AL",
+        "state": "Alabama",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AR",
+        "state": "Arkansas",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AZ",
+        "state": "Arizona",
+        "rate": 8.52,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CA",
+        "state": "California",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CO",
+        "state": "Colorado",
+        "rate": 7.89,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CT",
+        "state": "Connecticut",
+        "rate": 6.35,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DC",
+        "state": "District of Columbia",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DE",
+        "state": "Delaware",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "FL",
+        "state": "Florida",
+        "rate": 7.02,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "GA",
+        "state": "Georgia",
+        "rate": 7.38,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "HI",
+        "state": "Hawaii",
+        "rate": 4.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IA",
+        "state": "Iowa",
+        "rate": 6.94,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ID",
+        "state": "Idaho",
+        "rate": 6.03,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IL",
+        "state": "Illinois",
+        "rate": 8.86,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IN",
+        "state": "Indiana",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KS",
+        "state": "Kansas",
+        "rate": 8.66,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KY",
+        "state": "Kentucky",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "LA",
+        "state": "Louisiana",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MA",
+        "state": "Massachusetts",
+        "rate": 6.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MD",
+        "state": "Maryland",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ME",
+        "state": "Maine",
+        "rate": 5.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MI",
+        "state": "Michigan",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MN",
+        "state": "Minnesota",
+        "rate": 8.04,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MO",
+        "state": "Missouri",
+        "rate": 8.41,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MS",
+        "state": "Mississippi",
+        "rate": 7.07,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MT",
+        "state": "Montana",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NC",
+        "state": "North Carolina",
+        "rate": 6.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ND",
+        "state": "North Dakota",
+        "rate": 6.96,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NE",
+        "state": "Nebraska",
+        "rate": 6.97,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NH",
+        "state": "New Hampshire",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NJ",
+        "state": "New Jersey",
+        "rate": 6.6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NM",
+        "state": "New Mexico",
+        "rate": 7.62,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NV",
+        "state": "Nevada",
+        "rate": 8.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NY",
+        "state": "New York",
+        "rate": 8.53,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OH",
+        "state": "Ohio",
+        "rate": 7.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OK",
+        "state": "Oklahoma",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OR",
+        "state": "Oregon",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "PA",
+        "state": "Pennsylvania",
+        "rate": 6.34,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "RI",
+        "state": "Rhode Island",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SC",
+        "state": "South Carolina",
+        "rate": 7.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SD",
+        "state": "South Dakota",
+        "rate": 6.4,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TN",
+        "state": "Tennessee",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TX",
+        "state": "Texas",
+        "rate": 8.2,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "UT",
+        "state": "Utah",
+        "rate": 7.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VA",
+        "state": "Virginia",
+        "rate": 5.77,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VT",
+        "state": "Vermont",
+        "rate": 6.36,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WA",
+        "state": "Washington",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WI",
+        "state": "Wisconsin",
+        "rate": 5.7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WV",
+        "state": "West Virginia",
+        "rate": 6.57,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WY",
+        "state": "Wyoming",
+        "rate": 5.44,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      }
+    ],
+    "orders": [],
+    "orderItems": []
+  }
+}

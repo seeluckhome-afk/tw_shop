@@ -1,0 +1,669 @@
+{
+  "schema": "twodrapes_factory_tool_sqlite_v1",
+  "exportedAt": "2026-05-27T15:07:27.647Z",
+  "data": {
+    "globals": [
+      {
+        "key": "bottom_hem_allowance_cm",
+        "value": "5",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "curtainLaborPerM",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "curtainWasteRate",
+        "value": "1.08",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "defaultPackaging",
+        "value": "8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "factorySettlementMultiplier",
+        "value": "1.2",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "inchToCm",
+        "value": "2.54",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "laborUseFlatWidth",
+        "value": "false",
+        "value_type": "boolean",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "manualCutExtraCm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "manualHeightM",
+        "value": "7",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "material_issue_buffer_cm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "memoryShapingCostPerPanel",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "profitWarnRate",
+        "value": "0.4",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "roundingStepM",
+        "value": "0.1",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "salesAmountMode",
+        "value": "pretax",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyAdminToken",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyApiVersion",
+        "value": "2026-01",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyShopDomain",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "sideHemAllowanceCm",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "spliceFeePerM",
+        "value": "3",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "superHeightWarnM",
+        "value": "4.5",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "top_nonwoven_allowance_cm",
+        "value": "10",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "usTaxRate",
+        "value": "0",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "usdRmb",
+        "value": "6.8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "verticalCutAllowanceCm",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "fabrics": [
+      {
+        "id": "fabric_dmmfl",
+        "name": "印花麻料",
+        "series": "印花麻料",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "fabric_cmdd",
+        "name": "棉麻大肚",
+        "series": "棉麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "fabric_dmdd",
+        "name": "涤麻大肚",
+        "series": "涤麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "linings": [
+      {
+        "id": "lining_450_white_280",
+        "name": "450gsm遮光内衬白色",
+        "color": "450gsm White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 18,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_none",
+        "name": "无内衬",
+        "color": "",
+        "width_cm": 0,
+        "price_per_m": 0,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_white_280",
+        "name": "遮光内衬白色",
+        "color": "White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_black_280",
+        "name": "遮光内衬黑色",
+        "color": "Black Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "products": [],
+    "laborRules": [
+      {
+        "id": 1,
+        "layer": "single",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 8,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 2,
+        "layer": "single",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 12,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 3,
+        "layer": "single",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 16,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 4,
+        "layer": "double",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 10,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 5,
+        "layer": "double",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 15,
+        "note": "",
+        "sort_order": 4
+      },
+      {
+        "id": 6,
+        "layer": "double",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 20,
+        "note": "",
+        "sort_order": 5
+      }
+    ],
+    "memoryRules": [
+      {
+        "id": 1,
+        "min_m": 0,
+        "max_m": 3.2,
+        "single_rate_rmb": 6,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 2,
+        "min_m": 3.2,
+        "max_m": 4.5,
+        "single_rate_rmb": 12,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 3,
+        "min_m": 4.5,
+        "max_m": 5.5,
+        "single_rate_rmb": 25,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 4,
+        "min_m": 5.5,
+        "max_m": 7,
+        "single_rate_rmb": 45,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 5,
+        "min_m": 7,
+        "max_m": null,
+        "single_rate_rmb": 0,
+        "double_coef": 1.5,
+        "manual_quote": 1,
+        "note": "",
+        "sort_order": 4
+      }
+    ],
+    "taxRates": [
+      {
+        "code": "AK",
+        "state": "Alaska",
+        "rate": 1.82,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AL",
+        "state": "Alabama",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AR",
+        "state": "Arkansas",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AZ",
+        "state": "Arizona",
+        "rate": 8.52,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CA",
+        "state": "California",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CO",
+        "state": "Colorado",
+        "rate": 7.89,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CT",
+        "state": "Connecticut",
+        "rate": 6.35,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DC",
+        "state": "District of Columbia",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DE",
+        "state": "Delaware",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "FL",
+        "state": "Florida",
+        "rate": 7.02,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "GA",
+        "state": "Georgia",
+        "rate": 7.38,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "HI",
+        "state": "Hawaii",
+        "rate": 4.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IA",
+        "state": "Iowa",
+        "rate": 6.94,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ID",
+        "state": "Idaho",
+        "rate": 6.03,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IL",
+        "state": "Illinois",
+        "rate": 8.86,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IN",
+        "state": "Indiana",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KS",
+        "state": "Kansas",
+        "rate": 8.66,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KY",
+        "state": "Kentucky",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "LA",
+        "state": "Louisiana",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MA",
+        "state": "Massachusetts",
+        "rate": 6.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MD",
+        "state": "Maryland",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ME",
+        "state": "Maine",
+        "rate": 5.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MI",
+        "state": "Michigan",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MN",
+        "state": "Minnesota",
+        "rate": 8.04,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MO",
+        "state": "Missouri",
+        "rate": 8.41,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MS",
+        "state": "Mississippi",
+        "rate": 7.07,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MT",
+        "state": "Montana",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NC",
+        "state": "North Carolina",
+        "rate": 6.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ND",
+        "state": "North Dakota",
+        "rate": 6.96,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NE",
+        "state": "Nebraska",
+        "rate": 6.97,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NH",
+        "state": "New Hampshire",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NJ",
+        "state": "New Jersey",
+        "rate": 6.6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NM",
+        "state": "New Mexico",
+        "rate": 7.62,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NV",
+        "state": "Nevada",
+        "rate": 8.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NY",
+        "state": "New York",
+        "rate": 8.53,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OH",
+        "state": "Ohio",
+        "rate": 7.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OK",
+        "state": "Oklahoma",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OR",
+        "state": "Oregon",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "PA",
+        "state": "Pennsylvania",
+        "rate": 6.34,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "RI",
+        "state": "Rhode Island",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SC",
+        "state": "South Carolina",
+        "rate": 7.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SD",
+        "state": "South Dakota",
+        "rate": 6.4,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TN",
+        "state": "Tennessee",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TX",
+        "state": "Texas",
+        "rate": 8.2,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "UT",
+        "state": "Utah",
+        "rate": 7.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VA",
+        "state": "Virginia",
+        "rate": 5.77,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VT",
+        "state": "Vermont",
+        "rate": 6.36,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WA",
+        "state": "Washington",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WI",
+        "state": "Wisconsin",
+        "rate": 5.7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WV",
+        "state": "West Virginia",
+        "rate": 6.57,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WY",
+        "state": "Wyoming",
+        "rate": 5.44,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      }
+    ],
+    "orders": [],
+    "orderItems": []
+  }
+}

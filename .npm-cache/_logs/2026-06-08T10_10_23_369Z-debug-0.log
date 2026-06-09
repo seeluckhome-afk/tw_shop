@@ -1,0 +1,25 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.9.0
+2 info using node@v24.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Administrator\.npmrc
+5 silly config load:file:C:\Users\Administrator\AppData\Roaming\npm\etc\npmrc
+6 verbose title npm exec @shopify/cli@latest theme dev --store twodrapes.com
+7 verbose argv "exec" "--yes" "--cache" "C:\\Users\\Administrator\\Desktop\\twodrapes-factory-tool\\.npm-cache" "--" "@shopify/cli@latest" "theme" "dev" "--store" "twodrapes.com"
+8 verbose logfile logs-max:10 dir:C:\Users\Administrator\Desktop\twodrapes-factory-tool\.npm-cache\_logs\2026-06-08T10_10_23_369Z-
+9 verbose logfile C:\Users\Administrator\Desktop\twodrapes-factory-tool\.npm-cache\_logs\2026-06-08T10_10_23_369Z-debug-0.log
+10 silly logfile done cleaning log files
+11 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+12 http fetch GET 200 https://registry.npmjs.org/npm 1440ms
+13 http fetch GET 200 https://registry.npmjs.org/@shopify%2fcli 1644ms (cache miss)
+14 verbose cwd C:\Users\Administrator\Desktop\shop
+15 verbose os Windows_NT 10.0.19045
+16 verbose node v24.14.0
+17 verbose npm  v11.9.0
+18 notice
+18 notice New minor version of npm available! 11.9.0 -> 11.16.0
+18 notice Changelog: https://github.com/npm/cli/releases/tag/v11.16.0
+18 notice To update run: npm install -g npm@11.16.0
+18 notice  { force: true, Symbol(proc-log.meta): true }
+19 verbose exit 1
+20 verbose code 1

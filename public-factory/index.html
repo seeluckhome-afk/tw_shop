@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twodrapes 订单工具 - 管理端</title>
+  <link rel="stylesheet" href="/css/factory.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Twodrapes 订单工具 - 管理端</h1>
+    </div>
+    <nav class="tab-nav" role="tablist" aria-label="管理端导航">
+      <button id="tab-summary" class="active" data-tab="summary" role="tab" aria-selected="true" aria-controls="page-summary">订单汇总</button>
+      <button id="tab-profit" data-tab="profit" role="tab" aria-selected="false" aria-controls="page-profit">利润计算</button>
+      <button id="tab-params" data-tab="params" role="tab" aria-selected="false" aria-controls="page-params">参数设置</button>
+      <button id="tab-users" data-tab="users" role="tab" aria-selected="false" aria-controls="page-users">用户管理</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="toast" class="toast hidden" aria-live="polite" role="status"></div>
+
+    <section id="page-summary" class="page active" role="tabpanel" aria-labelledby="tab-summary">
+      <article class="card">
+        <div class="section-title">
+          <h2>订单汇总</h2>
+          <div class="toolbar">
+            <button class="btn secondary small" id="summaryRefreshBtn">刷新</button>
+          </div>
+        </div>
+        <div class="summary-stats" id="summaryStats"></div>
+        <div class="summary-filters">
+          <label>渠道
+            <select id="summaryChannelFilter">
+              <option value="">全部</option>
+              <option value="shopify">独立站</option>
+              <option value="amazon">亚马逊</option>
+            </select>
+          </label>
+          <label>状态
+            <select id="summaryStatusFilter">
+              <option value="">全部</option>
+              <option value="production">待生产</option>
+              <option value="shipping">待发货</option>
+              <option value="completed">完成</option>
+            </select>
+          </label>
+          <label>搜索<input id="summarySearchInput" type="search" placeholder="订单号 / 客户"></label>
+        </div>
+        <div class="table-wrap"><table id="summaryTable"></table></div>
+      </article>
+    </section>
+
+    <section id="page-profit" class="page" role="tabpanel" aria-labelledby="tab-profit" style="display:none">
+      <article class="card">
+        <div class="section-title">
+          <h2>利润计算</h2>
+          <div class="toolbar">
+            <button class="btn secondary small" id="profitRefreshBtn">刷新</button>
+          </div>
+        </div>
+        <div class="profit-select-row">
+          <label>选择订单
+            <select id="profitOrderSelect"><option value="">请选择订单</option></select>
+          </label>
+        </div>
+        <div id="profitDetail" class="hidden"></div>
+      </article>
+    </section>
+
+    <section id="page-params" class="page" role="tabpanel" aria-labelledby="tab-params" style="display:none">
+      <article class="card">
+        <div class="section-title">
+          <h2>参数设置</h2>
+          <div class="toolbar">
+            <button class="btn secondary small" id="refreshParamsBtn">刷新</button>
+            <button class="btn primary small" id="saveParamsBtn">保存参数</button>
+          </div>
+        </div>
+        <div id="paramsSummary" class="notice">加载中...</div>
+        <div id="paramsStatus" class="notice hidden"></div>
+        <div id="paramsContent" class="params-content"></div>
+      </article>
+    </section>
+
+    <section id="page-users" class="page" role="tabpanel" aria-labelledby="tab-users" style="display:none">
+      <article class="card users-card">
+        <div class="section-title">
+          <h2>用户管理</h2>
+          <div class="toolbar users-toolbar">
+            <label class="users-filter-label">渠道
+              <select id="userChannelFilter">
+                <option value="">全部渠道</option>
+                <option value="shopify">独立站</option>
+                <option value="amazon">亚马逊</option>
+              </select>
+            </label>
+            <button class="btn primary small" id="addUserBtn">新增用户</button>
+          </div>
+        </div>
+
+        <div id="userForm" class="user-form-panel hidden">
+          <div class="user-form-grid">
+            <label>渠道
+              <select id="userFormChannel">
+                <option value="shopify">独立站</option>
+                <option value="amazon">亚马逊</option>
+              </select>
+            </label>
+            <label>用户名
+              <input id="userFormUsername" type="text" placeholder="登录用户名">
+            </label>
+            <label>新密码
+              <input id="userFormPassword" type="password" placeholder="留空则不修改">
+            </label>
+            <div class="user-form-actions">
+              <button class="btn primary small" id="userFormSaveBtn">保存</button>
+              <button class="btn secondary small" id="userFormCancelBtn">取消</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap users-table-wrap"><table id="usersTable"></table></div>
+      </article>
+    </section>
+  </main>
+
+  <div id="orderDetailModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="订单详情">
+    <div class="modal-backdrop" id="closeOrderDetailModal"></div>
+    <div class="modal-panel">
+      <div class="section-title">
+        <h3 id="orderDetailTitle">订单详情</h3>
+        <button class="btn small secondary" id="closeOrderDetailBtn" type="button">关闭</button>
+      </div>
+      <div id="orderDetailContent"></div>
+    </div>
+  </div>
+
+  <script src="/js/factory.js"></script>
+</body>
+</html>

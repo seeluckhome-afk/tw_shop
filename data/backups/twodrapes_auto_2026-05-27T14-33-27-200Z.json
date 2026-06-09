@@ -1,0 +1,959 @@
+{
+  "schema": "twodrapes_factory_tool_sqlite_v1",
+  "exportedAt": "2026-05-27T14:33:27.200Z",
+  "data": {
+    "globals": [
+      {
+        "key": "bottom_hem_allowance_cm",
+        "value": "5",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "curtainLaborPerM",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "curtainWasteRate",
+        "value": "1.08",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "defaultPackaging",
+        "value": "8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "factorySettlementMultiplier",
+        "value": "1.2",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "inchToCm",
+        "value": "2.54",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "laborUseFlatWidth",
+        "value": "false",
+        "value_type": "boolean",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "manualCutExtraCm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "manualHeightM",
+        "value": "7",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "material_issue_buffer_cm",
+        "value": "50",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "memoryShapingCostPerPanel",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "profitWarnRate",
+        "value": "0.4",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "roundingStepM",
+        "value": "0.1",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "salesAmountMode",
+        "value": "pretax",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyAdminToken",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyApiVersion",
+        "value": "2026-01",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "shopifyShopDomain",
+        "value": "",
+        "value_type": "text",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "sideHemAllowanceCm",
+        "value": "20",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "spliceFeePerM",
+        "value": "3",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "superHeightWarnM",
+        "value": "4.5",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "top_nonwoven_allowance_cm",
+        "value": "10",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "usTaxRate",
+        "value": "0",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "usdRmb",
+        "value": "6.8",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "key": "verticalCutAllowanceCm",
+        "value": "30",
+        "value_type": "number",
+        "note": "",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "fabrics": [
+      {
+        "id": "fabric_dmmfl",
+        "name": "印花麻料",
+        "series": "印花麻料",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "fabric_cmdd",
+        "name": "棉麻大肚",
+        "series": "棉麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "fabric_dmdd",
+        "name": "涤麻大肚",
+        "series": "涤麻大肚",
+        "width_cm": 340,
+        "price_per_m": 26.14,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "linings": [
+      {
+        "id": "lining_450_white_280",
+        "name": "450gsm遮光内衬白色",
+        "color": "450gsm White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 18,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_none",
+        "name": "无内衬",
+        "color": "",
+        "width_cm": 0,
+        "price_per_m": 0,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_white_280",
+        "name": "遮光内衬白色",
+        "color": "White Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      },
+      {
+        "id": "lining_black_280",
+        "name": "遮光内衬黑色",
+        "color": "Black Blackout Lining",
+        "width_cm": 280,
+        "price_per_m": 12,
+        "enabled": 1,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z"
+      }
+    ],
+    "products": [
+      {
+        "id": "lucie_linen_blend_curtain",
+        "name": "Lucie Linen Blend Curtain",
+        "factory_name": "Lucie DMDD",
+        "shopify_option_set": "Lucie DMDD",
+        "type": "curtain",
+        "series": "Lucie",
+        "default_fabric_id": "fabric_dmdd",
+        "base_price": 0,
+        "default_fullness": 2,
+        "enabled": true,
+        "created_at": "2026-05-27T14:31:31.279Z",
+        "updated_at": "2026-05-27T14:31:31.279Z",
+        "panels_per_unit": 1,
+        "factoryName": "Lucie DMDD",
+        "shopifyOptionSet": "Lucie DMDD",
+        "defaultFabricId": "fabric_dmdd",
+        "basePrice": 0,
+        "defaultFullness": 2,
+        "panelsPerUnit": 1,
+        "width_prices": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 40,
+            "price_usd": 17.99,
+            "sort_order": 0
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 80,
+            "price_usd": 49.99,
+            "sort_order": 1
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 120,
+            "price_usd": 95.99,
+            "sort_order": 2
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 220,
+            "price_usd": 261.99,
+            "sort_order": 3
+          }
+        ],
+        "length_prices": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 84,
+            "price_usd": 38.99,
+            "sort_order": 0
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 96,
+            "price_usd": 44.99,
+            "sort_order": 1
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 120,
+            "price_usd": 59.99,
+            "sort_order": 2
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "size_in": 216,
+            "price_usd": 117.99,
+            "sort_order": 3
+          }
+        ],
+        "widthPrices": [
+          {
+            "size": 40,
+            "price": 17.99
+          },
+          {
+            "size": 80,
+            "price": 49.99
+          },
+          {
+            "size": 120,
+            "price": 95.99
+          },
+          {
+            "size": 220,
+            "price": 261.99
+          }
+        ],
+        "lengthPrices": [
+          {
+            "size": 84,
+            "price": 38.99
+          },
+          {
+            "size": 96,
+            "price": 44.99
+          },
+          {
+            "size": 120,
+            "price": 59.99
+          },
+          {
+            "size": 216,
+            "price": 117.99
+          }
+        ],
+        "options": [
+          {
+            "id": 1,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "color",
+            "label": "Color",
+            "source_name": "Color",
+            "type": "image-swatches",
+            "required": 1,
+            "priceable": 1,
+            "costable": 0,
+            "factory": 1,
+            "sort_order": 0,
+            "key": "color",
+            "values": [
+              {
+                "id": 1,
+                "group_id": 1,
+                "label": "Snow White",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 2,
+                "group_id": 1,
+                "label": "Natural",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "header_style",
+            "label": "Hanging Header Style",
+            "source_name": "Hanging Header Style",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 1,
+            "key": "header_style",
+            "values": [
+              {
+                "id": 3,
+                "group_id": 2,
+                "label": "2X Pinch Pleat (Black Rings)",
+                "price_usd": 25.99,
+                "cost_rmb": 12,
+                "sort_order": 0,
+                "price": 25.99,
+                "costRmb": 12
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "lining",
+            "label": "Lining Type",
+            "source_name": "Lining Type",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 2,
+            "key": "lining",
+            "values": [
+              {
+                "id": 4,
+                "group_id": 3,
+                "label": "Unlined",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 5,
+                "group_id": 3,
+                "label": "Blackout 100%",
+                "price_usd": 56.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 56.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "memory_shaped",
+            "label": "Memory Shaped",
+            "source_name": "Memory Shaped",
+            "type": "dropdown",
+            "required": 0,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 3,
+            "key": "memory_shaped",
+            "values": [
+              {
+                "id": 6,
+                "group_id": 4,
+                "label": "Without memory training",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 0,
+                "price": 0,
+                "costRmb": 0
+              },
+              {
+                "id": 7,
+                "group_id": 4,
+                "label": "Add memory training",
+                "price_usd": 89.99,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 89.99,
+                "costRmb": 0
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "product_id": "lucie_linen_blend_curtain",
+            "option_key": "tieback",
+            "label": "Matching Tieback",
+            "source_name": "Matching Tieback",
+            "type": "dropdown",
+            "required": 1,
+            "priceable": 1,
+            "costable": 1,
+            "factory": 1,
+            "sort_order": 4,
+            "key": "tieback",
+            "values": [
+              {
+                "id": 8,
+                "group_id": 5,
+                "label": "Yes need the matching tieback",
+                "price_usd": 1,
+                "cost_rmb": 8,
+                "sort_order": 0,
+                "price": 1,
+                "costRmb": 8
+              },
+              {
+                "id": 9,
+                "group_id": 5,
+                "label": "No Need",
+                "price_usd": 0,
+                "cost_rmb": 0,
+                "sort_order": 1,
+                "price": 0,
+                "costRmb": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "laborRules": [
+      {
+        "id": 1,
+        "layer": "single",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 8,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 2,
+        "layer": "single",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 12,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 3,
+        "layer": "single",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 16,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 4,
+        "layer": "double",
+        "min_m": 0,
+        "max_m": 3.4,
+        "rate_rmb_per_m": 10,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 5,
+        "layer": "double",
+        "min_m": 3.4,
+        "max_m": 5,
+        "rate_rmb_per_m": 15,
+        "note": "",
+        "sort_order": 4
+      },
+      {
+        "id": 6,
+        "layer": "double",
+        "min_m": 5,
+        "max_m": null,
+        "rate_rmb_per_m": 20,
+        "note": "",
+        "sort_order": 5
+      }
+    ],
+    "memoryRules": [
+      {
+        "id": 1,
+        "min_m": 0,
+        "max_m": 3.2,
+        "single_rate_rmb": 6,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 0
+      },
+      {
+        "id": 2,
+        "min_m": 3.2,
+        "max_m": 4.5,
+        "single_rate_rmb": 12,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 1
+      },
+      {
+        "id": 3,
+        "min_m": 4.5,
+        "max_m": 5.5,
+        "single_rate_rmb": 25,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 2
+      },
+      {
+        "id": 4,
+        "min_m": 5.5,
+        "max_m": 7,
+        "single_rate_rmb": 45,
+        "double_coef": 1.5,
+        "manual_quote": 0,
+        "note": "",
+        "sort_order": 3
+      },
+      {
+        "id": 5,
+        "min_m": 7,
+        "max_m": null,
+        "single_rate_rmb": 0,
+        "double_coef": 1.5,
+        "manual_quote": 1,
+        "note": "",
+        "sort_order": 4
+      }
+    ],
+    "taxRates": [
+      {
+        "code": "AK",
+        "state": "Alaska",
+        "rate": 1.82,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AL",
+        "state": "Alabama",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AR",
+        "state": "Arkansas",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "AZ",
+        "state": "Arizona",
+        "rate": 8.52,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CA",
+        "state": "California",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CO",
+        "state": "Colorado",
+        "rate": 7.89,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "CT",
+        "state": "Connecticut",
+        "rate": 6.35,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DC",
+        "state": "District of Columbia",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "DE",
+        "state": "Delaware",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "FL",
+        "state": "Florida",
+        "rate": 7.02,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "GA",
+        "state": "Georgia",
+        "rate": 7.38,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "HI",
+        "state": "Hawaii",
+        "rate": 4.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IA",
+        "state": "Iowa",
+        "rate": 6.94,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ID",
+        "state": "Idaho",
+        "rate": 6.03,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IL",
+        "state": "Illinois",
+        "rate": 8.86,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "IN",
+        "state": "Indiana",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KS",
+        "state": "Kansas",
+        "rate": 8.66,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "KY",
+        "state": "Kentucky",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "LA",
+        "state": "Louisiana",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MA",
+        "state": "Massachusetts",
+        "rate": 6.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MD",
+        "state": "Maryland",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ME",
+        "state": "Maine",
+        "rate": 5.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MI",
+        "state": "Michigan",
+        "rate": 6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MN",
+        "state": "Minnesota",
+        "rate": 8.04,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MO",
+        "state": "Missouri",
+        "rate": 8.41,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MS",
+        "state": "Mississippi",
+        "rate": 7.07,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "MT",
+        "state": "Montana",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NC",
+        "state": "North Carolina",
+        "rate": 6.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "ND",
+        "state": "North Dakota",
+        "rate": 6.96,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NE",
+        "state": "Nebraska",
+        "rate": 6.97,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NH",
+        "state": "New Hampshire",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NJ",
+        "state": "New Jersey",
+        "rate": 6.6,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NM",
+        "state": "New Mexico",
+        "rate": 7.62,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NV",
+        "state": "Nevada",
+        "rate": 8.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "NY",
+        "state": "New York",
+        "rate": 8.53,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OH",
+        "state": "Ohio",
+        "rate": 7.24,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OK",
+        "state": "Oklahoma",
+        "rate": 8.99,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "OR",
+        "state": "Oregon",
+        "rate": 0,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "PA",
+        "state": "Pennsylvania",
+        "rate": 6.34,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "RI",
+        "state": "Rhode Island",
+        "rate": 7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SC",
+        "state": "South Carolina",
+        "rate": 7.5,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "SD",
+        "state": "South Dakota",
+        "rate": 6.4,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TN",
+        "state": "Tennessee",
+        "rate": 9.56,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "TX",
+        "state": "Texas",
+        "rate": 8.2,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "UT",
+        "state": "Utah",
+        "rate": 7.25,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VA",
+        "state": "Virginia",
+        "rate": 5.77,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "VT",
+        "state": "Vermont",
+        "rate": 6.36,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WA",
+        "state": "Washington",
+        "rate": 9.46,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WI",
+        "state": "Wisconsin",
+        "rate": 5.7,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WV",
+        "state": "West Virginia",
+        "rate": 6.57,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      },
+      {
+        "code": "WY",
+        "state": "Wyoming",
+        "rate": 5.44,
+        "note": "average reference; Shopify/ZIP tax prevails"
+      }
+    ],
+    "orders": [],
+    "orderItems": []
+  }
+}
